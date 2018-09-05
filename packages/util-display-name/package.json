@@ -1,0 +1,11 @@
+{
+  "name": "@rcp/util-display-name",
+  "author": "imcuttle",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "devDependencies": {
+    "@rcp/_internal-types": "^0.0.1"
+  }
+}

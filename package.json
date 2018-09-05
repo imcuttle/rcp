@@ -1,0 +1,81 @@
+{
+  "name": "rcp",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "description": "Anything about React Component",
+  "author": "imcuttle",
+  "scripts": {
+    "new": "edam",
+    "test": "jest",
+    "precommit": "pretty-quick --staged",
+    "bootstrap": "lerna bootstrap",
+    "prerelease": "npm test",
+    "release": "lerna publish --conventional-commits -m 'chore(release): publish'",
+    "build": "rimraf lib && babel src/ -Dd lib",
+    "dev": "npm run build -- -w",
+    "version": "npm run changelog",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "imcuttle",
+    "rcp"
+  ],
+  "typings": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": "imcuttle/rcp",
+  "edam": {
+    "source": "./packages/__template",
+    "output": "./packages"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testMatch": [
+      "**/__test{s,}__/*.(spec|test).{t,j}s{x,}"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.4.13",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "conventional-changelog-cli": "^2.0.5",
+    "documentation": "^8.1.2",
+    "edam-cli": "^2.3.12",
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "lerna": "^2.7.1",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.3"
+  }
+}

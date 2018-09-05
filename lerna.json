@@ -1,0 +1,5 @@
+{
+  "packages": ["packages/!(__template)"],
+  "version": "0.0.0",
+  "lerna": "2.7.1"
+}
