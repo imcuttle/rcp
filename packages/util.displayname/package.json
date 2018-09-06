@@ -6,7 +6,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@rcp/_types": "^0.0.1",
+    "@rcp/_types": "^1.0.0",
     "react": "^16.4.2"
   },
   "license": "MIT",

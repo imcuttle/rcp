@@ -24,11 +24,11 @@
   "typings": "index.d.js",
   "version": "1.0.0",
   "dependencies": {
-    "@rcp/util.displayname": "^0.0.1",
+    "@rcp/util.displayname": "^1.0.0",
     "@rcp/util.iscompclass": "^1.0.0"
   },
   "devDependencies": {
-    "@rcp/_types": "^0.0.1",
+    "@rcp/_types": "^1.0.0",
     "react": "^16.4.2"
   }
 }
