@@ -28,7 +28,6 @@
     "@rcp/util.iscompclass": "^1.0.0"
   },
   "devDependencies": {
-    "@rcp/_types": "^1.0.0",
-    "react": "^16.4.2"
+    "@rcp/_types": "^1.0.0"
   }
 }

@@ -74,9 +74,11 @@
     "edam-cli": "^2.3.12",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
-    "lerna": "^2.7.1",
+    "lerna": "^3.3.0",
     "prettier": "^1.14.2",
     "pretty-quick": "^1.6.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",
     "typescript": "^3.0.3"
