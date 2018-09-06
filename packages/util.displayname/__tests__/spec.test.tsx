@@ -6,8 +6,7 @@
  */
 import displayName from '../'
 import * as React from 'react'
-import { IFunction } from '../../_internal'
-import { func } from 'prop-types'
+import { IFunction } from '@rcp/_types'
 
 describe('displayName', function() {
   it('should return self when component is string', () => {

@@ -33,6 +33,9 @@
     "output": "./packages"
   },
   "jest": {
+    "testPathIgnorePatterns": [
+      "__template"
+    ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest",
       "^.+\\.jsx?$": "babel-jest"
