@@ -6,7 +6,7 @@
 <!--[![NPM version](https://img.shields.io/npm/v/rcp.svg?style=flat-square)](https://www.npmjs.com/package/rcp)
 [![NPM Downloads](https://img.shields.io/npm/dm/rcp.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/rcp)-->
 
-Any about React Component
+Anything about React Component
 
 ## Develop
 
@@ -46,6 +46,10 @@ should be named as `hoc.{{lowerCase}}`, eg. `@rp/hoc.i18n`.
 should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
 
 ## Related
+
+## Authors
+
+This library is written and maintained by imcuttle, [moyuyc95@gmail.com](mailto:moyuyc95@gmail.com).
 
 ## License
 

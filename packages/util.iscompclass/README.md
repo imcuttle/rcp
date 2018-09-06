@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@rcp/util.iscompclass.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/util.iscompclass)
 [![NPM Downloads](https://img.shields.io/npm/dm/@rcp/util.iscompclass.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/util.iscompclass)
 
-Any about React Component
+The utility for checking component instance
 
 ## Installation
 
@@ -22,6 +22,10 @@ import utiliscompclass from '@rcp/util.iscompclass'
 ## API
 
 ## Related
+
+## Authors
+
+This library is written and maintained by imcuttle, [moyuyc95@gmail.com](mailto:moyuyc95@gmail.com).
 
 ## License
 

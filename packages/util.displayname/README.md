@@ -23,6 +23,10 @@ import utilDisplayname from '@rcp/util.displayname'
 
 ## Related
 
+## Authors
+
+This library is written and maintained by imcuttle, [moyuyc95@gmail.com](mailto:moyuyc95@gmail.com).
+
 ## License
 
 MIT

@@ -1,9 +1,29 @@
 {
   "name": "@rcp/_types",
   "author": "imcuttle",
+  "description": "The internal about type definition",
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.1",
-  "dependencies": {}
+  "license": "MIT",
+  "scripts": {
+    "dist": "tsc",
+    "dev": "npm run dist -- -w",
+    "prepublishOnly": "npm test && npm run doc",
+    "test": "jest",
+    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\""
+  },
+  "keywords": [
+    "imcuttle",
+    "_types"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "typings": "index.d.js",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/react": "^16.4.13"
+  }
 }

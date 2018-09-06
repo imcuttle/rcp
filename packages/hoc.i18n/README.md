@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@rcp/hoc-i18n.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/hoc-i18n)
 [![NPM Downloads](https://img.shields.io/npm/dm/@rcp/hoc-i18n.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/hoc-i18n)
 
-Any about React Component
+React Component's high order component about internationalization
 
 ## Installation
 
@@ -22,6 +22,10 @@ import hocI18n from '@rcp/hoc-i18n'
 ## API
 
 ## Related
+
+## Authors
+
+This library is written and maintained by imcuttle, [moyuyc95@gmail.com](mailto:moyuyc95@gmail.com).
 
 ## License
 
