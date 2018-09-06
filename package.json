@@ -70,6 +70,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "conventional-changelog-cli": "^2.0.5",
+    "create-react-class": "^15.6.3",
     "documentation": "^8.1.2",
     "edam-cli": "^2.3.12",
     "husky": "^0.14.3",
