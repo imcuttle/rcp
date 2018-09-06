@@ -5,11 +5,11 @@
  * @description
  */
 import * as React from 'react'
-import { IFunction, MixComponentClass } from '@rcp/_types'
+import { IFunction } from '@rcp/_types'
 import isComponentClass from '@rcp/util.iscompclass'
 
 export default function displayName(
-  component: MixComponentClass | React.ReactElement<any> | IFunction | string
+  component: React.ComponentType | React.ReactElement<any> | IFunction | string
 ): string {
   if (typeof component === 'string') {
     return component
@@ -19,7 +19,7 @@ export default function displayName(
   }
 
   if (isComponentClass(component)) {
-    return (<MixComponentClass>component).displayName
+    return (<React.ComponentType>component).displayName
   }
   const result = (<IFunction>component).name
   if (!result) {

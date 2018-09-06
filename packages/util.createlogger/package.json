@@ -1,7 +1,7 @@
 {
-  "name": "@rcp/hoc.i18n",
+  "name": "@rcp/util.createlogger",
   "author": "imcuttle",
-  "description": "React Component's high order component about internationalization",
+  "description": "The internal about logger",
   "publishConfig": {
     "access": "public"
   },
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "imcuttle",
-    "hoc-i18n"
+    "_helper"
   ],
   "engines": {
     "node": ">=6"
@@ -23,14 +23,7 @@
   "main": "index.js",
   "typings": "index.d.js",
   "version": "1.0.0",
-  "peerDependencies": {
-    "prop-types": "^15.0.0",
-    "react": "^15.0.0"
-  },
   "dependencies": {
-    "@rcp/util.createlogger": "^1.0.0",
-    "@rcp/util.displayname": "^1.0.0",
-    "lodash.foreach": "^4.5.0",
-    "tiny-i18n": "^1.1.2"
+    "debug": "^3.1.0"
   }
 }

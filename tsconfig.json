@@ -7,7 +7,8 @@
     "declarationDir": "declare",
     "outDir": "dist",
     "allowJs": true,
-    "jsx": "react"
+    "jsx": "react",
+    "experimentalDecorators": true
   },
   "include": ["./packages/**/*"],
   "exclude": ["node_modules", "test", "__tests__"]

@@ -50,7 +50,8 @@
     ],
     "testMatch": [
       "**/__test{s,}__/*.(spec|test).{t,j}s{x,}"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/scripts/test-setup.js"
   },
   "commitlint": {
     "extends": [
@@ -60,7 +61,9 @@
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "@types/enzyme": "^3.1.13",
     "@types/jest": "^23.3.1",
+    "@types/node": "^10.9.4",
     "@types/react": "^16.4.13",
     "babel-cli": "^6.26.0",
     "babel-jest": "^23.4.2",
@@ -73,15 +76,18 @@
     "create-react-class": "^15.6.3",
     "documentation": "^8.1.2",
     "edam-cli": "^2.3.12",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "lerna": "^3.3.0",
     "prettier": "^1.14.2",
     "pretty-quick": "^1.6.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",
-    "typescript": "^3.0.3"
+    "typescript": "^3.1.0-dev.20180906"
   }
 }
