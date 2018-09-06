@@ -1,4 +1,4 @@
-# @rcp/hoc-i18n
+# @rcp/hoc.i18n
 
 [![NPM version](https://img.shields.io/npm/v/@rcp/hoc-i18n.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/hoc-i18n)
 [![NPM Downloads](https://img.shields.io/npm/dm/@rcp/hoc-i18n.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/hoc-i18n)

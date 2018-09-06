@@ -1,7 +1,7 @@
 {
-  "name": "@rcp/hoc-i18n",
+  "name": "@rcp/util.iselemof",
   "author": "imcuttle",
-  "description": "React Component's high order component about internationalization",
+  "description": "The utility determinating the input is element of the component class",
   "publishConfig": {
     "access": "public"
   },
@@ -15,12 +15,16 @@
   },
   "keywords": [
     "imcuttle",
-    "hoc-i18n"
+    "util.iselemof"
   ],
   "engines": {
     "node": ">=6"
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "@rcp/_types": "^0.0.1",
+    "react": "^16.4.2"
+  }
 }

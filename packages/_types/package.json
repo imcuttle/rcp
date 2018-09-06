@@ -1,5 +1,5 @@
 {
-  "name": "@rcp/_internal-types",
+  "name": "@rcp/_types",
   "author": "imcuttle",
   "publishConfig": {
     "access": "public"

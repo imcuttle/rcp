@@ -8,6 +8,43 @@
 
 Any about React Component
 
+## Develop
+
+```bash
+git clone https://github.com/imcuttle/rcp.git
+cd rcp
+npm install
+```
+
+### New a package
+
+Use [edam](https://github.com/imcuttle/edam) for generating.
+
+```bash
+npm run new
+# Or use edam-cli in straightway
+npm i edam-cli -g
+edam
+```
+
+#### About package name
+
+- internal package
+
+should be named as `_foo`, eg. `@rp/_types`.
+
+- utility package
+
+should be named as `util.{{lowerCase}}`, eg. `@rp/util.displayname`.
+
+- hoc package
+
+should be named as `hoc.{{lowerCase}}`, eg. `@rp/hoc.i18n`.
+
+- component package
+
+should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
+
 ## Related
 
 ## License

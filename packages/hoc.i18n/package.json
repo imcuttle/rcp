@@ -1,0 +1,26 @@
+{
+  "name": "@rcp/hoc.i18n",
+  "author": "imcuttle",
+  "description": "React Component's high order component about internationalization",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dist": "tsc",
+    "dev": "npm run dist -- -w",
+    "prepublishOnly": "npm test && npm run doc",
+    "test": "jest",
+    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\""
+  },
+  "keywords": [
+    "imcuttle",
+    "hoc-i18n"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "typings": "index.d.js",
+  "version": "1.0.0"
+}

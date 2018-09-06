@@ -1,11 +1,12 @@
 {
-  "name": "@rcp/util-display-name",
+  "name": "@rcp/util.displayname",
   "author": "imcuttle",
   "publishConfig": {
     "access": "public"
   },
   "version": "0.0.1",
   "devDependencies": {
-    "@rcp/_internal-types": "^0.0.1"
+    "@rcp/_types": "^0.0.1",
+    "react": "^16.4.2"
   }
 }

@@ -5,9 +5,8 @@
  * @description
  */
 import * as React from 'react'
-import { IFunction } from '@rcp/_internal-types'
+import { IFunction, MixComponentClass } from '@rcp/_types'
 
-type MixComponentClass = React.ComponentClass | React.StatelessComponent
 export default function displayName<T>(
   component: MixComponentClass | React.ReactElement<T> | IFunction | string
 ): string {
@@ -22,4 +21,5 @@ export default function displayName<T>(
     component = <React.ReactElement<T>>component
     return (component.type && displayName(component.type)) || 'Unknown'
   }
+  return result
 }
