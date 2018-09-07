@@ -11,7 +11,6 @@
     "precommit": "pretty-quick --staged",
     "bootstrap": "lerna bootstrap",
     "prerelease": "npm test",
-    "prepare": "npm run dist",
     "dist": "lerna run --parallel dist",
     "dev": "lerna run --parallel dev",
     "release": "lerna publish --conventional-commits -m 'chore(release): publish'",
