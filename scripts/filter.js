@@ -22,8 +22,9 @@ const fs = require('fs')
     const pkg = require(path)
     const newPkg = merge({}, pkg, {
       scripts: {
+        doc: 'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
         // prepare: 'npm run dist',
-        prepublishOnly: 'npm run dist && npm run doc'
+        // prepublishOnly: 'npm run dist && npm run doc'
       }
       // devDependencies: {
       //   react: '^16.4.2'
@@ -31,7 +32,7 @@ const fs = require('fs')
     })
 
     // delete newPkg.scripts.prepare
-    delete newPkg.scripts.test
+    // delete newPkg.scripts.test
     // delete newPkg.devDependencies.typescript
 
     fs.writeFileSync(path, JSON.stringify(newPkg, null, 2))
