@@ -10,5 +10,5 @@ public/
 .vscode
 
 packages/*/**.js
-packages/*/**.map
+packages/*/*.js.map
 !packages/__template/**.js
