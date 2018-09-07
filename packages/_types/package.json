@@ -21,7 +21,7 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "devDependencies": {
     "@types/react": "^16.4.13"
   },
