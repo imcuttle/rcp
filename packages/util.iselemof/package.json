@@ -22,9 +22,9 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "devDependencies": {
-    "@rcp/_types": "^1.0.2"
+    "@rcp/_types": "^1.0.3"
   },
   "gitHead": "df770543249c17944d64be5571baa2e8cc9efae6"
 }
