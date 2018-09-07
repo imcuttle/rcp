@@ -1,3 +1,3 @@
 export interface IFunction extends Function {
-  name: string
+    name: string;
 }
