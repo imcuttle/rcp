@@ -22,12 +22,12 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "@rcp/util.displayname": "^1.0.0",
-    "@rcp/util.iscompclass": "^1.0.0"
+    "@rcp/util.displayname": "^1.0.1",
+    "@rcp/util.iscompclass": "^1.0.1"
   },
   "devDependencies": {
-    "@rcp/_types": "^1.0.0"
+    "@rcp/_types": "^1.0.1"
   }
 }
