@@ -3,7 +3,7 @@
  * @author {{{_.git.name}}}
  *
  */
-const base = require('../../../package').jest
+const base = require('../../package').jest
 const pack = require('./package')
 
 module.exports = {

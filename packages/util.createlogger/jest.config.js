@@ -3,7 +3,7 @@
  * @author imcuttle
  *
  */
-const base = require('../../../package').jest
+const base = require('../../package.json').jest
 const pack = require('./package')
 
 module.exports = {

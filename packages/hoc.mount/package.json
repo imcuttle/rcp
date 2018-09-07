@@ -28,5 +28,6 @@
     "@rcp/util.createmount": "^1.0.2",
     "@rcp/util.displayname": "^1.0.2",
     "@rcp/util.tocompclass": "^1.0.2"
-  }
+  },
+  "gitHead": "df770543249c17944d64be5571baa2e8cc9efae6"
 }

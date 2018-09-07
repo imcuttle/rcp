@@ -4,7 +4,7 @@
  * @date 2018/9/6
  *
  */
-const base = require('../../package').jest
+const base = require('../../package.json').jest
 const pack = require('./package')
 
 module.exports = {
