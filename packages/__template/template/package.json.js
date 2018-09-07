@@ -12,10 +12,8 @@ module.exports = ({ _, name, description }) => {
     scripts: {
       dist: 'tsc',
       dev: 'npm run dist -- -w',
-      prepublishOnly: 'npm run dist && npm test && npm run doc',
-      test: 'jest',
-      doc:
-        'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git commit -am "chore: update readme"'
+      prepublishOnly: 'npm run dist && npm run doc',
+      doc: 'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
     },
     keywords: [_.git.name].concat(name.split('.')).concat('react', 'rcp'),
     engines: {
