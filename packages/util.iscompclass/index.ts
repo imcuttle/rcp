@@ -3,7 +3,7 @@
  * @author imcuttle
  *
  */
-import * as React from 'React'
+import * as React from 'react'
 import * as isPlainObj from 'is-plain-obj'
 
 export function isComponentInstance(instance: any): boolean {
