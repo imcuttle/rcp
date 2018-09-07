@@ -8,3 +8,7 @@ public/
 .entry
 .dist
 .vscode
+
+packages/*/**.js
+packages/*/**.map
+!packages/__template/**.js

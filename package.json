@@ -11,9 +11,11 @@
     "precommit": "pretty-quick --staged",
     "bootstrap": "lerna bootstrap",
     "prerelease": "npm test",
+    "prepare": "npm run dist",
+    "dist": "lerna run --parallel dist",
+    "dev": "lerna run --parallel dev",
     "release": "lerna publish --conventional-commits -m 'chore(release): publish'",
     "build": "rimraf lib && babel src/ -Dd lib",
-    "dev": "npm run build -- -w",
     "version": "npm run changelog",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"

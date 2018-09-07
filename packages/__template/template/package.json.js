@@ -14,6 +14,7 @@ module.exports = ({ _, name, description }) => {
       dev: 'npm run dist -- -w',
       prepublishOnly: 'npm test && npm run doc',
       test: 'jest',
+      prepare: 'npm run dist',
       doc:
         'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git commit -am "chore: update readme"'
     },

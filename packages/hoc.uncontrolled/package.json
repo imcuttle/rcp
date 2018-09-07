@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dist": "tsc",
+    "prepare": "npm run dist",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm test && npm run doc",
     "test": "jest",

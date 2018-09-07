@@ -32,6 +32,7 @@ module.exports = edam => {
       edam.config.output = nps.join(edam.config.output, name)
       return {
         move: {
+          'gitignore': '.gitignore',
           'package.json.js': 'package.json'
         }
       }

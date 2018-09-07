@@ -4,9 +4,8 @@
  *
  */
 import * as React from 'React'
-import { MixComponentClass } from '@rcp/_types'
 
-export default function isElementOf(Component: MixComponentClass) {
+export default function isElementOf(Component: React.ComponentType) {
   // Trying to solve the problem with 'children: XXX.isRequired'
   // (https://github.com/gaearon/react-hot-loader/issues/710). This does not work for me :(
   const originalPropTypes = Component.propTypes

@@ -4,7 +4,6 @@
     "target": "es5",
     "sourceMap": true,
     "declaration": true,
-    "declarationDir": "declare",
     "outDir": "dist",
     "jsx": "react",
     "lib": ["dom", "es2015"],
