@@ -28,5 +28,8 @@
     "@rcp/util.createmount": "^1.0.1",
     "@rcp/util.displayname": "^1.0.1",
     "@rcp/util.tocompclass": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3"
   }
 }

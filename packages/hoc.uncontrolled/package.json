@@ -29,5 +29,8 @@
     "@rcp/util.createlogger": "^1.0.1",
     "@rcp/util.displayname": "^1.0.1",
     "@rcp/util.iscompclass": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3"
   }
 }

@@ -6,7 +6,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@rcp/_types": "^1.0.1"
+    "@rcp/_types": "^1.0.1",
+    "typescript": "^3.0.3"
   },
   "license": "MIT",
   "scripts": {
