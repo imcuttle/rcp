@@ -9,9 +9,10 @@
   "scripts": {
     "dist": "tsc",
     "dev": "npm run dist -- -w",
-    "prepublishOnly": "npm run dist && npm test && npm run doc",
+    "prepublishOnly": "npm test && npm run doc",
     "test": "jest",
-    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\""
+    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\"",
+    "prepare": "npm run dist"
   },
   "keywords": [
     "imcuttle",
@@ -34,8 +35,5 @@
     "lodash.foreach": "^4.5.0",
     "tiny-i18n": "^1.1.2"
   },
-  "devDependencies": {
-    "typescript": "^3.0.3",
-    "react": "^16.4.2"
-  }
+  "devDependencies": {}
 }

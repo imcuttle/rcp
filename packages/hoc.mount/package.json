@@ -10,8 +10,9 @@
     "dist": "tsc",
     "dev": "npm run dist -- -w",
     "test": "jest",
-    "prepublishOnly": "npm run dist && npm test && npm run doc",
-    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\""
+    "prepublishOnly": "npm test && npm run doc",
+    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\"",
+    "prepare": "npm run dist"
   },
   "keywords": [
     "imcuttle",
@@ -29,8 +30,5 @@
     "@rcp/util.displayname": "^1.0.1",
     "@rcp/util.tocompclass": "^1.0.1"
   },
-  "devDependencies": {
-    "typescript": "^3.0.3",
-    "react": "^16.4.2"
-  }
+  "devDependencies": {}
 }

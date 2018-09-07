@@ -3,7 +3,7 @@
  * @author imcuttle
  *
  */
-import * as React from 'React'
+import * as React from 'react'
 
 export default function isElementOf(Component: React.ComponentType) {
   // Trying to solve the problem with 'children: XXX.isRequired'
