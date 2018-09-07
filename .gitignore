@@ -9,6 +9,6 @@ public/
 .dist
 .vscode
 
-packages/*/**.js
-packages/*/*.js.map
+packages/*/**/*.js
+packages/*/**/*.js.map
 !packages/__template/**.js
