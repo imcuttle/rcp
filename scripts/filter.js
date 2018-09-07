@@ -23,14 +23,15 @@ const fs = require('fs')
     const newPkg = merge({}, pkg, {
       scripts: {
         // prepare: 'npm run dist',
-        prepublishOnly: 'npm run dist && npm test && npm run doc'
+        prepublishOnly: 'npm run dist && npm run doc'
       }
       // devDependencies: {
       //   react: '^16.4.2'
       // }
     })
 
-    delete newPkg.scripts.prepare
+    // delete newPkg.scripts.prepare
+    delete newPkg.scripts.test
     // delete newPkg.devDependencies.typescript
 
     fs.writeFileSync(path, JSON.stringify(newPkg, null, 2))
