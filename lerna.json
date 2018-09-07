@@ -1,5 +1,5 @@
 {
   "packages": ["packages/!(__template)"],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "lerna": "2.7.1"
 }

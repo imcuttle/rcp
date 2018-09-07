@@ -22,12 +22,11 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
-    "@rcp/util.createlogger": "^1.0.1",
-    "@rcp/util.createmount": "^1.0.1",
-    "@rcp/util.displayname": "^1.0.1",
-    "@rcp/util.tocompclass": "^1.0.1"
-  },
-  "devDependencies": {}
+    "@rcp/util.createlogger": "^1.0.2",
+    "@rcp/util.createmount": "^1.0.2",
+    "@rcp/util.displayname": "^1.0.2",
+    "@rcp/util.tocompclass": "^1.0.2"
+  }
 }
