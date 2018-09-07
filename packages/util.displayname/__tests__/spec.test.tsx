@@ -48,6 +48,6 @@ describe('displayName', function() {
   it('should return name when component is StatelessClass even displayName is preset', () => {
     const CusComp: any = () => <div>123</div>
     CusComp.displayName = '123'
-    expect(displayName(CusComp)).toBe('CusComp')
+    expect(displayName(CusComp)).toBe('123')
   })
 })

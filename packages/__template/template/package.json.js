@@ -17,7 +17,7 @@ module.exports = ({ _, name, description }) => {
       doc:
         'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git commit -am "chore: update readme"'
     },
-    keywords: [_.git.name, name],
+    keywords: [_.git.name].concat(name.split('.')).concat('react', 'rcp'),
     engines: {
       node: '>=6'
     },

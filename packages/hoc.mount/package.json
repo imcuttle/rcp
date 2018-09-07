@@ -1,7 +1,7 @@
 {
-  "name": "@rcp/hoc.i18n",
+  "name": "@rcp/hoc.mount",
   "author": "imcuttle",
-  "description": "React Component's high order component about internationalization",
+  "description": "The high order component for mounting component",
   "publishConfig": {
     "access": "public"
   },
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "imcuttle",
-    "hoc-i18n"
+    "hoc.mount"
   ],
   "engines": {
     "node": ">=6"
@@ -23,15 +23,10 @@
   "main": "index.js",
   "typings": "index.d.js",
   "version": "1.0.0",
-  "peerDependencies": {
-    "prop-types": "^15.0.0",
-    "react": "^15.0.0"
-  },
   "dependencies": {
     "@rcp/util.createlogger": "^1.0.0",
+    "@rcp/util.createmount": "^1.0.0",
     "@rcp/util.displayname": "^1.0.0",
-    "@rcp/util.iscompclass": "^1.0.0",
-    "lodash.foreach": "^4.5.0",
-    "tiny-i18n": "^1.1.2"
+    "@rcp/util.tocompclass": "^1.0.0"
   }
 }

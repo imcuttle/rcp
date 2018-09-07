@@ -6,6 +6,7 @@
 
 import displayName from '@rcp/util.displayname'
 import createLogger from '@rcp/util.createlogger'
+import isCompClass from '@rcp/util.iscompclass'
 import { createIsolateI18n } from 'tiny-i18n'
 import * as each from 'lodash.foreach'
 import * as PropTypes from 'prop-types'
@@ -25,6 +26,7 @@ export interface II18n {
   language?: string
   dict?: IDictMap | IDictGroupMap
 }
+
 function initI18n({ language, dict }: II18n = {}) {
   const { setDictionary, extendDictionary, setLanguage, i18n } = this
   if (language && typeof language === 'string') {
@@ -79,11 +81,18 @@ export interface II18nEnv {
   extendDictionary: (dict: IDictMap, language?: string) => void
 }
 
+export interface II18nOptions {
+  localeKey?: string
+  languageKey?: string
+}
+
 /**
- * 设置组件国际化
- * @param dict {{}}
- * @param [language] {string}
- * @return {function}
+ *
+ * @param {IDictMap | IDictGroupMap} dict
+ * @param {string} language
+ * @param {string} localeKey
+ * @param {string} languageKey
+ * @return {(Component: React.ComponentClass) => II18nComponentClass<II18nProps & P, S>}
  * @example
  * \@i18n({
  *   zh-cn: {
@@ -99,22 +108,36 @@ export interface II18nEnv {
  *    }
  * }
  */
-export default function i18n<P = II18nProps, S = any>(dict?: IDictMap | IDictGroupMap, language?: string) {
+export default function i18n<P = II18nProps, S = any>(
+  dict?: IDictMap | IDictGroupMap,
+  language?: string,
+  { localeKey = 'locale', languageKey = 'language' }: II18nOptions = {}
+) {
   return function(Component: React.ComponentClass): II18nComponentClass<II18nProps & P, S> {
-    // todo
+    horn.invariant(
+      isCompClass(Component),
+      `\`Component\` should be a React ComponentClass. but typeof ${typeof Component}`
+    )
+
+    // todo  typescript decorator syntax
     // @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/recompose/index.d.ts
     // @see https://www.zhihu.com/question/279911703
     // @i18n in ts
+    const i18nEnv: II18nEnv = createIsolateI18n()
+    initI18n.call(i18nEnv, {
+      dict,
+      language
+    })
+
     class I18nComponent extends Component implements II18nComponent<II18nProps & P, S> {
       readonly props: II18nProps & P
-      static i18n: II18nEnv = createIsolateI18n()
-      static displayName = displayName(Component)
+      static i18n: II18nEnv = i18nEnv
+      static displayName = `I18n_${displayName(Component)}`
       static propTypes = {
-        locale: PropTypes.objectOf(PropTypes.string),
-        language: PropTypes.string,
+        [localeKey]: PropTypes.objectOf(PropTypes.string),
+        [languageKey]: PropTypes.string,
         ...Component.propTypes
       }
-      // static defaultProps = {}
 
       public i(key, ...argv) {
         const constructor = <II18nComponentClass>this.constructor
@@ -123,34 +146,29 @@ export default function i18n<P = II18nProps, S = any>(dict?: IDictMap | IDictGro
           'i18n is not found in ' + displayName(this.constructor)
         )
 
+        const language = this.props[languageKey]
+        const locale = this.props[localeKey]
         const { i18n, getDictionary, setLanguage } = constructor.i18n
-        if (this.props.locale) {
+        if (locale) {
           const tmp: II18nEnv = createIsolateI18n()
-          let lang = typeof this.props.language === 'string' ? this.props.language : undefined
+          let lang = typeof language === 'string' ? language : undefined
           const currDict = getDictionary(lang)
           tmp.extendDictionary(currDict)
-
-          tmp.extendDictionary(this.props.locale)
+          tmp.extendDictionary(locale)
           return tmp.i18n.apply(null, arguments)
         }
 
-        if (typeof this.props.language === 'string') {
-          const lang = this.props.language
+        if (typeof language === 'string') {
           const tmp: II18nEnv = createIsolateI18n()
-          const langDict = getDictionary(lang)
-          tmp.extendDictionary(langDict, lang)
-          tmp.setLanguage(lang)
+          const langDict = getDictionary(language)
+          tmp.extendDictionary(langDict, language)
+          tmp.setLanguage(language)
           return tmp.i18n.apply(null, arguments)
         }
         return i18n.apply(null, arguments)
       }
     }
 
-    // 默认字典
-    initI18n.call(I18nComponent.i18n, {
-      dict,
-      language
-    })
     return I18nComponent
   }
 }

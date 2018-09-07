@@ -116,4 +116,71 @@ describe('i18n', function() {
     expect(wrapper.find('h1').text()).toBe('xx你好世界')
     expect(I18nComp.i18n.getCurrentLanguage()).toBe('en-us')
   })
+
+  it('should use in words with localeKey option', () => {
+    @(i18n(
+      {
+        title: 'Hello, ${1}!'
+      },
+      void 0,
+      { localeKey: '_locale' }
+    ) as any)
+    class Comp extends React.Component<{ title: string } & II18nProps> {
+      public i: Function
+      render() {
+        return <h1>{this.i('title', this.props.title)}</h1>
+      }
+    }
+
+    const wrapper = mount(<Comp title={'xx'} />)
+    const I18nComp: any = Comp
+
+    wrapper.setProps({
+      _locale: {
+        title: 'Hi, ${1}!'
+      },
+      language: 'zh-cn'
+    })
+    expect(wrapper.find('h1').text()).toBe('Hi, xx!')
+  })
+
+  it('should use in words with languageKey option', () => {
+    @(i18n(
+      {
+        en: {
+          title: 'Hello, ${1}!'
+        },
+        zh: {
+          title: '你好, ${1}!'
+        }
+      },
+      'en',
+      { languageKey: '_lang' }
+    ) as any)
+    class Comp extends React.Component<{ title: string } & II18nProps> {
+      public i: Function
+      render() {
+        return <h1>{this.i('title', this.props.title)}</h1>
+      }
+    }
+
+    const wrapper = mount(<Comp title={'xx'} />)
+    const I18nComp: any = Comp
+
+    wrapper.setProps({
+      language: 'zh'
+    })
+    expect(wrapper.find('h1').text()).toBe('Hello, xx!')
+    wrapper.setProps({
+      _lang: 'zh'
+    })
+    expect(wrapper.find('h1').text()).toBe('你好, xx!')
+  })
+
+  it('should thrown error when Component is not belongs to React Component Class', function() {
+    const obj = {} as React.ComponentClass
+    expect(() => i18n()(obj)).toThrowErrorMatchingInlineSnapshot(
+      `"(@rcp/hoc.i18n): \`Component\` should be a React ComponentClass. but typeof object"`
+    )
+  })
 })

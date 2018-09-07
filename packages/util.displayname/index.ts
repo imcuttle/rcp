@@ -18,10 +18,7 @@ export default function displayName(
     return String(component)
   }
 
-  if (isComponentClass(component)) {
-    return (<React.ComponentType>component).displayName
-  }
-  const result = (<IFunction>component).name
+  const result = (<React.StatelessComponent>component).displayName || (<React.StatelessComponent>component).name
   if (!result) {
     component = <React.ReactElement<any>>component
     return (component.type && displayName(component.type)) || 'Unknown'

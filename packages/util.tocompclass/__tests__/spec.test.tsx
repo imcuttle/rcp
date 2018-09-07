@@ -23,4 +23,16 @@ describe('util.toCompClass', function() {
     expect(toCompClass(Comp)).toBeInstanceOf(Function)
     expect(toCompClass(Comp)).toBe(Comp)
   })
+
+  it('should to component class when stateless', () => {
+    const stateless = () => <div>123</div>
+    stateless.displayName = 'abc'
+    stateless.defaultProps = {
+      a: '2'
+    }
+    expect(toCompClass(stateless).displayName).toBe('abc')
+    expect(toCompClass(stateless).defaultProps).toEqual({
+      a: '2'
+    })
+  })
 })

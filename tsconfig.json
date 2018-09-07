@@ -6,8 +6,8 @@
     "declaration": true,
     "declarationDir": "declare",
     "outDir": "dist",
-    "allowJs": true,
     "jsx": "react",
+    "lib": ["dom", "es2015"],
     "experimentalDecorators": true
   },
   "include": ["./packages/**/*"],
