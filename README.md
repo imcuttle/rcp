@@ -2,6 +2,7 @@
 
 [![build status](https://img.shields.io/travis/imcuttle/rcp/master.svg?style=flat-square)](https://travis-ci.org/imcuttle/rcp)
 [![Test coverage](https://img.shields.io/codecov/c/github/imcuttle/rcp.svg?style=flat-square)](https://codecov.io/github/imcuttle/rcp?branch=master)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 Anything about React Component
 
@@ -11,6 +12,7 @@ Anything about React Component
 git clone https://github.com/imcuttle/rcp.git
 cd rcp
 npm install
+npm run bootstrap
 ```
 
 ### New a package
