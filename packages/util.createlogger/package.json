@@ -10,7 +10,7 @@
     "prepare": "npm run dist",
     "dist": "tsc",
     "dev": "npm run dist -- -w",
-    "prepublishOnly": "npm test && npm run doc",
+    "prepublishOnly": "npm run dist && npm test && npm run doc",
     "test": "jest",
     "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git commit -am \"chore: update readme\""
   },
