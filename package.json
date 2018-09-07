@@ -89,6 +89,6 @@
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",
-    "typescript": "^3.1.0-dev.20180906"
+    "typescript": "^3.0.3"
   }
 }
