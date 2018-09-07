@@ -11,5 +11,5 @@ public/
 
 packages/*/**/*.js
 packages/*/**/*.js.map
-!packages/__template/**.js
+!packages/__template/**/*.js
 !/packages/__template/index.js
