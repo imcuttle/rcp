@@ -14,3 +14,4 @@ packages/*/**/*.js.map
 !packages/*/**/jest.config.js
 !packages/__template/**/*.js
 !/packages/__template/index.js
+coverage/
