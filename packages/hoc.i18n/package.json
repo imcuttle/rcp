@@ -35,6 +35,7 @@
     "tiny-i18n": "^1.1.2"
   },
   "devDependencies": {
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "react": "^16.4.2"
   }
 }

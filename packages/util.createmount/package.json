@@ -24,6 +24,7 @@
   "typings": "index.d.js",
   "version": "1.0.1",
   "devDependencies": {
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "react": "^16.4.2"
   }
 }
