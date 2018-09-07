@@ -7,7 +7,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run dist",
     "dist": "tsc",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm run dist && npm test && npm run doc",

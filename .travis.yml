@@ -13,6 +13,7 @@ cache:
 
 install:
   - npm install
+  - ls -al node_modules/
   - npm run bootstrap
   - npm run dist
 
