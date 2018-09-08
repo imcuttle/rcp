@@ -8,7 +8,7 @@
   "scripts": {
     "new": "edam",
     "test": "jest",
-    "precommit": "pretty-quick --staged",
+    "precommit": "pretty-quick --staged && node scripts/gen-readme.js && git add README.md",
     "bootstrap": "lerna bootstrap",
     "prerelease": "npm test",
     "dist": "lerna run --parallel dist",
