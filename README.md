@@ -53,8 +53,8 @@ should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
-- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
+- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  
 
