@@ -23,7 +23,7 @@
   "main": "node.js",
   "browser": "browser.js",
   "typings": "index.d.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "debug": "^3.1.0",
     "log-symbols": "^2.2.0"

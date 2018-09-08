@@ -21,6 +21,6 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "gitHead": "3ec085397fa1a8c683eebc097ae26668cebde630"
 }
