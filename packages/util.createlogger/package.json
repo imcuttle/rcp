@@ -22,7 +22,7 @@
   },
   "main": "node.js",
   "browser": "browser.js",
-  "typings": "index.d.js",
+  "typings": "node.d.js",
   "version": "1.0.7",
   "dependencies": {
     "debug": "^3.1.0",
