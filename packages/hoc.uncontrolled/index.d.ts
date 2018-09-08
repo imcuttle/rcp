@@ -4,12 +4,14 @@
  * @date 2018/6/16
  * @description
  */
+/// <reference types="react" />
 /**
- * 修饰非控制组件，会添加 default${propName} 属性
- * 用于填充 ${propName} 第一次初始化值
- * @param propList {string[]}
- * @param {{withDefault: boolean}}
- * @return {Function}
+ *
+ * @public
+ * @param propList {string[]} eg. `['value']`
+ * @param {{}} options
+ * @param {boolean} [options.withDefault = true] - Whether check `default{propKey}` firstly
+ * @return {Function} `(Component: React.ComponentClass) => React.ComponentClass`
  */
 export default function uncontrolled(
   propList?: any[],
@@ -18,4 +20,4 @@ export default function uncontrolled(
   }?: {
     withDefault?: boolean
   }
-): (Component: any) => any
+): (Component: import('react').ComponentClass<{}, any>) => import('react').ComponentClass<{}, any>

@@ -63,14 +63,7 @@ describe('hocMount', function() {
   it('should attributesGetter and ref', () => {
     const Comp = mount({
       attributesGetter: props => props
-    })<{ id: string }>(
-      class extends React.Component<any> {
-        componentWillUnmount() {}
-        render() {
-          return <h2 />
-        }
-      }
-    )
+    })<{ id: string }>(() => <h2 />)
 
     let ref
     ReactDOM.render(<Comp ref={r => (ref = r)} id={'abc'} />, document.getElementById('root'), function() {})

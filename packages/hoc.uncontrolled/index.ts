@@ -16,11 +16,12 @@ function getDefaultName(name: string = '') {
 }
 
 /**
- * 修饰非控制组件，会添加 default${propName} 属性
- * 用于填充 ${propName} 第一次初始化值
- * @param propList {string[]}
- * @param {{withDefault: boolean}}
- * @return {Function}
+ *
+ * @public
+ * @param propList {string[]} eg. `['value']`
+ * @param {{}} options
+ * @param {boolean} [options.withDefault = true] - Whether check `default{propKey}` firstly
+ * @return {Function} `(Component: React.ComponentClass) => React.ComponentClass`
  */
 export default function uncontrolled(propList = [], { withDefault = true } = {}) {
   logger.invariant(
@@ -28,15 +29,16 @@ export default function uncontrolled(propList = [], { withDefault = true } = {})
     `\`propList\` should be string[], but ${typeof propList}`
   )
 
-  return function uncontrolled(Component) {
+  return function uncontrolled(Component: React.ComponentClass): React.ComponentClass {
     logger.invariant(isComponentClass(Component), `\`Component\` should be a react component class`)
 
     if (!propList.length) {
       return Component
     }
 
-    return class Uncontrolled extends Component {
+    class Uncontrolled extends Component {
       static displayName = `Uncontrolled_${displayName(Component)}`
+      state: any
       constructor(props) {
         super(props)
         this.state = this.state || {}
@@ -75,5 +77,6 @@ export default function uncontrolled(propList = [], { withDefault = true } = {})
         }
       }
     }
+    return Uncontrolled
   }
 }

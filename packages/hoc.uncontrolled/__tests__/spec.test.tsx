@@ -10,8 +10,8 @@ import { mount } from 'enzyme'
 describe('hocUncontrolled', function() {
   it('should spec', () => {
     @hocUncontrolled(['value'])
-    class View extends React.Component {
-      static defaultProps = {}
+    class View extends React.Component<any> {
+      static defaultProps? = {}
       state: any
 
       render() {
@@ -40,7 +40,7 @@ describe('hocUncontrolled', function() {
   it('should opt.withDefault', () => {
     @hocUncontrolled(['value'], { withDefault: false })
     class View extends React.Component {
-      static defaultProps = {}
+      static defaultProps? = {}
       state: any
 
       render() {

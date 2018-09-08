@@ -1,7 +1,7 @@
 {
   "name": "@rcp/util.createlogger",
   "author": "imcuttle",
-  "description": "The internal about logger",
+  "description": "Create namespace isomorphic logger",
   "publishConfig": {
     "access": "public"
   },
@@ -13,7 +13,9 @@
   },
   "keywords": [
     "imcuttle",
-    "_helper"
+    "logger",
+    "namespace",
+    "isomorphic"
   ],
   "engines": {
     "node": ">=6"

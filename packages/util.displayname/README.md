@@ -33,7 +33,7 @@ displayName(Foo) === 'FooFoo'
 
 ## Authors
 
-This library is written and maintained by imcuttle, <mailto:moyuyc95@gmail.com>.
+This library is written and maintained by imcuttle, <a href="mailto:moyuyc95@gmail.com">moyuyc95@gmail.com</a>.
 
 ## License
 

@@ -19,16 +19,24 @@ interface IHocMountOptions {
   createTimeType?: 'decorator' | 'class' | 'component'
 }
 
+/**
+ * @public
+ * @param opts {{}}
+ * @param {"decorator" | "class" | "component"} [opts.createTimeType = 'class']
+ * @param {() => HTMLElement} [opts.mountNodeGetter = () => document.body]
+ * @param {() => any} [opts.attributesGetter = () => {}]
+ * @return {<P>(Component: React.ComponentType) => React.ComponentClass<P>}
+ */
 export default function mountHOC({
   createTimeType = 'class',
   mountNodeGetter = () => document.body,
   attributesGetter = () => {}
-}: IHocMountOptions = {}): <P>(Component: React.ComponentType) => React.ComponentClass<P> {
+}: IHocMountOptions = {}) {
   let center
   if (createTimeType === 'decorator') {
     center = createMount()
   }
-  return function<P = any>(Component: React.ComponentType) {
+  return function<P = any>(Component: React.ComponentType): React.ComponentClass<P> {
     log.invariant(typeof Component === 'function', `\`Component\` should be an function, but ${typeof Component}`)
     Component = toComponentClass<{ ref: any }>(Component)
 

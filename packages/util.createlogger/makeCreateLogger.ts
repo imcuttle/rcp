@@ -7,7 +7,7 @@ import * as d from 'debug'
 import { FormatFunc, IFormat, IFormatOpts, ILogger } from './types'
 
 export default function makeCreateLogger(formatFunc: FormatFunc) {
-  return function createLogger(namespace: string = '', opt: IFormatOpts): ILogger {
+  return function createLogger(namespace: string = '', opt: IFormatOpts = {}): ILogger {
     function invariant(check: boolean, message = '') {
       if (!check) {
         throw new Error(format({ message }))

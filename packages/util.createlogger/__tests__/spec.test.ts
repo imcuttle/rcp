@@ -47,6 +47,7 @@ describe('logger', function() {
     c.warn('saa%s + %s', 'as', 'ssw')
     c.error('saa%s + %s', 'as', 'ssw')
     c.success('saa%s + %s', 'as', 'ssw')
+    c.success({ a: '222' }, 'ok')
     c.debug('saa%s + %s', 'as', 'ssw')
   })
 })
