@@ -8,35 +8,13 @@ const globby = require('globby')
 const nps = require('path')
 const merge = require('lodash.merge')
 const fs = require('fs')
-;(async () => {
+
+module.exports = async function filter() {
   const cwd = nps.join(__dirname, '..')
   const paths = await globby(require('../lerna').packages, {
     cwd,
     onlyDirectories: true
   })
 
-  const packageJsonPaths = paths.map(path => nps.join(path, 'package.json'))
-
-  packageJsonPaths.forEach(path => {
-    path = nps.join(cwd, path)
-    const pkg = require(path)
-    const newPkg = merge({}, pkg, {
-      scripts: {
-        // prepublishOnly: 'npm run dist && npm run doc',
-        doc: 'documentation --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
-        // prepare: 'npm run dist',
-        // prepublishOnly: 'npm run dist && npm run doc'
-      }
-      // devDependencies: {
-      //   react: '^16.4.2'
-      // }
-    })
-
-    // delete newPkg.scripts.prepare
-    // delete newPkg.scripts.test
-    // delete newPkg.devDependencies.typescript
-
-    fs.writeFileSync(path, JSON.stringify(newPkg, null, 2))
-  })
-  console.warn(paths)
-})()
+  return paths.map(path => nps.join(cwd, path))
+}

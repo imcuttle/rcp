@@ -46,7 +46,9 @@ should be named as `hoc.{{lowerCase}}`, eg. `@rp/hoc.i18n`.
 
 should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
 
-## Related
+## Packages
+
+<!--Packages-->
 
 ## Authors
 
