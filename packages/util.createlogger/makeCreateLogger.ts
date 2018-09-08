@@ -15,7 +15,7 @@ export default function makeCreateLogger(formatFunc: FormatFunc) {
     }
 
     function format(arg: IFormat = {}): string {
-      return formatFunc({ namespace, ...arg }, opt)
+      return formatFunc({ namespace, argv: [], ...arg }, { ...opt })
     }
 
     function log(message, ...argv) {

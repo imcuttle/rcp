@@ -18,6 +18,6 @@ export default makeCreateLogger(function(
   const str = namespace !== '' ? `${prefix}${namespace}${suffix}` : namespace
   message = u.format(message, ...argv)
 
-  type = typeMap[type] || type
+  type = typeMap[type] || type || ''
   return `${type}${str}: ${message}`
 })

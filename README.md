@@ -49,8 +49,8 @@ should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
 ## Packages
 
 - [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
-- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
+- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  

@@ -1,13 +1,2 @@
-import { FormatFunc, ILogger } from './types'
-export default function makeCreateLogger(
-  formatFunc: FormatFunc
-): (
-  namespace?: string,
-  {
-    prefix,
-    suffix
-  }?: {
-    prefix?: string
-    suffix?: string
-  }
-) => ILogger
+import { FormatFunc, IFormatOpts, ILogger } from './types'
+export default function makeCreateLogger(formatFunc: FormatFunc): (namespace?: string, opt?: IFormatOpts) => ILogger

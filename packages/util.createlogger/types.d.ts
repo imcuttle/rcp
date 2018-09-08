@@ -13,9 +13,16 @@ export interface IFormat {
 export interface IFormatOpts {
   prefix?: string
   suffix?: string
+  typeMap?: ITypeMap
+}
+export interface ITypeMap {
+  Log?: string
+  Success?: string
+  Warning?: string
+  Error?: string
 }
 export declare type FormatFunc = (format: IFormat, opts?: IFormatOpts) => string
-export declare type LoggerFunc = (message: string, ...argv: any[]) => void
+export declare type LoggerFunc = (message: any, ...argv: any[]) => void
 export interface ILogger {
   invariant: (check: boolean, message?: string) => void
   format: FormatFunc
