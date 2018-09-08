@@ -4,7 +4,7 @@
  *
  */
 import * as ReactDOM from 'react-dom'
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement } from 'react'
 
 export interface IMountOptions<P = any> {
   mountNode?: Node
@@ -18,16 +18,19 @@ export interface IMountCenter<P = any> {
 }
 
 /**
- *
- * @param {IMountOptions<P>} centerOpts
+ * @public
+ * @param {IMountOptions<P>} opts
+ * @param {Node} [opts.mountNode = document.body] - mountNode fallback in `open` function
+ * @param {any} [opts.attributes] - attributes fallback in `open` function
+ * @param {ReactElement<P>} [opts.element] - element fallback in `open` function
  * @return {IMountCenter}
  */
-export default function createMountCenter<P = any>(centerOpts: IMountOptions<P> = {}): IMountCenter {
-  centerOpts = Object.assign(
+export default function createMountCenter<P = any>(opts: IMountOptions<P> = {}): IMountCenter {
+  const centerOpts = Object.assign(
     {
       mountNode: document.body
     },
-    centerOpts
+    opts
   )
 
   let container: Node = null

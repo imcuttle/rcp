@@ -7,6 +7,12 @@ import isComponentClass from '@rcp/util.iscompclass'
 import displayName from '@rcp/util.displayname'
 import * as React from 'react'
 
+/**
+ * Convert stateless component class to be component class
+ * @public
+ * @param {React.ComponentType} component
+ * @return {React.ComponentClass<P, S>}
+ */
 export default function toComponentClass<P = any, S = any>(component: React.ComponentType): React.ComponentClass<P, S> {
   if (typeof component !== 'function') {
     throw new Error('toComponentClass requires `component` is type of function, but ' + typeof component)

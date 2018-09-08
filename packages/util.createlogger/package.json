@@ -9,8 +9,7 @@
   "scripts": {
     "dist": "tsc",
     "dev": "npm run dist -- -w",
-    "prepublishOnly": "npm run dist && npm run doc",
-    "doc": "documentation --github --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
+    "prepublishOnly": "npm run dist"
   },
   "keywords": [
     "imcuttle",
@@ -19,11 +18,13 @@
   "engines": {
     "node": ">=6"
   },
-  "main": "index.js",
+  "main": "node.js",
+  "browser": "browser.js",
   "typings": "index.d.js",
   "version": "1.0.5",
   "dependencies": {
-    "debug": "^3.1.0"
+    "debug": "^3.1.0",
+    "log-symbols": "^2.2.0"
   },
   "gitHead": "3ec085397fa1a8c683eebc097ae26668cebde630"
 }

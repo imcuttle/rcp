@@ -22,7 +22,8 @@ const fs = require('fs')
     const pkg = require(path)
     const newPkg = merge({}, pkg, {
       scripts: {
-        doc: 'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
+        // prepublishOnly: 'npm run dist && npm run doc',
+        doc: 'documentation --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
         // prepare: 'npm run dist',
         // prepublishOnly: 'npm run dist && npm run doc'
       }

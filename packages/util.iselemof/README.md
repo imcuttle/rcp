@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@rcp/util.iselemof.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/util.iselemof)
 [![NPM Downloads](https://img.shields.io/npm/dm/@rcp/util.iselemof.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/util.iselemof)
 
-The utility determinating the input is element of the component class
+The utility for determinate the input is element of the component class
 
 ## Installation
 
@@ -16,7 +16,10 @@ yarn add @rcp/util.iselemof
 ## Usage
 
 ```javascript
-import utilIselemof from '@rcp/util.iselemof'
+import isElementOf from '@rcp/util.iselemof'
+
+class Comp extends React.Component {}
+isElementOf(Comp)(<Comp />) // true
 ```
 
 ## API
@@ -25,9 +28,11 @@ import utilIselemof from '@rcp/util.iselemof'
 
 ## Related
 
+- [@rcp/util.iscompclass](../util.iscompclass) - The utility for checking react component class
+
 ## Authors
 
-This library is written and maintained by imcuttle, <mailto:moyuyc95@gmail.com>.
+This library is written and maintained by imcuttle, <a href="mailto:moyuyc95@gmail.com">moyuyc95@gmail.com</a>.
 
 ## License
 

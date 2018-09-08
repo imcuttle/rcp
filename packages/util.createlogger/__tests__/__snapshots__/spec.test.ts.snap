@@ -4,6 +4,14 @@ exports[`logger should format 1`] = `"aa: msss"`;
 
 exports[`logger should format 2`] = `"aa: msss:abc  { ac: 'sss' }"`;
 
+exports[`logger should format in browserCreateLogger 1`] = `"aa: msss"`;
+
+exports[`logger should format in browserCreateLogger 2`] = `"aa: msss:abc  { ac: 'sss' }"`;
+
 exports[`logger should format with scope 1`] = `"aa(scope): msss"`;
 
 exports[`logger should format with scope 2`] = `"aa(scope): msss:abc  { ac: 'sss' }"`;
+
+exports[`logger should format with scope in browserCreateLogger 1`] = `"aa(scope): msss"`;
+
+exports[`logger should format with scope in browserCreateLogger 2`] = `"aa(scope): msss:abc  { ac: 'sss' }"`;

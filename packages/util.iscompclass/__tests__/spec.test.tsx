@@ -7,7 +7,7 @@ import * as React from 'react'
 import * as createClass from 'create-react-class'
 import isComponentClass from '../'
 
-describe('utilisComponentClass', function() {
+describe('util.isComponentClass', function() {
   it('should spec', () => {
     class Comp extends React.Component {}
     const MyComp = createClass({
