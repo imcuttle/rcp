@@ -23,11 +23,19 @@ const filter = require('./filter')
 
   const strings = []
   each(data, (val, name) => {
+    if (name.startsWith('@rcp/_') || val.pkg.private) {
+      return
+    }
     strings.push(`- [${name}](${nps.relative(cwd, val.path)}) - ${val.pkg.description}  `)
   })
 
-  const readme = fs.readFileSync(nps.join(__dirname, '../README.md'), { encoding: 'utf8' })
-  readme.replace(/<!--\s*?Packages\s*?-->/, () => {
-    return strings.join('\n')
+  const readmePath = nps.join(cwd, 'README.md')
+  const readme = fs.readFileSync(readmePath, { encoding: 'utf8' })
+  const newReadme = readme.replace(/(?<=\n## Packages)[^]*?(?=\n#+ )/, () => {
+    return '\n\n' + strings.join('\n') + '\n\n'
   })
+
+  if (newReadme !== readme) {
+    fs.writeFileSync(readmePath, newReadme)
+  }
 })()
