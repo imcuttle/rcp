@@ -13,7 +13,7 @@ module.exports = ({ _, name, description }) => {
       dist: 'tsc',
       dev: 'npm run dist -- -w',
       prepublishOnly: 'npm run dist && npm run doc',
-      doc: 'documentation --github --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
+      doc: 'documentation --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
     },
     keywords: [_.git.name].concat(name.split('.')).concat('react', 'rcp'),
     engines: {

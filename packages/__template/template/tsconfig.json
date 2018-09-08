@@ -5,6 +5,6 @@
     "jsx": "react",
     "sourceMap": true
   },
-  "include": ["index.ts", "index.tsx", "**/*.ts", "**/*.tsx"]
+  "include": ["index.ts", "index.tsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["__tests__"]
 }
