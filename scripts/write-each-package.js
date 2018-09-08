@@ -14,9 +14,14 @@ const filter = require('./filter')
   paths.forEach(path => {
     const pkg = require(nps.join(path, 'package.json'))
 
-    const newPkg = merge({}, pkg, {})
+    const newPkg = merge({}, pkg, {
+      repository: {
+        type: 'git',
+        url: 'git+https://github.com/imcuttle/rcp.git'
+      }
+    })
 
-    fs.writeFileSync(path, JSON.stringify(newPkg, null, 2))
+    fs.writeFileSync(nps.join(path, 'package.json'), JSON.stringify(newPkg, null, 2))
   })
   console.warn(paths)
 })()

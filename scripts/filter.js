@@ -11,10 +11,12 @@ const fs = require('fs')
 
 module.exports = async function filter() {
   const cwd = nps.join(__dirname, '..')
-  const paths = await globby(require('../lerna').packages, {
+  let paths = await globby(require('../lerna').packages, {
     cwd,
     onlyDirectories: true
   })
+
+  paths = paths.filter(name => !['packages/__template'].includes(name))
 
   return paths.map(path => nps.join(cwd, path))
 }

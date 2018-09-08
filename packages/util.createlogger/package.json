@@ -28,5 +28,9 @@
     "debug": "^3.1.0",
     "log-symbols": "^2.2.0"
   },
-  "gitHead": "61d21542c15237221f078f8331e8c2cc960509c0"
+  "gitHead": "61d21542c15237221f078f8331e8c2cc960509c0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  }
 }
