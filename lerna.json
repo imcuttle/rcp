@@ -1,10 +1,11 @@
 {
   "packages": ["packages/*"],
   "ignoreChanges": ["**/__fixtures__/**", "**/__tests__/**", "**/*.md"],
-  "create": {
-    "homepage": "https://github.com/lerna/lerna",
-    "license": "MIT"
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
   },
-  "version": "1.0.6",
-  "lerna": "independent"
+  "version": "independent",
+  "lerna": "2.7.1"
 }
