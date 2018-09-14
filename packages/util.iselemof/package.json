@@ -22,7 +22,7 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "devDependencies": {
     "@rcp/_types": "^1.0.7"
   },

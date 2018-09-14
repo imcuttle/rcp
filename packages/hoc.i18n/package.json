@@ -20,15 +20,15 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "peerDependencies": {
     "prop-types": "^15.0.0",
     "react": "^15.0.0"
   },
   "dependencies": {
-    "@rcp/util.createlogger": "^1.0.7",
-    "@rcp/util.displayname": "^1.0.7",
-    "@rcp/util.iscompclass": "^1.0.7",
+    "@rcp/util.createlogger": "^1.0.8",
+    "@rcp/util.displayname": "^1.0.8",
+    "@rcp/util.iscompclass": "^1.0.8",
     "lodash.foreach": "^4.5.0",
     "tiny-i18n": "^1.1.2"
   },

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.8"></a>
+
+## [1.0.8](https://github.com/imcuttle/rcp/compare/@rcp/util.displayname@1.0.7...@rcp/util.displayname@1.0.8) (2018-09-14)
+
+**Note:** Version bump only for package @rcp/util.displayname
+
 <a name="1.0.7"></a>
 
 ## 1.0.7 (2018-09-08)

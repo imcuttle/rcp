@@ -1,6 +1,10 @@
 <a name="1.0.0"></a>
 
-# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2018-09-08)
+# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2018-09-14)
+
+### Bug Fixes
+
+- should remove container firstly ([8dfcc84](https://github.com/imcuttle/rcp/commit/8dfcc84))
 
 <a name="1.0.6"></a>
 
