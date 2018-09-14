@@ -20,10 +20,10 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "dependencies": {
     "@rcp/util.createlogger": "^1.0.8",
-    "@rcp/util.createmount": "^1.0.8",
+    "@rcp/util.createmount": "^1.0.9",
     "@rcp/util.displayname": "^1.0.8",
     "@rcp/util.tocompclass": "^1.0.8"
   },
