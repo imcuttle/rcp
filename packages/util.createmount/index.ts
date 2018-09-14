@@ -47,7 +47,7 @@ export default function createMountCenter<P = any>(opts: IMountOptions<P> = {}):
       let dom = getContainer()
       container = null
       ReactDOM.unmountComponentAtNode(dom)
-      dom.parentNode.removeChild(dom)
+      dom.parentNode && dom.parentNode.removeChild(dom)
     },
     open({ element = centerOpts.element, mountNode = centerOpts.mountNode, attributes = centerOpts.attributes } = {}) {
       const dom = getContainer(attributes, mountNode)
