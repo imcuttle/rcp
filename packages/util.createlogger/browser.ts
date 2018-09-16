@@ -8,7 +8,7 @@ import makeCreateLogger from './makeCreateLogger'
 import * as u from 'util'
 
 export const Map = {
-  Log: ''
+  Info: ''
 }
 
 export default makeCreateLogger(function(

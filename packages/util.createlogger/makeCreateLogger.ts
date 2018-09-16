@@ -18,7 +18,7 @@ export default function makeCreateLogger(formatFunc: FormatFunc) {
     }
 
     function log(message, ...argv) {
-      console.log(format({ message, argv, type: 'Log' }))
+      console.log(format({ message, argv, type: 'Info' }))
     }
 
     function success(message, ...argv) {
@@ -36,6 +36,7 @@ export default function makeCreateLogger(formatFunc: FormatFunc) {
       invariant,
       format,
       log,
+      info: log,
       success,
       warn,
       debug: require('debug')(namespace),

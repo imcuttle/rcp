@@ -19,7 +19,7 @@ yarn add @rcp/util.createlogger
 import createLogger from '@rcp/util.createlogger'
 const logger = createLogger('@rcp/hoc.i18n')
 
-logger.log('%s abc', 'ok')
+logger.info('%s abc', 'ok') // alias `log`
 logger.success({ a: '222' }, 'ok')
 logger.warn({})
 logger.debug()
@@ -60,7 +60,7 @@ e.g. `Success(foo): Done!`
 
 #### Returns
 
-##### `log`
+##### `info`: (alias: `log`)
 
 - Type: `function`
 

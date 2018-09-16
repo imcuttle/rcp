@@ -9,7 +9,7 @@ import * as u from 'util'
 import * as logSymbols from 'log-symbols'
 
 export const SYMBOLS_MAP = {
-  Log: `${logSymbols.info} `,
+  Info: `${logSymbols.info} `,
   Success: `${logSymbols.success} `,
   Warning: `${logSymbols.warning} `,
   Error: `${logSymbols.error} `
