@@ -3,7 +3,6 @@
  * @author imcuttle
  *
  */
-import * as d from 'debug'
 import { FormatFunc, IFormat, IFormatOpts, ILogger } from './types'
 
 export default function makeCreateLogger(formatFunc: FormatFunc) {
@@ -33,14 +32,13 @@ export default function makeCreateLogger(formatFunc: FormatFunc) {
     function error(message, ...argv) {
       console.error(format({ message, argv, type: 'Error' }))
     }
-
     return {
       invariant,
       format,
       log,
       success,
       warn,
-      debug: d(namespace),
+      debug: require('debug')(namespace),
       error
     }
   }
