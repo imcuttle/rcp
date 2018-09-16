@@ -23,7 +23,7 @@
   "main": "node.js",
   "browser": "browser.js",
   "typings": "node.d.js",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "dependencies": {
     "debug": "^3.1.0",
     "log-symbols": "^2.2.0"

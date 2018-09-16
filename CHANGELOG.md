@@ -7,6 +7,10 @@
 - should remove container firstly ([4e0d087](https://github.com/imcuttle/rcp/commit/4e0d087))
 - should remove container firstly ([8dfcc84](https://github.com/imcuttle/rcp/commit/8dfcc84))
 
+### Features
+
+- util.createlogger log alias to info ([8757ae8](https://github.com/imcuttle/rcp/commit/8757ae8))
+
 <a name="1.0.6"></a>
 
 ## [1.0.6](https://github.com/imcuttle/rcp/compare/v1.0.5...v1.0.6) (2018-09-08)
