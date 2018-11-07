@@ -8,15 +8,15 @@ React Component's high order component about internationalization
 ## Installation
 
 ```bash
-npm install @rcp/hoc-i18n
+npm install @rcp/hoc.i18n
 # or use yarn
-yarn add @rcp/hoc-i18n
+yarn add @rcp/hoc.i18n
 ```
 
 ## Usage
 
 ```javascript
-import i18n from '@rcp/hoc-i18n'
+import i18n from '@rcp/hoc.i18n'
 
 const currentLang = 'en-us'
 @i18n(
@@ -49,7 +49,7 @@ class View extends React.Component {
 ### Customize Component's i18n
 
 ```javascript
-import i18n from '@rcp/hoc-i18n'
+import i18n from '@rcp/hoc.i18n'
 
 const currentLang = 'en-us'
 @i18n(
@@ -80,7 +80,7 @@ View.i18n.setDictionary(
 ### Preset dictionary by default
 
 ```javascript
-import i18n from '@rcp/hoc-i18n'
+import i18n from '@rcp/hoc.i18n'
 
 @i18n({
   hello: 'hello, ${1}',
@@ -105,7 +105,7 @@ class View extends React.Component {
 ### Preset multiple dictionaries
 
 ```javascript
-import i18n from '@rcp/hoc-i18n'
+import i18n from '@rcp/hoc.i18n'
 
 @i18n({
   'zh': {
