@@ -22,8 +22,8 @@
   "typings": "index.d.js",
   "version": "1.0.10",
   "peerDependencies": {
-    "prop-types": "^15.0.0",
-    "react": "^15.0.0"
+    "prop-types": ">=15.0.0",
+    "react": ">=15.0.0"
   },
   "dependencies": {
     "@rcp/util.createlogger": "^1.1.0",
