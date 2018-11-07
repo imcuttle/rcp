@@ -102,6 +102,36 @@ class View extends React.Component {
 //    equals to `<p>hello from locale, Jilly<span>awesome</span></p>`
 ```
 
+### Preset multiple dictionaries
+
+```javascript
+import i18n from '@rcp/hoc-i18n'
+
+@i18n({
+  'zh': {
+    hello: '你好, ${1}',
+    tip: '酷'
+  },
+  'en': {
+    hello: 'hello, ${1}',
+    tip: 'awesome'
+  },
+})
+class View extends React.Component {
+  render() {
+    return (
+      <p>
+        {this.i('hello', this.props.title)}
+        <span>{this.i('tip')}</span>
+      </p>
+    )
+  }
+}
+
+// `<View title="Jilly" language="zh" />`
+// => '<p>你好 Jilly<span>酷</span></p>'
+```
+
 ## Related
 
 - [tiny-i18n](https://github.com/imcuttle/tiny-i18n/tree/master/packages/tiny-i18n) - Tiny yet useful i18n library
