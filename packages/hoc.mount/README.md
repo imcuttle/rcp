@@ -42,9 +42,9 @@ const TitleComponent = mount({
 
 ReactDOM.render(
   <div>
-    <Title title="foo" />
-    <Title title="bar" />
-    <Title title="barbar" />
+    <TitleComponent title="foo" />
+    <TitleComponent title="bar" />
+    <TitleComponent title="barbar" />
   </div>,
   window.root
 )
