@@ -6,18 +6,28 @@
  */
 /// <reference types="react" />
 /**
+ * @typedef StrictProp
+ * @public
+ * @param name {string}
+ * @param [withDefault=true] {boolean} - Whether check `default{propKey}` firstly
+ * @param [eq=(a, b) => a === b] {Function} - Detect new value and old value is equal
+ */
+export declare type StrictProp = {
+  name: string
+  withDefault?: boolean
+  eq?: (oldValue: any, newValue: any) => boolean
+}
+/**
+ * @typedef Prop {string | StrictProp}
+ * @public
+ */
+export declare type Prop = string | StrictProp
+/**
  *
  * @public
- * @param propList {string[]} eg. `['value']`
- * @param {{}} options
- * @param {boolean} [options.withDefault = true] - Whether check `default{propKey}` firstly
+ * @param propList {Prop[]} eg. `['value']` / `[{ name: 'value', withDefault: false }]`
  * @return {Function} `(Component: React.ComponentClass) => React.ComponentClass`
  */
 export default function uncontrolled(
-  propList?: any[],
-  {
-    withDefault
-  }?: {
-    withDefault?: boolean
-  }
+  propList?: Prop[]
 ): (Component: import('react').ComponentClass<{}, any>) => import('react').ComponentClass<{}, any>

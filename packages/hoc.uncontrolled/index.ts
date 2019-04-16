@@ -15,19 +15,48 @@ function getDefaultName(name: string = '') {
   return 'default' + name[0].toUpperCase() + name.slice(1)
 }
 
+function normalizePropList(propList: Prop[]): StrictProp[] {
+  return propList.map(prop => {
+    if (typeof prop === 'string') {
+      return {
+        withDefault: true,
+        eq: defaultEq,
+        name: prop
+      }
+    }
+    return {
+      withDefault: true,
+      eq: defaultEq,
+      ...prop
+    }
+  })
+}
+
+/**
+ * @typedef StrictProp
+ * @public
+ * @param name {string}
+ * @param [withDefault=true] {boolean} - Whether check `default{propKey}` firstly
+ * @param [eq=(a, b) => a === b] {Function} - Detect new value and old value is equal
+ */
+export type StrictProp = { name: string; withDefault?: boolean; eq?: (oldValue, newValue) => boolean }
+
+/**
+ * @typedef Prop {string | StrictProp}
+ * @public
+ */
+export type Prop = string | StrictProp
+
+const defaultEq = (a, b) => a === b
+
 /**
  *
  * @public
- * @param propList {string[]} eg. `['value']`
- * @param {{}} options
- * @param {boolean} [options.withDefault = true] - Whether check `default{propKey}` firstly
+ * @param propList {Prop[]} eg. `['value']` / `[{ name: 'value', withDefault: false }]`
  * @return {Function} `(Component: React.ComponentClass) => React.ComponentClass`
  */
-export default function uncontrolled(propList = [], { withDefault = true } = {}) {
-  logger.invariant(
-    Array.isArray(propList) && propList.every(x => typeof x === 'string'),
-    `\`propList\` should be string[], but ${typeof propList}`
-  )
+export default function uncontrolled(propList: Prop[] = []) {
+  let propArray = normalizePropList(propList)
 
   return function uncontrolled(Component: React.ComponentClass): React.ComponentClass {
     logger.invariant(isComponentClass(Component), `\`Component\` should be a react component class`)
@@ -42,18 +71,19 @@ export default function uncontrolled(propList = [], { withDefault = true } = {})
       constructor(props) {
         super(props)
         this.state = this.state || {}
-        propList.forEach(prop => {
-          if (withDefault) {
-            const defaultPropName = getDefaultName(prop)
-            this.state[prop] =
-              typeof this.props[prop] === 'undefined'
+        propArray.forEach(prop => {
+          const propName = prop.name
+          if (prop.withDefault) {
+            const defaultPropName = getDefaultName(propName)
+            this.state[propName] =
+              typeof this.props[propName] === 'undefined'
                 ? typeof this.props[defaultPropName] === 'undefined'
-                  ? this.state[prop]
+                  ? this.state[propName]
                   : this.props[defaultPropName]
-                : this.props[prop]
+                : this.props[propName]
           } else {
-            if (typeof this.props[prop] !== 'undefined') {
-              this.state[prop] = this.props[prop]
+            if (typeof this.props[propName] !== 'undefined') {
+              this.state[propName] = this.props[propName]
             }
           }
         })
@@ -66,9 +96,10 @@ export default function uncontrolled(propList = [], { withDefault = true } = {})
 
         const newState = {}
         let hasNewRecord = false
-        propList.forEach(prop => {
-          if (typeof newProps[prop] !== 'undefined' && this.state[prop] !== newProps[prop]) {
-            newState[prop] = newProps[prop]
+        propArray.forEach(prop => {
+          const { name: propName, eq = defaultEq } = prop
+          if (typeof newProps[propName] !== 'undefined' && !eq(this.state[propName], newProps[propName])) {
+            newState[propName] = newProps[propName]
             hasNewRecord = true
           }
         })

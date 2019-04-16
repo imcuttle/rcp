@@ -38,7 +38,7 @@ describe('hocUncontrolled', function() {
   })
 
   it('should opt.withDefault', () => {
-    @hocUncontrolled(['value'], { withDefault: false })
+    @hocUncontrolled([{ name: 'value', withDefault: false }])
     class View extends React.Component {
       static defaultProps? = {}
       state: any
@@ -63,5 +63,39 @@ describe('hocUncontrolled', function() {
       value: 'xxx'
     })
     expect(wrapper.text()).toBe('xxx')
+  })
+
+  it('should opt.eq', () => {
+    @hocUncontrolled([{ name: 'value', eq: (a, b) => a.k === b.k }])
+    class View extends React.Component {
+      static defaultProps? = {}
+      state: {
+        value: any
+      }
+
+      render() {
+        return this.state.value.label || ''
+      }
+    }
+    const AnyView = View as any
+
+    let wrapper = mount(<AnyView value={{ k: '1', label: 'a' }} />)
+    expect(wrapper.text()).toBe('a')
+
+    // setValue failed
+    wrapper.setProps({
+      value: { k: '1', label: 'hahah' }
+    })
+    expect(wrapper.text()).toBe('a')
+    expect((wrapper.state() as any).value).toEqual({ k: '1', label: 'a' })
+
+    wrapper.setProps({
+      value: { k: '2', label: 'a' }
+    })
+    expect((wrapper.state() as any).value).toEqual({ k: '2', label: 'a' })
+    wrapper.setProps({
+      value: { k: '1', label: 'hahah' }
+    })
+    expect((wrapper.state() as any).value).toEqual({ k: '1', label: 'hahah' })
   })
 })
