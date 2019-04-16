@@ -25,7 +25,7 @@ export declare type Prop = string | StrictProp
 /**
  *
  * @public
- * @param propList {Prop[]} eg. `['value']` / `[{ name: 'value', withDefault: false }]`
+ * @param propList {Prop[]} eg. `['value']` / `[{ name: 'value', withDefault: false, eq: (a, b) => a === b }]`
  * @return {Function} `(Component: React.ComponentClass) => React.ComponentClass`
  */
 export default function uncontrolled(

@@ -4,9 +4,11 @@ os:
   - linux
   - osx
 node_js:
-  - 6
-  - 7
+  #  - 6
+  #  - 7
   - 8
+  - 9
+  - stable
 
 cache:
   bundle: true
@@ -16,7 +18,7 @@ cache:
 install:
   - npm install
   - npm run bootstrap
-  - npm run dist
+#  - npm run dist
 
 jobs:
   include:
