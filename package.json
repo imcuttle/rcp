@@ -9,7 +9,7 @@
     "new": "edam",
     "test": "jest",
     "precommit": "pretty-quick --staged && node scripts/gen-readme.js && git add README.md",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && npm run dist",
     "prerelease": "npm test",
     "dist": "lerna run --parallel dist",
     "dev": "lerna run --parallel dev",
@@ -32,27 +32,6 @@
   "edam": {
     "source": "./packages/__template",
     "output": "./packages"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "__template"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest",
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "testMatch": [
-      "**/__test{s,}__/*.(spec|test).{t,j}s{x,}"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/scripts/test-setup.js"
   },
   "commitlint": {
     "extends": [

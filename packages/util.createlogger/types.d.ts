@@ -16,7 +16,7 @@ export interface IFormatOpts {
   typeMap?: ITypeMap
 }
 export interface ITypeMap {
-  Log?: string
+  Info?: string
   Success?: string
   Warning?: string
   Error?: string
@@ -27,6 +27,7 @@ export interface ILogger {
   invariant: (check: boolean, message?: string) => void
   format: FormatFunc
   log: LoggerFunc
+  info: LoggerFunc
   warn: LoggerFunc
   success: LoggerFunc
   debug: LoggerFunc

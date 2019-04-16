@@ -8,7 +8,6 @@ import displayName from '@rcp/util.displayname'
 import createLogger from '@rcp/util.createlogger'
 import createMount, { IMountOptions } from '@rcp/util.createmount'
 import toComponentClass from '@rcp/util.tocompclass'
-import { createRef, Ref } from 'react'
 import { IMountCenter } from '../util.createmount'
 
 const log = createLogger(require('./package.json').name)

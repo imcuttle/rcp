@@ -4,7 +4,7 @@
  * @date 2018/9/8
  */
 export declare const SYMBOLS_MAP: {
-  Log: string
+  Info: string
   Success: string
   Warning: string
   Error: string
