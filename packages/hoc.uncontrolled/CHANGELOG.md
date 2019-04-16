@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@1.0.10...@rcp/hoc.uncontrolled@2.1.0) (2019-04-16)
+
+### Features
+
+- allow customized eq function ([79e92ce](https://github.com/imcuttle/rcp/commit/79e92ce))
+
 <a name="1.0.10"></a>
 
 ## [1.0.10](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@1.0.9...@rcp/hoc.uncontrolled@1.0.10) (2018-09-16)
