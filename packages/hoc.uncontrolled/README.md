@@ -36,11 +36,9 @@ class Input extends React.Component {
 
 #### Parameters
 
-- `propList` {string\[]} eg. `['value']`
-- `options` **{}**
-  - `options.withDefault` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Whether check `default{propKey}` firstly (optional, default `true`)
+- `propList` {Prop\[]} eg. `['value']` / `[{ name: 'value', withDefault: false }]`
 
-Returns **`(Component: React.ComponentClass) => React.ComponentClass`**
+Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** `(Component: React.ComponentClass) => React.ComponentClass`
 
 ## Related
 
