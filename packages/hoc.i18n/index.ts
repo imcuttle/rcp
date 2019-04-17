@@ -138,6 +138,10 @@ export default function i18n<P = II18nProps, S = any>(
         [languageKey]: PropTypes.string,
         ...Component.propTypes
       }
+      static defaultProps = {
+        [languageKey]: language,
+        ...Component.defaultProps
+      }
 
       public i(key, ...argv) {
         const constructor = <II18nComponentClass>this.constructor
