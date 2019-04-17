@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.13"></a>
+
+## [1.0.13](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.12...@rcp/hoc.i18n@1.0.13) (2019-04-17)
+
+### Performance Improvements
+
+- set defaultLanguage to defaultProps ([cf01859](https://github.com/imcuttle/rcp/commit/cf01859))
+
 <a name="1.0.12"></a>
 
 ## [1.0.12](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.11...@rcp/hoc.i18n@1.0.12) (2019-04-16)
