@@ -183,4 +183,30 @@ describe('i18n', function() {
       `"(@rcp/hoc.i18n): \`Component\` should be a React ComponentClass. but typeof object"`
     )
   })
+
+  it('should use in extends', () => {
+    @(i18n({
+      title: 'Hello, ${1}!'
+    }) as any)
+    class Comp extends React.Component<{ title: string } & II18nProps> {
+      public i: Function
+      render() {
+        return <h1>{this.i('title', this.props.title)}</h1>
+      }
+    }
+
+    let wrapper = mount(<Comp title={'xx'} />)
+    expect(wrapper.find('h1').text()).toBe('Hello, xx!')
+
+    class NewComp extends Comp {}
+    wrapper = mount(<NewComp title={'xx'} />)
+    expect(wrapper.find('h1').text()).toBe('Hello, xx!')
+
+    @(i18n({
+      title: 'WrapComp, ${1}!'
+    }) as any)
+    class WrapComp extends Comp {}
+    wrapper = mount(<WrapComp title={'xx'} />)
+    expect(wrapper.find('h1').text()).toBe('WrapComp, xx!')
+  })
 })
