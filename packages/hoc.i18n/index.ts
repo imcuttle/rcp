@@ -139,7 +139,7 @@ export default function i18n<P = II18nProps, S = any>(
         ...Component.propTypes
       }
       static defaultProps = {
-        [languageKey]: language,
+        // [languageKey]: language,
         ...Component.defaultProps
       }
 
