@@ -98,7 +98,7 @@ export default function uncontrolled(propList: Prop[] = []) {
         let hasNewRecord = false
         propArray.forEach(prop => {
           const { name: propName, eq = defaultEq } = prop
-          if (typeof newProps[propName] !== 'undefined' && !eq(this.state[propName], newProps[propName])) {
+          if (newProps && newProps.hasOwnProperty(propName) && !eq(this.state[propName], newProps[propName])) {
             newState[propName] = newProps[propName]
             hasNewRecord = true
           }
