@@ -36,7 +36,7 @@ class Input extends React.Component {
 
 #### Parameters
 
-- `propList` {Prop\[]} eg. `['value']` / `[{ name: 'value', withDefault: false, eq: (a, b) => a === b }]`
+-   `propList`  {Prop\[]} eg. `['value']` / `[{ name: 'value', withDefault: false, eq: (a, b) => a === b }]`
 
 Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** `(Component: React.ComponentClass) => React.ComponentClass`
 
