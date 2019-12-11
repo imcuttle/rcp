@@ -24,7 +24,7 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "dependencies": {
     "@rcp/util.createlogger": "^1.1.1",
     "@rcp/util.displayname": "^1.0.8",
