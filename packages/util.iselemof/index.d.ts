@@ -10,4 +10,13 @@ import * as React from 'react'
  * @param {React.ComponentType} Component
  * @return {(element: React.ReactElement<any>) => boolean}
  */
-export default function isElementOf(Component: React.ComponentType): (element: React.ReactElement<any>) => boolean
+export default function isElementOf(
+  Component: React.ComponentType
+): (
+  element: React.ReactElement<
+    any,
+    | string
+    | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>)
+    | (new (props: any) => React.Component<any, any, any>)
+  >
+) => boolean

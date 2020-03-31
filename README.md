@@ -46,12 +46,17 @@ should be named as `hoc.{{lowerCase}}`, eg. `@rp/hoc.i18n`.
 
 should be named as `c.{{lowerCase}}`, eg. `@rp/c.text`.
 
+- React Hook related
+
+should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
+
 ## Packages
 
-- [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
-- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
+- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
+- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
+- [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
