@@ -32,11 +32,11 @@ Determinate the input is element of the component class
 
 #### Parameters
 
-- `Component` **React.ComponentType**
+-   `Component` **React.ComponentType** 
 
 ## Related
 
-- [@rcp/util.iscompclass](../util.iscompclass) - The utility for checking react component class
+-   [@rcp/util.iscompclass](../util.iscompclass) - The utility for checking react component class
 
 ## Authors
 

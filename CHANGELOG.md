@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2019-12-11)
+# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2020-03-31)
 
 
 ### Bug Fixes
@@ -10,6 +10,7 @@
 
 ### Features
 
+* add use.i18n ([8f2b256](https://github.com/imcuttle/rcp/commit/8f2b256))
 * allow customized eq function ([79e92ce](https://github.com/imcuttle/rcp/commit/79e92ce))
 * remove global option ([55f611a](https://github.com/imcuttle/rcp/commit/55f611a))
 * util.createlogger log alias to info ([8757ae8](https://github.com/imcuttle/rcp/commit/8757ae8))
