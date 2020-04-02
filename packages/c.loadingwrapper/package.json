@@ -1,0 +1,37 @@
+{
+  "name": "@rcp/c.loadingwrapper",
+  "author": "imcuttle",
+  "description": "A component for easy create loading mask",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "prefix-classname": "^1.0.1"
+  },
+  "scripts": {
+    "example": "webpack-dev-server",
+    "dist": "tsc",
+    "dev": "npm run dist -- -w",
+    "prepublishOnly": "npm run dist",
+    "version": "npm run doc",
+    "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "keywords": [
+    "imcuttle",
+    "c",
+    "loadingwrapper",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "typings": "index.d.js",
+  "version": "1.0.0"
+}

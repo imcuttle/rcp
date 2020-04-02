@@ -1,0 +1,32 @@
+# @rcp/c.loadingwrapper
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/c.loadingwrapper.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/c.loadingwrapper)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/c.loadingwrapper.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/c.loadingwrapper)
+
+A component for easy create loading mask
+
+## Installation
+
+```bash
+npm install @rcp/c.loadingwrapper
+# or use yarn
+yarn add @rcp/c.loadingwrapper
+```
+
+## Usage
+
+```javascript
+import cLoadingwrapper from '@rcp/c.loadingwrapper'
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by imcuttle, <a href="mailto:moyuyc95@gmail.com"">moyuyc95@gmail.com</a>.
+
+## License
+
+MIT

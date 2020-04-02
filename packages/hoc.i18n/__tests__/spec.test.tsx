@@ -69,6 +69,7 @@ describe('i18n', function() {
     wrapper.setProps({
       title: 'h'
     })
+    // @ts-ignore
     console.log(wrapper.instance().i('title'))
     expect(wrapper.find('h1').text()).toBe('h你好世界')
 

@@ -1,7 +1,8 @@
 // @loader module?indent=2
 
 module.exports = ({ _, name, description }) => {
-  return {
+  const isComponent = name.startsWith('c.')
+  const pkg = {
     name: `@rcp/${name}`,
     author: _.git.name,
     description: description,
@@ -28,4 +29,9 @@ module.exports = ({ _, name, description }) => {
     typings: 'index.d.js',
     version: '1.0.0'
   }
+  if (isComponent) {
+    pkg.scripts.example = 'webpack '
+  }
+
+  return pkg;
 }
