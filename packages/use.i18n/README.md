@@ -45,31 +45,25 @@ function App({ locale = {}, language = 'zh' } = {}) {
 
 #### Parameters
 
-- `presetDict` {{}}
-- `options`
-  - `options.language` {string}
-  - `options.locale` {{}}
+-   `presetDict`  {{}}
+-   `options`  
+    -   `options.language`  {string}
+    -   `options.locale`  {{}}
 
 #### Examples
 
 ```javascript
-useI18n(
-  {
-    zh: { name: '姓名' },
-    en: { name: 'Name' }
-  },
-  { language: 'zh' }
-)
+useI18n({
+  zh: { name: '姓名' },
+  en: { name: 'Name' },
+}, { language: 'zh' })
 ```
 
 ```javascript
-useI18n(
-  {
-    zh: { name: '姓名' },
-    en: { name: 'Name' }
-  },
-  { locale: { name: 'Customized Name' } }
-)
+useI18n({
+  zh: { name: '姓名' },
+  en: { name: 'Name' },
+}, { locale: {name: 'Customized Name'} })
 ```
 
 ## Related
