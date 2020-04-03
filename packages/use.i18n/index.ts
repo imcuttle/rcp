@@ -15,18 +15,47 @@ export type Dictionary = {
   [language: string]: Locale
 }
 
+export interface II18nEnv {
+  i18n: (key: string, ...argv: any[]) => string
+  setDictionary: (dict: Locale, language?: string) => void
+  setLanguage: (language: string) => void
+  getCurrentLanguage: () => string
+  getDictionary: (language?: string) => Locale
+  getLanguages: () => string[]
+  getWord: (key: string, language?: string) => string
+  extendDictionary: (dict: Locale, language?: string) => void
+}
+
 export type UseI18nOptions = {
   language?: string
   locale?: Locale
 }
 
-export default function useI18n(presetDict: Dictionary, { language, locale = {} }: UseI18nOptions = {}) {
-  const i18n = React.useMemo(() => {
+/**
+ * @public
+ * @param presetDict {{}}
+ * @param options
+ * @param [options.language] {string}
+ * @param [options.locale] {{}}
+ * @example
+ * useI18n({
+ *   zh: { name: '姓名' },
+ *   en: { name: 'Name' },
+ * }, { language: 'zh' })
+ * @example
+ * useI18n({
+ *   zh: { name: '姓名' },
+ *   en: { name: 'Name' },
+ * }, { locale: {name: 'Customized Name'} })
+ */
+export default function useI18n(presetDict: Dictionary, options: UseI18nOptions = {}): II18nEnv {
+  const { language, locale = {} } = options
+  const i18n = React.useMemo<II18nEnv>(() => {
     const i18n = createIsolateI18n()
     for (const [lang, dict] of Object.entries(presetDict)) {
       i18n.setDictionary(dict, lang)
     }
-    return i18n
+    return i18n as II18nEnv
   }, [])
 
   // 先设置语言

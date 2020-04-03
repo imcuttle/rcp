@@ -3,6 +3,17 @@
  * @author imcuttle
  *
  */
+import { IDictMap } from '../hoc.i18n/index'
+export interface II18nEnv {
+  i18n: (key: string, ...argv: any[]) => string
+  setDictionary: (dict: IDictMap, language?: string) => void
+  setLanguage: (language: string) => void
+  getCurrentLanguage: () => string
+  getDictionary: (language?: string) => IDictMap
+  getLanguages: () => string[]
+  getWord: (key: string, language?: string) => string
+  extendDictionary: (dict: IDictMap, language?: string) => void
+}
 export declare type Locale = {
   [key: string]: string
 }
@@ -14,6 +25,7 @@ export declare type UseI18nOptions = {
   locale?: Locale
 }
 /**
+ * @public
  * @param presetDict {{}}
  * @param options
  * @param [options.language] {string}
@@ -29,11 +41,4 @@ export declare type UseI18nOptions = {
  *   en: { name: 'Name' },
  * }, { locale: {name: 'Customized Name'} })
  */
-export default function useI18n(
-  presetDict: Dictionary,
-  options?: UseI18nOptions
-): {
-  setDictionary(dict: Object, lang?: string): any
-  extendDictionary(dict: Object, lang?: string): any
-  setLanguage(lang: string): any
-}
+export default function useI18n(presetDict: Dictionary, options?: UseI18nOptions): II18nEnv

@@ -5,3 +5,14 @@ declare module 'prefix-classname' {
   const prefixCls: TypePrefixCls
   export = prefixCls
 }
+
+declare module 'tiny-i18n' {
+  type I18nEnv = {
+    setDictionary(dict: Object, lang?: string)
+    extendDictionary(dict: Object, lang?: string)
+    setLanguage(lang: string)
+  }
+
+  const env: I18nEnv & { createIsolateI18n: () => I18nEnv }
+  export = env
+}

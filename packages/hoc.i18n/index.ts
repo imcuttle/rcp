@@ -123,7 +123,7 @@ export default function i18n<P = II18nProps, S = any>(
     // @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/recompose/index.d.ts
     // @see https://www.zhihu.com/question/279911703
     // @i18n in ts
-    const i18nEnv: II18nEnv = createIsolateI18n()
+    const i18nEnv: II18nEnv = createIsolateI18n() as any
     initI18n.call(i18nEnv, {
       dict,
       language
@@ -154,7 +154,7 @@ export default function i18n<P = II18nProps, S = any>(
         const locale = this.props[localeKey]
         const { i18n, getDictionary, setLanguage } = constructor.i18n
         if (locale) {
-          const tmp: II18nEnv = createIsolateI18n()
+          const tmp: II18nEnv = createIsolateI18n() as any
           let lang = typeof language === 'string' ? language : undefined
           const currDict = getDictionary(lang)
           tmp.extendDictionary(currDict)
@@ -163,7 +163,7 @@ export default function i18n<P = II18nProps, S = any>(
         }
 
         if (typeof language === 'string') {
-          const tmp: II18nEnv = createIsolateI18n()
+          const tmp: II18nEnv = createIsolateI18n() as any
           const langDict = getDictionary(language)
           tmp.extendDictionary(langDict, language)
           tmp.setLanguage(language)
