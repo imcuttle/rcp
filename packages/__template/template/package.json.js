@@ -11,6 +11,7 @@ module.exports = ({ _, name, description }) => {
     },
     license: 'MIT',
     scripts: {
+      test: 'npx jest',
       dist: 'tsc',
       dev: 'npm run dist -- -w',
       prepublishOnly: 'npm run dist',

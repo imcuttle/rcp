@@ -7,6 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "test": "npx jest",
     "dist": "tsc",
     "dev": "npm run dist -- -w",
     "version": "npm run doc",
