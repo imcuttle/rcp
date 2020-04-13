@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.19"></a>
+## [1.0.19](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.17...@rcp/hoc.i18n@1.0.19) (2020-04-13)
+
+**Note:** Version bump only for package @rcp/hoc.i18n
+
+
+
+
+
 <a name="1.0.18"></a>
 
 ## [1.0.18](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.17...@rcp/hoc.i18n@1.0.18) (2020-04-13)
