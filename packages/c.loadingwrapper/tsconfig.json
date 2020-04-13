@@ -6,5 +6,5 @@
     "sourceMap": true
   },
   "include": ["index.ts", "index.tsx", "**/*.ts", "**/*.tsx"],
-  "exclude": ["__tests__"]
+  "exclude": ["__tests__", "example"]
 }

@@ -4,7 +4,12 @@
  * @description
  */
 import cLoadingwrapper from '../'
+import { Page } from 'puppeteer'
+declare const page: Page
 
 describe('cLoadingwrapper', function() {
-  it('should ', () => {})
+  it('should ', () => {
+    // page
+    console.log(page)
+  })
 })

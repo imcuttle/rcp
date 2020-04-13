@@ -1,4 +1,5 @@
 module.exports = {
+  preset: 'jest-puppeteer',
   roots: ['<rootDir>/packages'],
   testPathIgnorePatterns: ['__template'],
   transform: {

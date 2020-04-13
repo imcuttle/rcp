@@ -9,6 +9,9 @@
   "dependencies": {
     "prefix-classname": "^1.0.1"
   },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
+  },
   "scripts": {
     "example": "webpack-dev-server",
     "dist": "tsc",
