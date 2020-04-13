@@ -10,7 +10,6 @@
     "test": "npx lerna run test --parallel",
     "precommit": "pretty-quick --staged && node scripts/gen-readme.js && git add README.md",
     "bootstrap": "lerna bootstrap && npm run dist",
-    "prerelease": "npm test",
     "dist": "lerna run --parallel dist",
     "dev": "lerna run --parallel dev",
     "release": "lerna publish --conventional-commits -m 'chore(release): publish'",
