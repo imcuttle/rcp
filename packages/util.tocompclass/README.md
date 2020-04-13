@@ -41,13 +41,13 @@ Convert stateless component class to be component class
 
 #### Parameters
 
-- `component` **React.ComponentType**
+-   `component` **React.ComponentType** 
 
-Returns **React.ComponentClass&lt;P, S>**
+Returns **React.ComponentClass&lt;P, S>** 
 
 ## Related
 
-- [@rcp/util.iscompclass](../util.iscompclass) - The utility for checking react component class
+-   [@rcp/util.iscompclass](../util.iscompclass) - The utility for checking react component class
 
 ## Authors
 

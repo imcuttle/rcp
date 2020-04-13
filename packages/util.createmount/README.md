@@ -44,12 +44,12 @@ center.open({
 
 #### Parameters
 
-- `opts` **IMountOptions&lt;P>**
-  - `opts.mountNode` **[Node](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)** mountNode fallback in `open` function (optional, default `document.body`)
-  - `opts.attributes` **any?** attributes fallback in `open` function
-  - `opts.element` **ReactElement&lt;P>?** element fallback in `open` function
+-   `opts` **IMountOptions&lt;P>** 
+    -   `opts.mountNode` **[Node](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)** mountNode fallback in `open` function (optional, default `document.body`)
+    -   `opts.attributes` **any?** attributes fallback in `open` function
+    -   `opts.element` **ReactElement&lt;P>?** element fallback in `open` function
 
-Returns **IMountCenter**
+Returns **IMountCenter** 
 
 ## Related
 

@@ -45,7 +45,7 @@ Determine react component instance
 
 #### Parameters
 
-- `instance` {any}
+-   `instance`  {any}
 
 #### Examples
 
@@ -56,23 +56,23 @@ class View extends React.Component {}
 isComponentInstance(View.prototype)
 ```
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
 ### isComponentClass
 
-- **See: [how-to-determine-if-js-object-is-react-component](https://discuss.reactjs.org/t/how-to-determine-if-js-object-is-react-component/2825/5)**
+-   **See: [how-to-determine-if-js-object-is-react-component](https://discuss.reactjs.org/t/how-to-determine-if-js-object-is-react-component/2825/5)**
 
 Determine react component class
 
 #### Parameters
 
-- `component` {any}
+-   `component`  {any}
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
 ## Related
 
-- [@rcp/util.iselemof](../util.iselemof) - The utility for determinate the input is element of the component class
+-   [@rcp/util.iselemof](../util.iselemof) - The utility for determinate the input is element of the component class
 
 ## Authors
 

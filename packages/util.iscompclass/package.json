@@ -27,7 +27,7 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "dependencies": {
     "is-plain-obj": "^1.1.0"
   },

@@ -37,9 +37,9 @@ The utility for getting display name
 
 #### Parameters
 
-- `component` **(React.ComponentType | React.ReactElement&lt;any> | IFunction | [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))**
+-   `component` **(React.ComponentType | React.ReactElement&lt;any> | IFunction | [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** 
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ## Authors
 
