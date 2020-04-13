@@ -59,7 +59,7 @@ import '@rcp/c.loadingwrapper/style.less'
 
 ## Authors
 
-This library is written and maintained by imcuttle, &lt;a href="<mailto:moyuyc95@gmail.com"">moyuyc95@gmail.com></a>.
+This library is written and maintained by imcuttle, <a href="<mailto:moyuyc95@gmail.com">moyuyc95@gmail.com></a>.
 
 ## License
 

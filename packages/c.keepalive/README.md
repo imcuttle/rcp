@@ -71,7 +71,7 @@ class Content extends React.Component {
 
 ## Authors
 
-This library is written and maintained by imcuttle, <a href="mailto:moyuyc95@gmail.com"">moyuyc95@gmail.com</a>.
+This library is written and maintained by imcuttle, <a href="mailto:moyuyc95@gmail.com">moyuyc95@gmail.com</a>.
 
 ## License
 
