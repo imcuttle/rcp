@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@rcp/c.keepalive.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/c.keepalive)
 [![NPM Downloads](https://img.shields.io/npm/dm/@rcp/c.keepalive.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/c.keepalive)
 
-Keep react component view / store when switched view.
+Keep react component view / store when switched view rather than unmount it.
 
 ## Installation
 
