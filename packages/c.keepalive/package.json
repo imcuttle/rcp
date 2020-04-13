@@ -6,9 +6,12 @@
     "access": "public"
   },
   "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  },
   "scripts": {
     "test": "npx jest",
-    "dist": "tsc",
+    "dist": "npx tsc",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm run dist",
     "example": "webpack "

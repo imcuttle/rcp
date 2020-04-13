@@ -9,7 +9,6 @@
     "lib": ["dom", "es2015", "es2017"],
     "experimentalDecorators": true
   },
-  "files": ["./types/modules.d.ts", "./types/global.ts"],
   "include": ["./packages/**/*"],
   "exclude": ["node_modules", "test", "__tests__"]
 }

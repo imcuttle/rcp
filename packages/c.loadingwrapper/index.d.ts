@@ -4,8 +4,7 @@
  *
  */
 import * as React from 'react'
-import { FunctionComponent } from 'react'
-import { ComponentClass } from 'react'
+import { FunctionComponent, ComponentClass } from 'react'
 export declare type TypeLoadingWrapperProps = {
   isLoading: boolean
   renderLoadingDelayMs?: number

@@ -8,9 +8,12 @@
   "license": "MIT",
   "scripts": {
     "test": "npx jest",
-    "dist": "tsc",
+    "dist": "npx tsc",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm run dist"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3"
   },
   "keywords": [
     "imcuttle",
