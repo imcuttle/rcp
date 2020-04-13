@@ -1,0 +1,39 @@
+{
+  "name": "@rcp/c.keepalive",
+  "author": "imcuttle",
+  "description": "Keep react component view / store when switched view.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "npx jest",
+    "dist": "tsc",
+    "dev": "npm run dist -- -w",
+    "prepublishOnly": "npm run dist",
+    "version": "npm run doc",
+    "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md",
+    "example": "webpack "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "keywords": [
+    "imcuttle",
+    "c",
+    "keepalive",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "typings": "index.d.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@rcp/util.displayname": "^1.0.9",
+    "classnames": "^2.2.6"
+  }
+}

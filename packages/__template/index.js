@@ -31,15 +31,23 @@ module.exports = edam => {
     process({ name }) {
       edam.config.output = nps.join(edam.config.output, name)
       const isComponent = name.startsWith('c.')
+
+      const move = {
+        'gitignore': '.gitignore',
+        'package.json.js': 'package.json'
+      }
+
+      if (isComponent) {
+        move['index.ts'] = 'index.tsx';
+        move['__tests__/spec.test.ts'] = '__tests__/spec.test.tsx';
+      }
+
       return {
         ignore: [
           !isComponent && 'example/**',
           !isComponent && 'webpack.config.js',
         ].filter(Boolean),
-        move: {
-          'gitignore': '.gitignore',
-          'package.json.js': 'package.json'
-        }
+        move
       }
     }
   }
