@@ -15,11 +15,57 @@ yarn add @rcp/c.keepalive
 
 ## Usage
 
-```javascript
-import cKeepalive from '@rcp/c.keepalive'
+```jsx
+import KeepAlive, { bindKeepAliveLifeCycle } from '@rcp/c.keepalive'
+import '@rcp/c.keepalive/style.less'
+
+@bindKeepAliveLifeCycle
+class Content extends React.Component {
+    // 新增的生命周期
+    componentWillActive({newValue, oldValue}) {}
+    componentDidActive({newValue, oldValue}) {}
+    componentWillUnactive({newValue, oldValue}) {}
+    componentDidUnactive({newValue, oldValue}) {}
+}
+
+<KeepAlive uniqKey="/home" >
+    <Content>Home</Content>
+<KeepAlive>
+// LifeCycle
+// componentWillActive => {newValue: '/home'}
+// componentDidActive => {newValue: '/home'}
+
+// Components
+// <>
+//   <Content>Home</Content>
+// </>
+
+// Update
+<KeepAlive uniqKey="/detail" >
+    <Content>Detail</Content>
+<KeepAlive>
+// LifeCycle
+// componentWillUnactive => {newValue: '/detail', oldValue: '/home'} (Home)
+// componentWillActive => {newValue: '/detail', oldValue: '/home'} (Detail)
+// componentDidUnactive => {newValue: '/detail', oldValue: '/home'} (Home)
+// componentDidActive => {newValue: '/detail', oldValue: '/home'} (Detail)
+
+// Components
+// <>
+//   <Content (display: none)>Home</Content>
+//   <Content>Detail</Content>
+// </>
 ```
 
-## API
+## Props
+
+### `uniqKey`
+
+- **Type:** `string`
+
+### `disabled`
+
+- **Type:** `boolean`
 
 ## Related
 

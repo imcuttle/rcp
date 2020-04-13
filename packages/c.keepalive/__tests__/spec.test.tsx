@@ -21,6 +21,7 @@ describe('KeepAlive', function() {
 
   const KeepAliveLifeCycle = bindKeepAliveLifeCycle(
     class extends React.Component {
+      componentWillMount() {}
       componentDidUnactive(input: InputType) {
         list.push('componentDidUnactive', input)
       }
@@ -92,10 +93,7 @@ describe('KeepAlive', function() {
   })
 
   it('normal lifecycle', () => {
-    // jest.spyOn(KeepAliveLifeCycle.prototype, 'componentWillActive')
-    // jest.spyOn(KeepAliveLifeCycle.prototype, 'componentDidActive')
-    // jest.spyOn(KeepAliveLifeCycle.prototype, 'componentWillUnactive')
-    // jest.spyOn(KeepAliveLifeCycle.prototype, 'componentDidUnactive')
+    jest.spyOn(KeepAliveLifeCycle.prototype, 'componentWillMount')
     const wrp = mount(<Page name={'bHome'} />)
     expect(list).toMatchInlineSnapshot(`
 Array [
@@ -238,5 +236,8 @@ Array [
       name: 'detail'
     })
     expect(list).toMatchInlineSnapshot(`Array []`)
+
+    // bHome & bDetail
+    expect(KeepAliveLifeCycle.prototype.componentWillMount).toHaveBeenCalledTimes(2)
   })
 })
