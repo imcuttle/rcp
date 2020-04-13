@@ -17,9 +17,7 @@
     "example": "webpack-dev-server",
     "dist": "tsc",
     "dev": "npm run dist -- -w",
-    "prepublishOnly": "npm run dist",
-    "version": "npm run doc",
-    "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
+    "prepublishOnly": "npm run dist"
   },
   "repository": {
     "type": "git",
@@ -37,5 +35,5 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

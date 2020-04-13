@@ -3,41 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.18"></a>
+
+## [1.0.18](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.17...@rcp/hoc.i18n@1.0.18) (2020-04-13)
+
+**Note:** Version bump only for package @rcp/hoc.i18n
+
 <a name="1.0.17"></a>
+
 ## [1.0.17](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.16...@rcp/hoc.i18n@1.0.17) (2020-04-13)
 
 **Note:** Version bump only for package @rcp/hoc.i18n
 
-
-
-
-
 <a name="1.0.16"></a>
+
 ## [1.0.16](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.15...@rcp/hoc.i18n@1.0.16) (2020-04-03)
 
 **Note:** Version bump only for package @rcp/hoc.i18n
 
-
-
-
-
 <a name="1.0.15"></a>
+
 ## [1.0.15](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.14...@rcp/hoc.i18n@1.0.15) (2019-12-11)
 
 **Note:** Version bump only for package @rcp/hoc.i18n
 
-
-
-
-
 <a name="1.0.14"></a>
+
 ## [1.0.14](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.13...@rcp/hoc.i18n@1.0.14) (2019-12-07)
 
 **Note:** Version bump only for package @rcp/hoc.i18n
-
-
-
-
 
 <a name="1.0.13"></a>
 
