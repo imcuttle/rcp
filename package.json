@@ -7,7 +7,7 @@
   "author": "imcuttle",
   "scripts": {
     "new": "edam",
-    "test": "jest",
+    "test": "npx lerna run test --parallel",
     "precommit": "pretty-quick --staged && node scripts/gen-readme.js && git add README.md",
     "bootstrap": "lerna bootstrap && npm run dist",
     "prerelease": "npm test",

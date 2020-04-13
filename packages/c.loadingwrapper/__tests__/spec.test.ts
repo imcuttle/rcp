@@ -7,9 +7,9 @@ import cLoadingwrapper from '../'
 import { Page } from 'puppeteer'
 declare const page: Page
 
-describe('cLoadingwrapper', function() {
-  it('should ', () => {
+describe.skip('cLoadingwrapper', function() {
+  it('should page', () => {
     // page
-    console.log(page)
+    // console.log(page.ev)
   })
 })

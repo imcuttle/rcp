@@ -2,7 +2,7 @@
   "packages": ["packages/*"],
   "command": {
     "publish": {
-      "ignoreChanges": ["**/__fixtures__/**", "**/__tests__/**", "**/*.md"]
+      "ignoreChanges": ["**/*.js", "**/__fixtures__/**", "**/__tests__/**", "**/*.md"]
     },
     "bootstrap": {
       "hoist": true,

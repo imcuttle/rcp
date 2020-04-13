@@ -5,8 +5,7 @@
  */
 import * as React from 'react'
 import * as p from 'prefix-classname'
-import { FunctionComponent } from 'react'
-import { ComponentClass } from 'react'
+import { FunctionComponent, ComponentClass } from 'react'
 
 const cx = p('')
 const c = p('rcp-loading-wrapper__')

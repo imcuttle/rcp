@@ -1,7 +1,3 @@
-import { Page } from 'puppeteer'
-
-declare const page: Page
-
 declare module 'prefix-classname' {
   type TypeCls = (...arg: any[]) => string
   type TypePrefixCls = (prefix: string) => TypeCls
