@@ -53,10 +53,15 @@ export function I18nProvider({ tinyI18n, children, ...props }: UseI18nOptions & 
 
 export const I18nConsumer = I18nContext.Consumer
 
-export const withTinyI18n = function(Component) {
-  return class WithTinyI18n extends React.Component {
+export const withTinyI18n = function<PropsType = any, RefType = any>(Component) {
+  return class WithTinyI18n<PropsType> extends React.Component {
+    originRef = React.createRef<RefType>()
     render() {
-      return <I18nConsumer>{tinyI18n => <Component tinyI18n={tinyI18n} {...this.props} />}</I18nConsumer>
+      return (
+        <I18nConsumer>
+          {tinyI18n => <Component ref={this.originRef} tinyI18n={tinyI18n} {...this.props} />}
+        </I18nConsumer>
+      )
     }
   }
 }

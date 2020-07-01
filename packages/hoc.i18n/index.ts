@@ -82,6 +82,7 @@ export interface II18nEnv {
 }
 
 export interface II18nOptions {
+  tinyI18n?: II18nEnv
   localeKey?: string
   languageKey?: string
 }
@@ -92,6 +93,7 @@ export interface II18nOptions {
  * @param {string} language
  * @param {string} localeKey
  * @param {string} languageKey
+ * @param {string} tinyI18n
  * @return {(Component: React.ComponentClass) => II18nComponentClass<II18nProps & P, S>}
  * @example
  * \@i18n({
@@ -111,7 +113,7 @@ export interface II18nOptions {
 export default function i18n<P = II18nProps, S = any>(
   dict?: IDictMap | IDictGroupMap,
   language?: string,
-  { localeKey = 'locale', languageKey = 'language' }: II18nOptions = {}
+  { tinyI18n = createIsolateI18n(), localeKey = 'locale', languageKey = 'language' }: II18nOptions = {}
 ) {
   return function(Component: React.ComponentClass): II18nComponentClass<II18nProps & P, S> {
     horn.invariant(
@@ -123,11 +125,8 @@ export default function i18n<P = II18nProps, S = any>(
     // @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/recompose/index.d.ts
     // @see https://www.zhihu.com/question/279911703
     // @i18n in ts
-    const i18nEnv: II18nEnv = createIsolateI18n() as any
-    initI18n.call(i18nEnv, {
-      dict,
-      language
-    })
+    const i18nEnv: II18nEnv = tinyI18n
+    initI18n.call(i18nEnv, { dict, language })
 
     class I18nComponent extends Component implements II18nComponent<II18nProps & P, S> {
       readonly props: II18nProps & P
