@@ -24,7 +24,7 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "peerDependencies": {
     "prop-types": ">=15.0.0",
     "react": ">=15.0.0"
