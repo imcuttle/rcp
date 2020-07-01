@@ -20,6 +20,7 @@ export interface II18nEnv {
   extendDictionary: (dict: Locale, language?: string) => void
 }
 export declare type UseI18nOptions = {
+  tinyI18n?: II18nEnv
   language?: string
   locale?: Locale
 }
@@ -40,4 +41,4 @@ export declare type UseI18nOptions = {
  *   en: { name: 'Name' },
  * }, { locale: {name: 'Customized Name'} })
  */
-export default function useI18n(presetDict: Dictionary, options?: UseI18nOptions): II18nEnv
+export default function useI18nCore(presetDict: Dictionary, options?: UseI18nOptions): II18nEnv

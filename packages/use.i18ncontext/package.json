@@ -1,0 +1,37 @@
+{
+  "name": "@rcp/use.i18ncontext",
+  "author": "imcuttle",
+  "description": "A react hook for using i18n provider/consumer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "npx jest",
+    "dist": "tsc",
+    "dev": "npm run dist -- -w",
+    "prepublishOnly": "npm run dist",
+    "version": "npm run doc",
+    "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "dependencies": {
+    "@rcp/use.i18n": "^1.1.4"
+  },
+  "keywords": [
+    "imcuttle",
+    "use",
+    "i18ncontext",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "typings": "index.d.js",
+  "version": "1.0.0"
+}

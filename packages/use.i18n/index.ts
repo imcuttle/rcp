@@ -27,6 +27,7 @@ export interface II18nEnv {
 }
 
 export type UseI18nOptions = {
+  tinyI18n?: II18nEnv
   language?: string
   locale?: Locale
 }
@@ -48,15 +49,18 @@ export type UseI18nOptions = {
  *   en: { name: 'Name' },
  * }, { locale: {name: 'Customized Name'} })
  */
-export default function useI18n(presetDict: Dictionary, options: UseI18nOptions = {}): II18nEnv {
-  const { language, locale = {} } = options
-  const i18n = React.useMemo<II18nEnv>(() => {
-    const i18n = createIsolateI18n()
-    for (const [lang, dict] of Object.entries(presetDict)) {
-      i18n.setDictionary(dict, lang)
-    }
-    return i18n as II18nEnv
-  }, [])
+export default function useI18nCore(presetDict: Dictionary, options: UseI18nOptions = {}): II18nEnv {
+  const { language, locale = {}, tinyI18n } = options
+  const i18n = React.useMemo<II18nEnv>(
+    () => {
+      const i18n = tinyI18n || createIsolateI18n()
+      for (const [lang, dict] of Object.entries(presetDict)) {
+        i18n.setDictionary(dict, lang)
+      }
+      return i18n as II18nEnv
+    },
+    [tinyI18n]
+  )
 
   // 先设置语言
   React.useMemo(
