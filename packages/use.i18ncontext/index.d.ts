@@ -1,19 +1,20 @@
 import * as React from 'react'
+import { Dictionary, UseI18nOptions } from '@rcp/use.i18n'
+export * from '@rcp/use.i18n'
 export declare const I18nContext: React.Context<any>
 export declare function I18nProvider({
   tinyI18n,
   children,
   ...props
-}: {
-  [x: string]: any
-  tinyI18n: any
-  children: any
+}: UseI18nOptions & {
+  children?: any
 }): JSX.Element
 export declare const I18nConsumer: React.ExoticComponent<React.ConsumerProps<any>>
-export declare const withTinyI18n: (
+export declare const withTinyI18n: <PropsType = any, RefType = any>(
   Component: any
 ) => {
-  new (props: Readonly<{}>): {
+  new <PropsType>(props: Readonly<{}>): {
+    originRef: React.RefObject<RefType>
     render(): JSX.Element
     context: any
     setState<K extends never>(
@@ -42,7 +43,8 @@ export declare const withTinyI18n: (
     componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void
     UNSAFE_componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void
   }
-  new (props: {}, context?: any): {
+  new <PropsType>(props: {}, context?: any): {
+    originRef: React.RefObject<RefType>
     render(): JSX.Element
     context: any
     setState<K extends never>(
@@ -74,4 +76,4 @@ export declare const withTinyI18n: (
   contextType?: React.Context<any>
 }
 export declare function useI18nContext(): any
-export declare function useI18n(presetDict: any, opts: any): import('@rcp/use.i18n').II18nEnv
+export default function useI18n(presetDict: Dictionary, opts?: UseI18nOptions): import('@rcp/use.i18n').II18nEnv

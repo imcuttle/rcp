@@ -47,6 +47,7 @@ export interface II18nEnv {
   extendDictionary: (dict: IDictMap, language?: string) => void
 }
 export interface II18nOptions {
+  tinyI18n?: II18nEnv
   localeKey?: string
   languageKey?: string
 }
@@ -56,6 +57,7 @@ export interface II18nOptions {
  * @param {string} language
  * @param {string} localeKey
  * @param {string} languageKey
+ * @param {string} tinyI18n
  * @return {(Component: React.ComponentClass) => II18nComponentClass<II18nProps & P, S>}
  * @example
  * \@i18n({
@@ -75,5 +77,5 @@ export interface II18nOptions {
 export default function i18n<P = II18nProps, S = any>(
   dict?: IDictMap | IDictGroupMap,
   language?: string,
-  { localeKey, languageKey }?: II18nOptions
+  { tinyI18n, localeKey, languageKey }?: II18nOptions
 ): (Component: import('react').ComponentClass<{}, any>) => II18nComponentClass<II18nProps & P, S>

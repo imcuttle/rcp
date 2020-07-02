@@ -66,7 +66,7 @@ export default function useI18nCore(presetDict: Dictionary, options: UseI18nOpti
   React.useMemo(
     () => {
       language && i18n.setLanguage(language)
-      locale && i18n.extendDictionary(locale)
+      locale && Object.keys(locale).length && i18n.extendDictionary(locale)
     },
     [language, locale, i18n]
   )
