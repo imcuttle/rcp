@@ -6,7 +6,7 @@
     "access": "public"
   },
   "dependencies": {
-    "tiny-i18n": "^1.1.2"
+    "tiny-i18n": "^2.0.3"
   },
   "license": "MIT",
   "scripts": {

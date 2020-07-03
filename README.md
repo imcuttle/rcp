@@ -61,10 +61,10 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
+- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
+- [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  
-- [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
-- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 
 
 ## Authors

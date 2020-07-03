@@ -1,9 +1,9 @@
 import * as React from 'react'
-import tinyI18n from 'tiny-i18n'
+import tinyI18n, { TinyI18n } from 'tiny-i18n'
 import useI18nCore, { Dictionary, UseI18nOptions } from '@rcp/use.i18n'
 
 export * from '@rcp/use.i18n'
-export const I18nContext = React.createContext(tinyI18n)
+export const I18nContext = React.createContext<TinyI18n>(tinyI18n)
 
 function useForceUpdate() {
   const [v, set] = React.useState(1)

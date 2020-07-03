@@ -7,7 +7,7 @@
 import displayName from '@rcp/util.displayname'
 import createLogger from '@rcp/util.createlogger'
 import isCompClass from '@rcp/util.iscompclass'
-import { createIsolateI18n } from 'tiny-i18n'
+import { createIsolateI18n, TinyI18n } from 'tiny-i18n'
 import * as each from 'lodash.foreach'
 import * as PropTypes from 'prop-types'
 import { ComponentState, ReactNode } from 'react'
@@ -57,32 +57,11 @@ export interface II18nComponent<P = II18nProps, S = any> extends React.Component
 }
 export interface II18nComponentClass<P = II18nProps, S = ComponentState> extends React.ComponentClass {
   new (props: P, context?: any): II18nComponent<P, S>
-  i18n: II18nEnv
-}
-
-/**
- * i18n: i18n,
- setDictionary: setDictionary,
- setLanguage: setLanguage,
- getCurrentLanguage: getCurrentLanguage,
- getDictionary: getDictionary,
- getLanguages: getLanguages,
- getWord: getWord,
- extendDictionary: extendDictionary
- */
-export interface II18nEnv {
-  i18n: (key: string, ...argv: any[]) => string
-  setDictionary: (dict: IDictMap, language?: string) => void
-  setLanguage: (language: string) => void
-  getCurrentLanguage: () => string
-  getDictionary: (language?: string) => IDictMap
-  getLanguages: () => string[]
-  getWord: (key: string, language?: string) => string
-  extendDictionary: (dict: IDictMap, language?: string) => void
+  i18n: TinyI18n
 }
 
 export interface II18nOptions {
-  tinyI18n?: II18nEnv
+  tinyI18n?: TinyI18n
   localeKey?: string
   languageKey?: string
 }
@@ -125,12 +104,12 @@ export default function i18n<P = II18nProps, S = any>(
     // @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/recompose/index.d.ts
     // @see https://www.zhihu.com/question/279911703
     // @i18n in ts
-    const i18nEnv: II18nEnv = tinyI18n
+    const i18nEnv: TinyI18n = tinyI18n
     initI18n.call(i18nEnv, { dict, language })
 
     class I18nComponent extends Component implements II18nComponent<II18nProps & P, S> {
       readonly props: II18nProps & P
-      static i18n: II18nEnv = i18nEnv
+      static i18n: TinyI18n = i18nEnv
       static displayName = `I18n_${displayName(Component)}`
       static propTypes = {
         [localeKey]: PropTypes.objectOf(PropTypes.string),
@@ -153,7 +132,7 @@ export default function i18n<P = II18nProps, S = any>(
         const locale = this.props[localeKey]
         const { i18n, getDictionary, setLanguage } = constructor.i18n
         if (locale) {
-          const tmp: II18nEnv = createIsolateI18n() as any
+          const tmp = createIsolateI18n()
           let lang = typeof language === 'string' ? language : undefined
           const currDict = getDictionary(lang)
           tmp.extendDictionary(currDict)
@@ -162,7 +141,7 @@ export default function i18n<P = II18nProps, S = any>(
         }
 
         if (typeof language === 'string') {
-          const tmp: II18nEnv = createIsolateI18n() as any
+          const tmp = createIsolateI18n()
           const langDict = getDictionary(language)
           tmp.extendDictionary(langDict, language)
           tmp.setLanguage(language)
