@@ -13,7 +13,7 @@
     "test": "npx jest",
     "dist": "tsc",
     "dev": "npm run dist -- -w",
-    "prepublishOnly": "npm run dist",
+    "prepublishOnly": "npm run dist && npm test",
     "version": "npm run doc",
     "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
   },

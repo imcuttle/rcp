@@ -11,7 +11,7 @@
     "dist": "tsc",
     "dev": "npm run dist -- -w",
     "version": "npm run doc",
-    "prepublishOnly": "npm run dist",
+    "prepublishOnly": "npm run dist && npm test",
     "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
   },
   "keywords": [
