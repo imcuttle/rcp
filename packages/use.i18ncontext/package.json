@@ -33,5 +33,6 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.4"
+  "version": "1.0.4",
+  "gitHead": "640a4a782c1bd8624dbb360528ed5a0ed4fe0cc1"
 }

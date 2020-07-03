@@ -73,6 +73,7 @@ export function useI18nContext() {
 export default function useI18n(presetDict: Dictionary, opts?: UseI18nOptions) {
   const tinyI18n = useI18nContext() || {}
   return useI18nCore(presetDict, {
+    // @ts-ignore
     tinyI18n: tinyI18n.origin || tinyI18n,
     ...opts
   })

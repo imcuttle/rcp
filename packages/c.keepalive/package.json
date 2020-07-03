@@ -36,5 +36,6 @@
   "dependencies": {
     "@rcp/util.displayname": "^1.0.9",
     "classnames": "^2.2.6"
-  }
+  },
+  "gitHead": "640a4a782c1bd8624dbb360528ed5a0ed4fe0cc1"
 }

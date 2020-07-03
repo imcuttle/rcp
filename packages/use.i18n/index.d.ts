@@ -3,24 +3,10 @@
  * @author imcuttle
  *
  */
-export declare type Locale = {
-  [key: string]: string
-}
-export declare type Dictionary = {
-  [language: string]: Locale
-}
-export interface II18nEnv {
-  i18n: (key: string, ...argv: any[]) => string
-  setDictionary: (dict: Locale, language?: string) => void
-  setLanguage: (language: string) => void
-  getCurrentLanguage: () => string
-  getDictionary: (language?: string) => Locale
-  getLanguages: () => string[]
-  getWord: (key: string, language?: string) => string
-  extendDictionary: (dict: Locale, language?: string) => void
-}
+import { TinyI18n, Dictionary, Locale } from 'tiny-i18n'
+export { Dictionary, Locale }
 export declare type UseI18nOptions = {
-  tinyI18n?: II18nEnv
+  tinyI18n?: TinyI18n
   language?: string
   locale?: Locale
 }
@@ -41,4 +27,4 @@ export declare type UseI18nOptions = {
  *   en: { name: 'Name' },
  * }, { locale: {name: 'Customized Name'} })
  */
-export default function useI18nCore(presetDict: Dictionary, options?: UseI18nOptions): II18nEnv
+export default function useI18nCore(presetDict: Dictionary, options?: UseI18nOptions): TinyI18n

@@ -3,6 +3,7 @@
  * @author imcuttle
  *
  */
+import { TinyI18n } from 'tiny-i18n'
 import { ComponentState } from 'react'
 export interface IDictMap {
   [key: string]: string
@@ -24,30 +25,10 @@ export interface II18nComponent<P = II18nProps, S = any> extends React.Component
 }
 export interface II18nComponentClass<P = II18nProps, S = ComponentState> extends React.ComponentClass {
   new (props: P, context?: any): II18nComponent<P, S>
-  i18n: II18nEnv
-}
-/**
- * i18n: i18n,
- setDictionary: setDictionary,
- setLanguage: setLanguage,
- getCurrentLanguage: getCurrentLanguage,
- getDictionary: getDictionary,
- getLanguages: getLanguages,
- getWord: getWord,
- extendDictionary: extendDictionary
- */
-export interface II18nEnv {
-  i18n: (key: string, ...argv: any[]) => string
-  setDictionary: (dict: IDictMap, language?: string) => void
-  setLanguage: (language: string) => void
-  getCurrentLanguage: () => string
-  getDictionary: (language?: string) => IDictMap
-  getLanguages: () => string[]
-  getWord: (key: string, language?: string) => string
-  extendDictionary: (dict: IDictMap, language?: string) => void
+  i18n: TinyI18n
 }
 export interface II18nOptions {
-  tinyI18n?: II18nEnv
+  tinyI18n?: TinyI18n
   localeKey?: string
   languageKey?: string
 }

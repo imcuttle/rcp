@@ -7,6 +7,8 @@
 import * as React from 'react'
 import { createIsolateI18n, TinyI18n, Dictionary, Locale } from 'tiny-i18n'
 
+export { Dictionary, Locale }
+
 export type UseI18nOptions = {
   tinyI18n?: TinyI18n
   language?: string

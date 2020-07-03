@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { TinyI18n } from 'tiny-i18n'
 import { Dictionary, UseI18nOptions } from '@rcp/use.i18n'
 export * from '@rcp/use.i18n'
-export declare const I18nContext: React.Context<any>
+export declare const I18nContext: React.Context<TinyI18n>
 export declare function I18nProvider({
   tinyI18n,
   children,
@@ -9,7 +10,7 @@ export declare function I18nProvider({
 }: UseI18nOptions & {
   children?: any
 }): JSX.Element
-export declare const I18nConsumer: React.ExoticComponent<React.ConsumerProps<any>>
+export declare const I18nConsumer: React.ExoticComponent<React.ConsumerProps<TinyI18n>>
 export declare const withTinyI18n: <PropsType = any, RefType = any>(
   Component: any
 ) => {
@@ -75,5 +76,5 @@ export declare const withTinyI18n: <PropsType = any, RefType = any>(
   }
   contextType?: React.Context<any>
 }
-export declare function useI18nContext(): any
-export default function useI18n(presetDict: Dictionary, opts?: UseI18nOptions): import('@rcp/use.i18n').II18nEnv
+export declare function useI18nContext(): TinyI18n
+export default function useI18n(presetDict: Dictionary, opts?: UseI18nOptions): TinyI18n
