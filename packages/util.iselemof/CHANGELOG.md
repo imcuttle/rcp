@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.3"></a>
+
+## [1.1.3](https://github.com/imcuttle/rcp/compare/@rcp/util.iselemof@1.1.2...@rcp/util.iselemof@1.1.3) (2020-07-04)
+
+### Bug Fixes
+
+- use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/imcuttle/rcp/compare/@rcp/util.iselemof@1.1.1...@rcp/util.iselemof@1.1.2) (2020-07-04)

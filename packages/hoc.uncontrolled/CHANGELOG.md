@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.6"></a>
+
+## [2.1.6](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.5...@rcp/hoc.uncontrolled@2.1.6) (2020-07-04)
+
+### Bug Fixes
+
+- use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
+
 <a name="2.1.5"></a>
 
 ## [2.1.5](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.4...@rcp/hoc.uncontrolled@2.1.5) (2020-07-04)

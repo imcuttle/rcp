@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.15"></a>
+
+## [1.0.15](https://github.com/imcuttle/rcp/compare/@rcp/hoc.mount@1.0.14...@rcp/hoc.mount@1.0.15) (2020-07-04)
+
+### Bug Fixes
+
+- use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
+
 <a name="1.0.14"></a>
 
 ## [1.0.14](https://github.com/imcuttle/rcp/compare/@rcp/hoc.mount@1.0.13...@rcp/hoc.mount@1.0.14) (2020-07-04)

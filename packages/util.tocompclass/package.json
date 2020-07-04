@@ -23,10 +23,10 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "dependencies": {
-    "@rcp/util.displayname": "^1.0.10",
-    "@rcp/util.iscompclass": "^1.0.10"
+    "@rcp/util.displayname": "^1.0.11",
+    "@rcp/util.iscompclass": "^1.0.11"
   },
   "devDependencies": {
     "@rcp/_types": "^1.0.7"

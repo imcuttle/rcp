@@ -6,6 +6,7 @@
 
 - should remove container firstly ([4e0d087](https://github.com/imcuttle/rcp/commit/4e0d087))
 - should remove container firstly ([8dfcc84](https://github.com/imcuttle/rcp/commit/8dfcc84))
+- use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
 
 ### Features
 

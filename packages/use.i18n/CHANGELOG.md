@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.10"></a>
+
+## [1.1.10](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.9...@rcp/use.i18n@1.1.10) (2020-07-04)
+
+### Bug Fixes
+
+- use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
+
 <a name="1.1.9"></a>
 
 ## [1.1.9](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.8...@rcp/use.i18n@1.1.9) (2020-07-04)
