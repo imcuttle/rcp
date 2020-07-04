@@ -12,7 +12,7 @@ module.exports = ({ _, name, description }) => {
     license: 'MIT',
     "module": "dist/es",
     "main": "dist/cjs/index.js",
-    "typings": "dist/es/index.d.js",
+    "typings": "dist/es/index.d.ts",
     "scripts": {
       "dist": "npm run dist:cjs && npm run dist:es",
       "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",

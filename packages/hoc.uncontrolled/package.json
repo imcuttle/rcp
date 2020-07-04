@@ -24,7 +24,7 @@
     "node": ">=6"
   },
   "main": "index.js",
-  "typings": "index.d.js",
+  "typings": "index.d.ts",
   "version": "2.1.6",
   "dependencies": {
     "@rcp/util.createlogger": "^1.1.2",

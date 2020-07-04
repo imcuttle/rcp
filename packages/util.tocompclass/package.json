@@ -22,7 +22,7 @@
     "node": ">=6"
   },
   "main": "index.js",
-  "typings": "index.d.js",
+  "typings": "index.d.ts",
   "version": "1.0.11",
   "dependencies": {
     "@rcp/util.displayname": "^1.0.11",
