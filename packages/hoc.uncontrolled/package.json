@@ -25,11 +25,11 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "dependencies": {
-    "@rcp/util.createlogger": "^1.1.3",
-    "@rcp/util.displayname": "^1.0.12",
-    "@rcp/util.iscompclass": "^1.0.12"
+    "@rcp/util.createlogger": "^1.1.4",
+    "@rcp/util.displayname": "^1.0.13",
+    "@rcp/util.iscompclass": "^1.0.13"
   },
   "gitHead": "c5b70e409b81139b22686bb20a37b60a5ae1c69a",
   "repository": {
