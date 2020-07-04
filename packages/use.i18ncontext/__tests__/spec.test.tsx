@@ -108,15 +108,15 @@ describe('useI18nContext', function() {
       )
     }
 
-    function OverrideView({ locale }: any) {
-      const { i18n } = useI18n(
+    function OverrideView({ locale, language }: any) {
+      const { i18n, getDataBase } = useI18n(
         {
           en: {
             name: 'Name from OverrideView',
             age: 'Age from OverrideView'
           }
         },
-        { locale }
+        { locale, language }
       )
       return (
         <h1>
@@ -152,6 +152,45 @@ describe('useI18nContext', function() {
         </App>
       )
       expect(wrapper.text()).toMatchInlineSnapshot(`"Name from OverrideView,Override Age_name,_age"`)
+    })
+
+    it('should render Nested', function() {
+      function OverrideView({ locale }: any) {
+        const { i18n, getDataBase } = useI18n(
+          {
+            en: {
+              name: 'Name from OverrideView',
+              age: 'Age from OverrideView'
+            }
+          },
+          { locale }
+        )
+        console.log(getDataBase())
+        return (
+          <h1>
+            {i18n('name')},{i18n('age')}
+          </h1>
+        )
+      }
+
+      let wrapper = mount(
+        <App>
+          <OverrideView />
+        </App>
+      )
+      expect(wrapper.text()).toMatchInlineSnapshot(`"Name,Override Age"`)
+
+      wrapper = mount(
+        <App>
+          <OverrideView locale={{ age: '_age' }} />
+        </App>
+      )
+      expect(wrapper.text()).toMatchInlineSnapshot(`"Name,_age"`)
+    })
+
+    it('should nested', function() {
+      const wrapper = mount(<OverrideView language={'en'} locale={{ age: '_age' }} />)
+      expect(wrapper.text()).toMatchInlineSnapshot(`"Name from OverrideView,_age"`)
     })
   })
 })

@@ -24,6 +24,17 @@ const wrapFn = (fn, forceUpdate) => {
   }
 }
 
+/**
+ * @public
+ * @param opts
+ * @param [opts.tinyI18n] {TinyI18n}
+ * @param [opts.language] {string}
+ * @param [opts.locale] {{}}
+ * @example
+ * <I18nProvider tinyI18n={tinyI18n} language="zh-cn">
+ *   {children}
+ * </I18nProvider>
+ */
 export function I18nProvider({ tinyI18n, children, ...props }: UseI18nOptions & { children?: any }) {
   const i18n = useI18nCore(
     {},
@@ -51,9 +62,29 @@ export function I18nProvider({ tinyI18n, children, ...props }: UseI18nOptions & 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
 }
 
+/**
+ * @public
+ * @example
+ * <I18nConsumer>
+ *   {tinyI18n => <h1>{tinyI18n.i18n('title')}</h1>}
+ * </I18nConsumer>
+ */
 export const I18nConsumer = I18nContext.Consumer
 
-export const withTinyI18n = function<PropsType = any, RefType = any>(Component) {
+/**
+ * @public
+ * @example
+ * @example
+ *
+ * class AppView extends React.Component {
+ *   render() {
+ *     const tinyI18n = this.props.tinyI18n;
+ *     return <h1>{tinyI18n.i18n('title')}</h1>
+ *   }
+ * }
+ * const App = withTinyI18n(AppView)
+ */
+export const withTinyI18n = function<PropsType = any & { tinyI18n: TinyI18n }, RefType = any>(Component) {
   return class WithTinyI18n<PropsType> extends React.Component {
     originRef = React.createRef<RefType>()
     render() {
@@ -66,15 +97,42 @@ export const withTinyI18n = function<PropsType = any, RefType = any>(Component) 
   }
 }
 
+/**
+ * @public
+ * @example
+ * function App() {
+ *   const tinyI18n = useI18nContext()
+ * }
+ */
 export function useI18nContext() {
   return React.useContext(I18nContext)
 }
 
-export default function useI18n(presetDict: Dictionary, opts?: UseI18nOptions) {
-  const tinyI18n = useI18nContext() || {}
+/**
+ * @public
+ * @example
+ * function App() {
+ *   const tinyI18n = useI18n({
+ *     'zh-cn': {
+ *       hi: '你好'
+ *     }
+ *   })
+ *
+ *   return <h1>{tinyI18n.i18n('title')}</h1>
+ * }
+ */
+export default function useI18n(presetDict: Dictionary, opts: UseI18nOptions = {}) {
+  const tinyI18n = useI18nContext()
+
+  const currentLocale = tinyI18n.getDictionary()
+
   return useI18nCore(presetDict, {
     // @ts-ignore
     tinyI18n: tinyI18n.origin || tinyI18n,
-    ...opts
+    ...opts,
+    locale: {
+      ...currentLocale,
+      ...opts.locale
+    }
   })
 }
