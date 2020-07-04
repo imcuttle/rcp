@@ -26,7 +26,7 @@ const wrapFn = (fn, forceUpdate) => {
 
 /**
  * @public
- * @param opts
+ * @param opts {{}}
  * @param [opts.tinyI18n] {TinyI18n}
  * @param [opts.language] {string}
  * @param [opts.locale] {{}}
@@ -74,8 +74,6 @@ export const I18nConsumer = I18nContext.Consumer
 /**
  * @public
  * @example
- * @example
- *
  * class AppView extends React.Component {
  *   render() {
  *     const tinyI18n = this.props.tinyI18n;
