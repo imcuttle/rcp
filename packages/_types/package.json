@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "dist": "tsc",
+    "dist": "tsc || exit 0",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm run dist && npm run doc",
     "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/react": "^16.4.13"
   },
-  "gitHead": "61d21542c15237221f078f8331e8c2cc960509c0",
+  "gitHead": "c5b70e409b81139b22686bb20a37b60a5ae1c69a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"

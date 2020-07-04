@@ -36,7 +36,7 @@
     "lodash.foreach": "^4.5.0",
     "tiny-i18n": "^2.0.3"
   },
-  "gitHead": "67169750a161d406d973f1f7d73a6b3231060a54",
+  "gitHead": "c5b70e409b81139b22686bb20a37b60a5ae1c69a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"
