@@ -3,32 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.5"></a>
+
+## [2.1.5](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.4...@rcp/hoc.uncontrolled@2.1.5) (2020-07-04)
+
+**Note:** Version bump only for package @rcp/hoc.uncontrolled
+
 <a name="2.1.4"></a>
+
 ## [2.1.4](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.3...@rcp/hoc.uncontrolled@2.1.4) (2020-04-13)
 
 **Note:** Version bump only for package @rcp/hoc.uncontrolled
 
-
-
-
-
 <a name="2.1.3"></a>
+
 ## [2.1.3](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.2...@rcp/hoc.uncontrolled@2.1.3) (2019-12-11)
 
 **Note:** Version bump only for package @rcp/hoc.uncontrolled
 
-
-
-
-
 <a name="2.1.2"></a>
+
 ## [2.1.2](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.1...@rcp/hoc.uncontrolled@2.1.2) (2019-12-07)
 
 **Note:** Version bump only for package @rcp/hoc.uncontrolled
-
-
-
-
 
 <a name="2.1.1"></a>
 

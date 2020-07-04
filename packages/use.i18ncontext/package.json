@@ -19,7 +19,7 @@
     "url": "git+https://github.com/imcuttle/rcp.git"
   },
   "dependencies": {
-    "@rcp/use.i18n": "^1.1.8"
+    "@rcp/use.i18n": "^1.1.9"
   },
   "keywords": [
     "imcuttle",
@@ -33,6 +33,6 @@
   },
   "main": "index.js",
   "typings": "index.d.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "gitHead": "640a4a782c1bd8624dbb360528ed5a0ed4fe0cc1"
 }
