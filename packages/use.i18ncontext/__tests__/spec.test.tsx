@@ -10,7 +10,7 @@ import { UseI18nOptions } from '@rcp/use.i18n'
 import useI18n, { I18nProvider, I18nConsumer, withTinyI18n, useI18nContext } from '../index'
 
 function Demo({ language = 'zh-cn', locale }: UseI18nOptions) {
-  const { i18n } = useI18n(
+  const { i18n, getDataBase, getCurrentLanguage } = useI18n(
     {
       'zh-cn': {
         title: '标题',
@@ -26,7 +26,6 @@ function Demo({ language = 'zh-cn', locale }: UseI18nOptions) {
       locale
     }
   )
-
   return <p>{i18n('content', i18n('title'))}</p>
 }
 
@@ -69,21 +68,25 @@ describe('useI18nContext', function() {
   })
 
   describe('withContext', function() {
-    const tinyI18n = createIsolateI18n()
-    tinyI18n.setDictionary(
-      {
-        name: '姓名',
-        age: '年纪'
-      },
-      'zh'
-    )
-    tinyI18n.setDictionary(
-      {
-        name: 'Name',
-        age: 'Age'
-      },
-      'en'
-    )
+    let tinyI18n
+
+    beforeEach(() => {
+      tinyI18n = createIsolateI18n()
+      tinyI18n.setDictionary(
+        {
+          name: '姓名',
+          age: '年纪'
+        },
+        'zh'
+      )
+      tinyI18n.setDictionary(
+        {
+          name: 'Name',
+          age: 'Age'
+        },
+        'en'
+      )
+    })
 
     function App({ children, language = 'en' }) {
       return (
@@ -141,9 +144,7 @@ describe('useI18nContext', function() {
           <View />
         </App>
       )
-      expect(wrapper.text()).toMatchInlineSnapshot(
-        `"Name from OverrideView,Age from OverrideViewName from OverrideView,Age from OverrideView"`
-      )
+      expect(wrapper.text()).toMatchInlineSnapshot(`"Name,Override AgeName,Override Age"`)
 
       wrapper = mount(
         <App>
@@ -151,7 +152,7 @@ describe('useI18nContext', function() {
           <OverrideView locale={{ name: '_name', age: '_age' }} />
         </App>
       )
-      expect(wrapper.text()).toMatchInlineSnapshot(`"Name from OverrideView,Override Age_name,_age"`)
+      expect(wrapper.text()).toMatchInlineSnapshot(`"Name,Override Age_name,_age"`)
     })
 
     it('should render Nested', function() {
@@ -165,7 +166,6 @@ describe('useI18nContext', function() {
           },
           { locale }
         )
-        console.log(getDataBase())
         return (
           <h1>
             {i18n('name')},{i18n('age')}

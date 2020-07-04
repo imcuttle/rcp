@@ -124,7 +124,7 @@ export function useI18nContext() {
 export default function useI18n(presetDict: Dictionary, opts: UseI18nOptions = {}) {
   const tinyI18n = useI18nContext()
 
-  const currentLocale = tinyI18n.getDictionary()
+  const currentLocale = tinyI18n.getDictionary(opts.language == null ? void 0 : opts.language)
 
   return useI18nCore(presetDict, {
     // @ts-ignore

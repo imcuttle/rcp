@@ -30,7 +30,7 @@
   "dependencies": {
     "@rcp/util.iscompclass": "^1.0.10"
   },
-  "gitHead": "61d21542c15237221f078f8331e8c2cc960509c0",
+  "gitHead": "67169750a161d406d973f1f7d73a6b3231060a54",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"
