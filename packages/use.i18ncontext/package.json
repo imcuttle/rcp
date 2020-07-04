@@ -6,9 +6,14 @@
     "access": "public"
   },
   "license": "MIT",
+  "module": "dist/es",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/es/index.d.js",
   "scripts": {
+    "dist": "npm run dist:cjs && npm run dist:es",
+    "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",
+    "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
     "test": "npx jest",
-    "dist": "tsc",
     "dev": "npm run dist -- -w",
     "prepublishOnly": "npm run dist && npm test",
     "version": "npm run doc",
@@ -31,8 +36,6 @@
   "engines": {
     "node": ">=6"
   },
-  "main": "index.js",
-  "typings": "index.d.js",
   "version": "1.0.8",
   "gitHead": "67169750a161d406d973f1f7d73a6b3231060a54"
 }

@@ -7,7 +7,8 @@
     "outDir": "dist",
     "jsx": "react",
     "lib": ["dom", "es2015", "es2017"],
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
   },
   "include": ["./packages/**/*"],
   "exclude": ["node_modules", "test", "__tests__"]

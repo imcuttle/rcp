@@ -10,9 +10,14 @@ module.exports = ({ _, name, description }) => {
       access: 'public'
     },
     license: 'MIT',
-    scripts: {
+    "module": "dist/es",
+    "main": "dist/cjs/index.js",
+    "typings": "dist/es/index.d.js",
+    "scripts": {
+      "dist": "npm run dist:cjs && npm run dist:es",
+      "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",
+      "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
       test: 'npx jest',
-      dist: 'tsc',
       dev: 'npm run dist -- -w',
       prepublishOnly: 'npm run dist',
       version: 'npm run doc',
@@ -26,8 +31,6 @@ module.exports = ({ _, name, description }) => {
     engines: {
       node: '>=6'
     },
-    main: 'index.js',
-    typings: 'index.d.js',
     version: '1.0.0'
   }
   if (isComponent) {

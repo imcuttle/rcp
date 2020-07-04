@@ -34,6 +34,7 @@ module.exports = edam => {
 
       const move = {
         'gitignore': '.gitignore',
+        'npmignore': '.npmignore',
         'package.json.js': 'package.json'
       }
 
