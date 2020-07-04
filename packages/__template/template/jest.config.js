@@ -10,5 +10,6 @@ module.exports = {
   ...base,
   name: require('./package').name,
   displayName: require('./package').name,
+  testMatch: [`${__dirname}/__tests__/**/*.{spec,test}.ts{x,}`],
   rootDir: "../..",
 };
