@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.15"></a>
+
+## [1.1.15](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.14...@rcp/use.i18n@1.1.15) (2020-07-05)
+
+### Bug Fixes
+
+- use extendDictionary ([330edf0](https://github.com/imcuttle/rcp/commit/330edf0))
+
 <a name="1.1.14"></a>
 
 ## [1.1.14](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.13...@rcp/use.i18n@1.1.14) (2020-07-04)

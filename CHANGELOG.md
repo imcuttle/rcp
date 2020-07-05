@@ -1,11 +1,12 @@
 <a name="1.0.0"></a>
 
-# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2020-07-04)
+# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2020-07-05)
 
 ### Bug Fixes
 
 - should remove container firstly ([4e0d087](https://github.com/imcuttle/rcp/commit/4e0d087))
 - should remove container firstly ([8dfcc84](https://github.com/imcuttle/rcp/commit/8dfcc84))
+- use extendDictionary ([330edf0](https://github.com/imcuttle/rcp/commit/330edf0))
 - use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
 
 ### Features

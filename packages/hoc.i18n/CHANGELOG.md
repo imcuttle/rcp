@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.28"></a>
+
+## [1.0.28](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.27...@rcp/hoc.i18n@1.0.28) (2020-07-05)
+
+### Bug Fixes
+
+- use extendDictionary ([330edf0](https://github.com/imcuttle/rcp/commit/330edf0))
+
 <a name="1.0.27"></a>
 
 ## [1.0.27](https://github.com/imcuttle/rcp/compare/@rcp/hoc.i18n@1.0.26...@rcp/hoc.i18n@1.0.27) (2020-07-04)
