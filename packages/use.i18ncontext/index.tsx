@@ -96,7 +96,7 @@ export const I18nConsumer = I18nContext.Consumer
  * }
  * const App = withTinyI18n(AppView)
  */
-export const withTinyI18n = function<PropsType = never, RefType = never>(
+export const withTinyI18n = function<PropsType = any, RefType = any>(
   Component
 ): React.ComponentClass<PropsType & { tinyI18n: TinyI18n }, RefType> {
   Component = toCompClass(Component)
