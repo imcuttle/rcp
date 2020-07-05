@@ -42,7 +42,7 @@ function initI18n({ language, dict }: II18n = {}) {
         return
       }
 
-      setDictionary(words, lang)
+      extendDictionary(words, lang)
     })
   }
 }

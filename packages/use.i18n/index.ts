@@ -38,7 +38,7 @@ export default function useI18nCore(presetDict: Dictionary, options: UseI18nOpti
     () => {
       const i18n = tinyI18n || createIsolateI18n()
       for (const [lang, dict] of Object.entries(presetDict)) {
-        i18n.setDictionary(dict, lang)
+        i18n.extendDictionary(dict, lang)
       }
       return i18n
     },
