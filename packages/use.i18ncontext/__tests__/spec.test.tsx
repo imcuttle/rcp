@@ -9,6 +9,14 @@ import { createIsolateI18n } from 'tiny-i18n'
 import { UseI18nOptions } from '@rcp/use.i18n'
 import useI18n, { I18nProvider, I18nConsumer, withTinyI18n, useI18nContext } from '../index'
 
+@withTinyI18n
+class View extends React.Component<any & { tinyI18n: any }> {
+  render(): React.ReactNode {
+    this.props.tinyI18n
+    return super.render()
+  }
+}
+
 function Demo({ language = 'zh-cn', locale }: UseI18nOptions) {
   const { i18n, getDataBase, getCurrentLanguage } = useI18n(
     {
