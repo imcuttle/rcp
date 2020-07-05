@@ -3,9 +3,10 @@ import tinyI18n, { TinyI18n } from 'tiny-i18n'
 import useI18nCore, { Dictionary, UseI18nOptions } from '@rcp/use.i18n'
 
 export * from '@rcp/use.i18n'
+import toCompClass from '@rcp/util.tocompclass'
 export const I18nContext = React.createContext<TinyI18n>(tinyI18n)
 
-function useForceUpdate() {
+function useForceUpdate(): [any, () => void] {
   const [v, set] = React.useState(1)
   const update = React.useCallback(() => {
     set(v => v + 1)
@@ -28,6 +29,7 @@ const wrapFn = (fn, forceUpdate) => {
  * @public
  * @param opts {{}}
  * @param [opts.tinyI18n] {TinyI18n}
+ * @param [opts.onUpdate] {() => void}
  * @param [opts.language] {string}
  * @param [opts.locale] {{}}
  * @example
@@ -35,7 +37,12 @@ const wrapFn = (fn, forceUpdate) => {
  *   {children}
  * </I18nProvider>
  */
-export function I18nProvider({ tinyI18n, children, ...props }: UseI18nOptions & { children?: any }) {
+export function I18nProvider({
+  onUpdate,
+  tinyI18n,
+  children,
+  ...props
+}: UseI18nOptions & { children?: any; onUpdate?: () => void }) {
   const i18n = useI18nCore(
     {},
     {
@@ -44,7 +51,14 @@ export function I18nProvider({ tinyI18n, children, ...props }: UseI18nOptions & 
     }
   )
 
-  const [v, forceUpdate] = useForceUpdate()
+  const [v, _forceUpdate] = useForceUpdate()
+  const forceUpdate = React.useCallback(
+    () => {
+      _forceUpdate()
+      onUpdate && onUpdate()
+    },
+    [_forceUpdate]
+  )
 
   const value = React.useMemo(
     () => {
@@ -82,8 +96,11 @@ export const I18nConsumer = I18nContext.Consumer
  * }
  * const App = withTinyI18n(AppView)
  */
-export const withTinyI18n = function<PropsType = any & { tinyI18n: TinyI18n }, RefType = any>(Component) {
-  return class WithTinyI18n<PropsType> extends React.Component {
+export const withTinyI18n = function<PropsType = any & { tinyI18n: TinyI18n }, RefType = any>(
+  Component
+): React.ComponentClass<PropsType> {
+  Component = toCompClass(Component)
+  return class WithTinyI18n extends React.Component<PropsType> {
     originRef = React.createRef<RefType>()
     render() {
       return (
