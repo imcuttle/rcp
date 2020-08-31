@@ -59,8 +59,8 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
-- [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
 - [@rcp/use.uncontrolled](packages/use.uncontrolled) - Make props.value piped to state, and exposes `onChange`, make react component is **uncontrolled & controlled**  
+- [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
