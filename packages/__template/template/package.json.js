@@ -19,8 +19,8 @@ module.exports = ({ _, name, description }) => {
       "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
       test: 'npx jest',
       dev: 'npm run dist -- -w',
-      prepublishOnly: 'npm run dist',
-      version: 'npm run doc',
+      // prepublishOnly: 'npm run dist',
+      version: 'npm run dist && npm run doc',
       doc: 'documentation --markdown-toc=false readme dist/es/index.js -a public -s "API" && git add README.md'
     },
     repository: {
