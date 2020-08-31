@@ -21,7 +21,7 @@ module.exports = ({ _, name, description }) => {
       dev: 'npm run dist -- -w',
       prepublishOnly: 'npm run dist',
       version: 'npm run doc',
-      doc: 'documentation --markdown-toc=false readme index.js -a public -s "API" && git add README.md'
+      doc: 'documentation --markdown-toc=false readme dist/es/index.js -a public -s "API" && git add README.md'
     },
     repository: {
       type: 'git',
