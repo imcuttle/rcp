@@ -9,7 +9,7 @@ import isComponentClass from '@rcp/util.iscompclass'
 import displayName from '@rcp/util.displayname'
 import createLogger from '@rcp/util.createlogger'
 
-const logger = createLogger(require('./package.json').name)
+const logger = createLogger('@rcp/hoc.uncontrolled')
 
 function getDefaultName(name: string = '') {
   return 'default' + name[0].toUpperCase() + name.slice(1)
