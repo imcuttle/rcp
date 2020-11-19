@@ -28,7 +28,7 @@
     "@rcp/util.displayname": "^1.0.14",
     "@rcp/util.tocompclass": "^1.0.14"
   },
-  "gitHead": "c5b70e409b81139b22686bb20a37b60a5ae1c69a",
+  "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"
