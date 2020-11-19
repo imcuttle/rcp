@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.5"></a>
+## [1.1.5](https://github.com/imcuttle/rcp/compare/@rcp/util.createlogger@1.1.4...@rcp/util.createlogger@1.1.5) (2020-11-19)
+
+**Note:** Version bump only for package @rcp/util.createlogger
+
+
+
+
+
 <a name="1.1.4"></a>
 
 ## [1.1.4](https://github.com/imcuttle/rcp/compare/@rcp/util.createlogger@1.1.3...@rcp/util.createlogger@1.1.4) (2020-07-04)

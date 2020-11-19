@@ -32,9 +32,9 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "dependencies": {
-    "@rcp/util.displayname": "^1.0.13",
+    "@rcp/util.displayname": "^1.0.14",
     "classnames": "^2.2.6"
   },
   "gitHead": "c5b70e409b81139b22686bb20a37b60a5ae1c69a"

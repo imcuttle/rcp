@@ -23,38 +23,41 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Parameters
 
-- `values` {T\[]}
-- `setValues` {(values: T\[]) => void}
-- `remove` {(value: T) => void}
-- `add` {(value: T) => void}
-- `toggle` {(value: T) => void}
-- `indexOf` {(value: T) => number}
-- `has` {(value: T) => boolean}
+-   `values`  {T\[]}
+-   `setValues`  {(values: T\[]) => void}
+-   `remove`  {(value: T) => void}
+-   `add`  {(value: T) => void}
+-   `toggle`  {(value: T) => void}
+-   `indexOf`  {(value: T) => number}
+-   `has`  {(value: T) => boolean}
 
 ### useValuesHelper
 
 #### Parameters
 
-- `stateValues` {T\[]}
-- `setValues` {(values: T\[]) => void}
+-   `stateValues`  {T\[]}
+-   `setValues`  {(values: T\[]) => void}
 
-Returns **[ValuesHelper](#valueshelper)**
+Returns **[ValuesHelper](#valueshelper)** 
 
 ### useValuesState
 
 #### Parameters
 
-- `values` {any\[]}
+-   `values`  {any\[]}
 
 #### Examples
 
 ```javascript
-const { values, add, remove } = useValuesState([])
+import useValuesState from '@rcp/use.valuesstate'
 
-return <button onClick={() => add('something')}>Add</button>
+function App() {
+   const {values, add, remove} = useValuesState([])
+   return <button onClick={() => add('something')}>Add</button>
+}
 ```
 
-Returns **[ValuesHelper](#valueshelper)**
+Returns **[ValuesHelper](#valueshelper)** 
 
 ## Related
 

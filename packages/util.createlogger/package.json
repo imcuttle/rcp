@@ -24,7 +24,7 @@
   "main": "node.js",
   "browser": "browser.js",
   "typings": "node.d.ts",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "dependencies": {
     "debug": "^3.1.0",
     "log-symbols": "^2.2.0"
