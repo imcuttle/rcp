@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.18"></a>
+## [1.0.18](https://github.com/imcuttle/rcp/compare/@rcp/use.i18ncontext@1.0.17...@rcp/use.i18ncontext@1.0.18) (2020-11-19)
+
+**Note:** Version bump only for package @rcp/use.i18ncontext
+
+
+
+
+
 <a name="1.0.17"></a>
 ## [1.0.17](https://github.com/imcuttle/rcp/compare/@rcp/use.i18ncontext@1.0.16...@rcp/use.i18ncontext@1.0.17) (2020-11-19)
 

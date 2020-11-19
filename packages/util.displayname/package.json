@@ -26,9 +26,9 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "dependencies": {
-    "@rcp/util.iscompclass": "^1.0.14"
+    "@rcp/util.iscompclass": "^1.0.15"
   },
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
   "repository": {

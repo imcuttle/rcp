@@ -24,15 +24,15 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "peerDependencies": {
     "prop-types": ">=15.0.0",
     "react": ">=15.0.0"
   },
   "dependencies": {
-    "@rcp/util.createlogger": "^1.1.5",
-    "@rcp/util.displayname": "^1.0.14",
-    "@rcp/util.iscompclass": "^1.0.14",
+    "@rcp/util.createlogger": "^1.1.6",
+    "@rcp/util.displayname": "^1.0.15",
+    "@rcp/util.iscompclass": "^1.0.15",
     "lodash.foreach": "^4.5.0",
     "tiny-i18n": "^2.0.3"
   },
