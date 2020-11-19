@@ -3,34 +3,34 @@
  * @author imcuttle
  *
  */
-import { TinyI18n } from 'tiny-i18n'
-import { ComponentState } from 'react'
+import { TinyI18n } from 'tiny-i18n';
+import { ComponentState } from 'react';
 export interface IDictMap {
-  [key: string]: string
+    [key: string]: string;
 }
 export interface IDictGroupMap {
-  [lang: string]: IDictMap
+    [lang: string]: IDictMap;
 }
 export interface II18n {
-  language?: string
-  dict?: IDictMap | IDictGroupMap
+    language?: string;
+    dict?: IDictMap | IDictGroupMap;
 }
 export interface II18nProps {
-  language?: string
-  locale?: IDictMap
+    language?: string;
+    locale?: IDictMap;
 }
 export interface II18nComponent<P = II18nProps, S = any> extends React.Component {
-  i: Function
-  readonly props: P
+    i: Function;
+    readonly props: P;
 }
 export interface II18nComponentClass<P = II18nProps, S = ComponentState> extends React.ComponentClass {
-  new (props: P, context?: any): II18nComponent<P, S>
-  i18n: TinyI18n
+    new (props: P, context?: any): II18nComponent<P, S>;
+    i18n: TinyI18n;
 }
 export interface II18nOptions {
-  tinyI18n?: TinyI18n
-  localeKey?: string
-  languageKey?: string
+    tinyI18n?: TinyI18n;
+    localeKey?: string;
+    languageKey?: string;
 }
 /**
  *
@@ -55,8 +55,4 @@ export interface II18nOptions {
  *    }
  * }
  */
-export default function i18n<P = II18nProps, S = any>(
-  dict?: IDictMap | IDictGroupMap,
-  language?: string,
-  { tinyI18n, localeKey, languageKey }?: II18nOptions
-): (Component: import('react').ComponentClass<{}, any>) => II18nComponentClass<II18nProps & P, S>
+export default function i18n<P = II18nProps, S = any>(dict?: IDictMap | IDictGroupMap, language?: string, { tinyI18n, localeKey, languageKey }?: II18nOptions): (Component: import("react").ComponentClass<{}, any>) => II18nComponentClass<II18nProps & P, S>;

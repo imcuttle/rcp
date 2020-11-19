@@ -16,3 +16,5 @@ packages/*/**/*.js.map
 !/packages/__template/index.js
 coverage/
 **/etc/
+
+es6/

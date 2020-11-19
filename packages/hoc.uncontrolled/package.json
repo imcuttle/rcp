@@ -8,8 +8,10 @@
   "license": "MIT",
   "scripts": {
     "test": "npx jest",
-    "dist": "tsc",
-    "dev": "npm run dist -- -w",
+    "dist": "run-p --print-label \"dist:**\"",
+    "dist:es5": "tsc $TSC_OPTIONS --target es5",
+    "dist:es6": "tsc $TSC_OPTIONS --target es6 --outDir es6",
+    "dev": "TSC_OPTIONS=-w npm run dist",
     "prepublishOnly": "npm run dist && npm test",
     "version": "npm run doc",
     "doc": "documentation --markdown-toc=false readme index.js -a public -s \"API\" && git add README.md"
@@ -35,5 +37,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

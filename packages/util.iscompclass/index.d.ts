@@ -9,7 +9,7 @@
  *
  * isComponentInstance(View.prototype)
  */
-export declare function isComponentInstance(instance: any): boolean
+export declare function isComponentInstance(instance: any): boolean;
 /**
  * Determine react component class
  * @public
@@ -17,4 +17,4 @@ export declare function isComponentInstance(instance: any): boolean
  * @param component {any}
  * @return {boolean}
  */
-export default function isComponentClass(component: any): boolean
+export default function isComponentClass(component: any): boolean;
