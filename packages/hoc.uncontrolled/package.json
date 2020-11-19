@@ -10,7 +10,7 @@
     "test": "npx jest",
     "dist": "run-p --print-label \"dist:**\"",
     "dist:es5": "tsc $TSC_OPTIONS --target es5",
-    "dist:es6": "tsc $TSC_OPTIONS --target es6 --outDir es6",
+    "dist:es6": "rm -rf es6 && tsc $TSC_OPTIONS --target es6 --outDir es6",
     "dev": "TSC_OPTIONS=-w npm run dist",
     "prepublishOnly": "npm run dist && npm test",
     "version": "npm run doc",
