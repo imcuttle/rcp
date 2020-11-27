@@ -44,12 +44,12 @@ Array [
   it('values', () => {
     const { result } = renderHook(() => useValuesState([1, 2, 3]))
     expect(result.current.values).toMatchInlineSnapshot(`
-      Array [
-        1,
-        2,
-        3,
-      ]
-    `)
+Array [
+  1,
+  2,
+  3,
+]
+`)
   })
 
   it('setValues', () => {

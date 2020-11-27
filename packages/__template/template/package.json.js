@@ -24,6 +24,7 @@ module.exports = ({ _, name, description }) => {
       doc: 'documentation --markdown-toc=false readme dist/es/index.js -a public -s "API" && git add README.md'
     },
     repository: {
+      directory: 'packages/' + name,
       type: 'git',
       url: 'git+https://github.com/imcuttle/rcp.git'
     },

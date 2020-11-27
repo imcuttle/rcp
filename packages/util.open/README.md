@@ -1,0 +1,34 @@
+# @rcp/util.open
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/util.open.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/util.open)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/util.open.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/util.open)
+
+Open react element standalone
+
+## Installation
+
+```bash
+npm install @rcp/util.open
+# or use yarn
+yarn add @rcp/util.open
+```
+
+## Usage
+
+```javascript
+import open from '@rcp/util.open'
+
+
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong06@meituan.com">yucong06@meituan.com</a>.
+
+## License
+
+MIT

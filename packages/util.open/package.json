@@ -1,0 +1,44 @@
+{
+  "name": "@rcp/util.open",
+  "author": "余聪",
+  "description": "Open react element standalone",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "module": "dist/es",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/es/index.d.ts",
+  "scripts": {
+    "dist": "npm run dist:cjs && npm run dist:es",
+    "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",
+    "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
+    "test": "npx jest",
+    "dev": "npm run dist -- -w",
+    "version": "npm run dist && npm run doc",
+    "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md"
+  },
+  "repository": {
+    "directory": "packages/util.open",
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "keywords": [
+    "余聪",
+    "util",
+    "open",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "@rcp/util.createmount": "^1.0.16",
+    "lazy-value": "^2.0.0"
+  },
+  "devDependencies": {
+    "p-state": "^0.1.1"
+  }
+}
