@@ -7,7 +7,7 @@ export function createOpenReactStandalone({className, ...opts}: { className?: st
   const center = createMount(opts)
 
   let _container
-  const getContainer = lazy(
+  let createGetContainer = () => lazy(
     () => {
       const div = document.createElement('div')
       document.body.appendChild(div)
@@ -20,6 +20,7 @@ export function createOpenReactStandalone({className, ...opts}: { className?: st
       return div
     }
   )
+  let getContainer = createGetContainer()
 
   return Object.assign((createElement: (close: (result?: any) => void) => ReactElement) => {
     let resolve: Function
@@ -43,6 +44,7 @@ export function createOpenReactStandalone({className, ...opts}: { className?: st
     remove: () => {
       if (_container) {
         _container.remove()
+        getContainer = createGetContainer()
       }
     }
   })

@@ -1,0 +1,53 @@
+{
+  "name": "@rcp/c.prompt",
+  "author": "余聪",
+  "description": "Advanced React router prompt support beforeunload",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "module": "dist/es",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/es/index.d.ts",
+  "scripts": {
+    "dist": "npm run dist:cjs && npm run dist:es",
+    "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",
+    "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
+    "test": "npx jest",
+    "dev": "npm run dist -- -w",
+    "version": "npm run dist && npm run doc",
+    "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md",
+    "example": "webpack "
+  },
+  "repository": {
+    "directory": "packages/c.prompt",
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "keywords": [
+    "余聪",
+    "c",
+    "prompt",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/history": "^4.7.8",
+    "@types/react-router": "^5.1.8",
+    "history": "^4.10.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "peerDependencies": {
+    "history": "^4",
+    "react-router": ">=5"
+  },
+  "dependencies": {
+    "@rcp/util.open": "^1.0.1",
+    "lodash.isequal": "^4.5.0"
+  }
+}
