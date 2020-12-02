@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2020-11-27)
+# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2020-12-02)
 
 
 ### Bug Fixes
