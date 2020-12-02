@@ -1,9 +1,9 @@
 import * as H from 'history'
 import {ReactElement, RefObject} from 'react'
 import * as React from 'react'
-import {useHistory} from 'react-router'
+import {useHistory} from 'react-router-dom'
 import * as isEqual from 'lodash.isequal'
-import { createOpenReactStandalone } from '@rcp/util.open/index'
+import { createOpenReactStandalone } from '@rcp/util.open'
 
 const openReactStandalone = createOpenReactStandalone({ className: 'rcp-prompt-mount-container' })
 
