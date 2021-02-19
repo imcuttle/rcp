@@ -6,13 +6,21 @@
 
 import * as React from 'react'
 
+const defaultEq = (a, b) => a === b
+
 export function useUncontrolledCore<T = any>(
   propValue?: T,
   {
     initialValue = propValue,
-    useEffect = React.useEffect,
+    useEffect = React.useLayoutEffect,
+    eq = defaultEq,
     onChange
-  }: { initialValue?: T; useEffect?: typeof React.useEffect; onChange?: (value: T) => void } = {}
+  }: {
+    eq?: (a: T, b: T) => boolean
+    initialValue?: T
+    useEffect?: typeof React.useEffect
+    onChange?: (value: T) => void
+  } = {}
 ): [T | undefined, (newValue: ((value: T) => T) | T) => void] {
   const [value, setStateValue] = React.useState(initialValue)
   const setValueFinal = React.useCallback(
@@ -20,22 +28,25 @@ export function useUncontrolledCore<T = any>(
       if (typeof newValue === 'function') {
         newValue = newValue(value)
       }
-      if (value === newValue) {
+      if (eq(value, newValue)) {
         return
       }
       setStateValue(newValue)
       onChange && onChange(newValue)
     },
-    [value, onChange, setStateValue]
+    [value, eq, onChange, setStateValue]
   )
+
+  const fnRef = React.useRef(setValueFinal)
+  fnRef.current = setValueFinal
 
   useEffect(
     () => {
       if (typeof propValue !== 'undefined') {
-        setValueFinal(propValue)
+        fnRef.current(propValue)
       }
     },
-    [propValue, setValueFinal]
+    [propValue]
   )
 
   return [value, setValueFinal]
@@ -48,6 +59,7 @@ export function useUncontrolledCore<T = any>(
  * @param [defaultValue] {T} - Initialize value firstly
  * @param [onChange] {(value: T) => void} - Bind `onChange` handler when value updating
  * @param [useEffect] {typeof React.useLayoutEffect}
+ * @param [eq] {(a: T, b: T) => boolean}
  * @returns {Array} `[T, ((value: T) => T | T) => void]`
  * @example
  * function Input({value, onChangeValue, defaultValue}) {
@@ -60,12 +72,14 @@ export default function useUncontrolled<T = any>({
   value,
   defaultValue,
   onChange,
-  useEffect = React.useLayoutEffect
+  useEffect = React.useLayoutEffect,
+  eq
 }: {
   useEffect?: typeof React.useEffect
   value?: T
   defaultValue?: T
   onChange?: (value: T) => void
+  eq?: (a: T, b: T) => boolean
 }) {
   let initialValue = value
   if (defaultValue) {
@@ -73,6 +87,7 @@ export default function useUncontrolled<T = any>({
   }
 
   return useUncontrolledCore<T>(value, {
+    eq,
     initialValue,
     useEffect,
     onChange

@@ -1,4 +1,4 @@
-import useUncontrolled from '..'
+import useUncontrolled from '../index'
 import * as TestRenderer from 'react-test-renderer'
 import { renderHook, act } from '@testing-library/react-hooks'
 import * as React from 'react'
