@@ -52,15 +52,15 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 
 ## Packages
 
-- [@rcp/c.keepalive](packages/c.keepalive) - Keep react component view / store when switched view.  
 - [@rcp/c.loadingwrapper](packages/c.loadingwrapper) - A component for easy create loading mask  
 - [@rcp/c.prompt](packages/c.prompt) - Advanced React router prompt support beforeunload  
 - [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
-- [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
-- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
+- [@rcp/c.keepalive](packages/c.keepalive) - Keep react component view / store when switched view.  
+- [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
 - [@rcp/use.uncontrolled](packages/use.uncontrolled) - Make props.value piped to state, and exposes `onChange`, make react component is **uncontrolled & controlled**  
+- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  

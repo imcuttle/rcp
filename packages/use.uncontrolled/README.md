@@ -27,18 +27,19 @@ import useUncontrolled from '@rcp/use.uncontrolled'
 
 #### Parameters
 
--   `value`  {T} - Piped value
--   `defaultValue`  {T} - Initialize value firstly
--   `onChange`  {(value: T) => void} - Bind `onChange` handler when value updating
--   `useEffect`  {typeof React.useLayoutEffect}
+- `value` {T} - Piped value
+- `defaultValue` {T} - Initialize value firstly
+- `onChange` {(value: T) => void} - Bind `onChange` handler when value updating
+- `useEffect` {typeof React.useLayoutEffect}
+- `eq` {(a: T, b: T) => boolean}
 
 #### Examples
 
 ```javascript
-function Input({value, onChangeValue, defaultValue}) {
-  const [valueState, setValue] = useUncontrolled({value, onChange: onChangeValue, defaultValue})
+function Input({ value, onChangeValue, defaultValue }) {
+  const [valueState, setValue] = useUncontrolled({ value, onChange: onChangeValue, defaultValue })
 
-  return <input type='text' value={valueState} onChange={evt => setValue(evt.target.value)} />
+  return <input type="text" value={valueState} onChange={evt => setValue(evt.target.value)} />
 }
 ```
 
