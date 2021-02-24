@@ -52,14 +52,14 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 
 ## Packages
 
-- [@rcp/c.loadingwrapper](packages/c.loadingwrapper) - A component for easy create loading mask  
 - [@rcp/c.keepalive](packages/c.keepalive) - Keep react component view / store when switched view.  
+- [@rcp/c.loadingwrapper](packages/c.loadingwrapper) - A component for easy create loading mask  
 - [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
-- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
+- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/c.prompt](packages/c.prompt) - Advanced React router prompt support beforeunload  
-- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
+- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/use.persistfn](packages/use.persistfn) - use persist fn  
 - [@rcp/use.uncontrolled](packages/use.uncontrolled) - Make props.value piped to state, and exposes `onChange`, make react component is **uncontrolled & controlled**  
 - [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
@@ -68,8 +68,8 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
-- [@rcp/util.open](packages/util.open) - Open react element standalone  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  
+- [@rcp/util.open](packages/util.open) - Open react element standalone  
 
 
 ## Authors

@@ -33,9 +33,9 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "2.0.2",
+  "version": "2.1.0",
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
   "dependencies": {
-    "@rcp/use.persistfn": "^1.0.0"
+    "@rcp/use.persistfn": "^1.0.1"
   }
 }
