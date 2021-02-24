@@ -1,7 +1,7 @@
 {
-  "name": "@rcp/use.uncontrolled",
-  "author": "imcuttle",
-  "description": "Make props.value piped to state, and exposes `onChange`, make react component is **uncontrolled & controlled**",
+  "name": "@rcp/use.persistfn",
+  "author": "余聪",
+  "description": "use persist fn",
   "publishConfig": {
     "access": "public"
   },
@@ -19,23 +19,19 @@
     "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md"
   },
   "repository": {
+    "directory": "packages/use.persistfn",
     "type": "git",
     "url": "git+https://github.com/imcuttle/rcp.git"
   },
   "keywords": [
-    "imcuttle",
+    "余聪",
     "use",
-    "uncontrolled",
-    "controlled",
+    "persistfn",
     "react",
     "rcp"
   ],
   "engines": {
     "node": ">=6"
   },
-  "version": "2.0.2",
-  "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
-  "dependencies": {
-    "@rcp/use.persistfn": "^1.0.0"
-  }
+  "version": "1.0.0"
 }

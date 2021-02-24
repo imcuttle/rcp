@@ -1,0 +1,32 @@
+# @rcp/use.persistfn
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/use.persistfn.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/use.persistfn)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/use.persistfn.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/use.persistfn)
+
+use persist fn
+
+## Installation
+
+```bash
+npm install @rcp/use.persistfn
+# or use yarn
+yarn add @rcp/use.persistfn
+```
+
+## Usage
+
+```javascript
+import usePersistfn from '@rcp/use.persistfn'
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong@fenbi.com">yucong@fenbi.com</a>.
+
+## License
+
+MIT

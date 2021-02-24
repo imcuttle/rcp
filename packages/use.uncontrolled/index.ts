@@ -5,6 +5,7 @@
  */
 
 import * as React from 'react'
+import usePersistFn from '@rcp/use.persistfn'
 
 const defaultEq = (a, b) => a === b
 
@@ -23,19 +24,16 @@ export function useUncontrolledCore<T = any>(
   } = {}
 ): [T | undefined, (newValue: ((value: T) => T) | T) => void] {
   const [value, setStateValue] = React.useState(initialValue)
-  const setValueFinal = React.useCallback(
-    (newValue: Function | boolean | any) => {
-      if (typeof newValue === 'function') {
-        newValue = newValue(value)
-      }
-      if (eq(value, newValue)) {
-        return
-      }
-      setStateValue(newValue)
-      onChange && onChange(newValue)
-    },
-    [value, eq, onChange, setStateValue]
-  )
+  const setValueFinal = usePersistFn((newValue: Function | boolean | any) => {
+    if (typeof newValue === 'function') {
+      newValue = newValue(value)
+    }
+    if (eq(value, newValue)) {
+      return
+    }
+    setStateValue(newValue)
+    onChange && onChange(newValue)
+  })
 
   const fnRef = React.useRef(setValueFinal)
   fnRef.current = setValueFinal
@@ -49,7 +47,7 @@ export function useUncontrolledCore<T = any>(
     [propValue]
   )
 
-  return [value, setValueFinal]
+  return [value, fnRef.current]
 }
 
 /**
