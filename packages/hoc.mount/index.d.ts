@@ -3,11 +3,11 @@
  * @author imcuttle
  *
  */
-import * as React from 'react';
+import * as React from 'react'
 interface IHocMountOptions {
-    mountNodeGetter?: (props: any) => Node;
-    attributesGetter?: (props: any) => any;
-    createTimeType?: 'decorator' | 'class' | 'component';
+  mountNodeGetter?: (props: any) => Node
+  attributesGetter?: (props: any) => any
+  createTimeType?: 'decorator' | 'class' | 'component'
 }
 /**
  * @public
@@ -17,5 +17,9 @@ interface IHocMountOptions {
  * @param {() => any} [opts.attributesGetter = () => {}]
  * @return {<P>(Component: React.ComponentType) => React.ComponentClass<P>}
  */
-export default function mountHOC({ createTimeType, mountNodeGetter, attributesGetter }?: IHocMountOptions): <P = any>(Component: React.ComponentType<{}>) => React.ComponentClass<P, any>;
-export {};
+export default function mountHOC({
+  createTimeType,
+  mountNodeGetter,
+  attributesGetter
+}?: IHocMountOptions): <P = any>(Component: React.ComponentType) => React.ComponentClass<P, any>
+export {}

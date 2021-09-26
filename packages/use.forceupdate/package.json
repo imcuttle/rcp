@@ -1,0 +1,37 @@
+{
+  "name": "@rcp/use.forceupdate",
+  "author": "余聪",
+  "description": "forceUpdate like legacy react",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "module": "dist/es",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/es/index.d.ts",
+  "scripts": {
+    "dist": "npm run dist:cjs && npm run dist:es",
+    "dist:cjs": "rm -rf dist/cjs && tsc --module commonjs --outDir dist/cjs",
+    "dist:es": "rm -rf dist/es && tsc --module ES6 --outDir dist/es",
+    "test": "npx jest",
+    "dev": "npm run dist -- -w",
+    "version": "npm run dist && npm run doc",
+    "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md"
+  },
+  "repository": {
+    "directory": "packages/use.forceupdate",
+    "type": "git",
+    "url": "git+https://github.com/imcuttle/rcp.git"
+  },
+  "keywords": [
+    "余聪",
+    "use",
+    "forceupdate",
+    "react",
+    "rcp"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "version": "1.0.0"
+}
