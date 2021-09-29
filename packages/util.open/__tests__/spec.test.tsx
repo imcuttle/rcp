@@ -5,15 +5,15 @@
  */
 import * as React from 'react'
 import { promiseStateSync } from 'p-state'
-import utilOpen, { createOpenReactStandalone } from '../'
+import utilOpen, { createOpenReactStandalone } from '../index'
 
-describe('utilOpen', function() {
+describe('utilOpen', function () {
   beforeEach(() => {
     document.body.innerHTML = ''
   })
 
   it('should open', () => {
-    const p = utilOpen(close => (
+    const p = utilOpen((close) => (
       <h1 id={'close-me'} onClick={close}>
         title
       </h1>
@@ -36,21 +36,21 @@ describe('utilOpen', function() {
   })
 
   it('should open multiply', async () => {
-    const open = createOpenReactStandalone()
+    const open = createOpenReactStandalone({ wrapper: (elem) => <div>{elem}</div> })
 
-    const p = open(close => (
+    const p = open((close) => (
       <h1 id={'close-me'} onClick={close}>
         title
       </h1>
     ))
 
-    open(close => (
+    open((close) => (
       <h1 id={'close-me-2'} onClick={close}>
         title
       </h1>
     ))
     expect(document.body.innerHTML).toMatchInlineSnapshot(
-      `"<div class=\\"modal-open-controller\\"><div><h1 id=\\"close-me-2\\">title</h1></div></div>"`
+      `"<div class=\\"modal-open-controller\\"><div><div><h1 id=\\"close-me-2\\">title</h1></div></div></div>"`
     )
 
     // @ts-ignore

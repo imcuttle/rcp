@@ -6,7 +6,7 @@
  */
 
 import browser from './browser'
-import node from './node'
+import node from './index'
 
 const nLogger = node('node')
 const bLogger = browser('browser')

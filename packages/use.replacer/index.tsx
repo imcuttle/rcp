@@ -4,7 +4,8 @@
  *
  */
 
-import React, { useContext } from 'react'
+import { useContext } from 'react'
+import * as React from 'react'
 
 export interface Replacer<T = any, P extends T = T> {
   with: T

@@ -3,8 +3,7 @@
   "compilerOptions": {
     "outDir": ".",
     "jsx": "react",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true
+    "sourceMap": true
   },
   "include": ["index.tsx", "index.tsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["__tests__"]

@@ -1,14 +1,14 @@
 import createMount, { IMountOptions } from '@rcp/util.createmount'
 // @ts-ignore
 import * as lazy from 'lazy-value'
-import {ReactElement} from "react";
+import { ReactElement } from 'react'
 
-export function createOpenReactStandalone({className, ...opts}: { className?: string } & IMountOptions = {}) {
+export function createOpenReactStandalone({ className, ...opts }: { className?: string } & IMountOptions = {}) {
   const center = createMount(opts)
 
   let _container
-  let createGetContainer = () => lazy(
-    () => {
+  let createGetContainer = () =>
+    lazy(() => {
       const div = document.createElement('div')
       document.body.appendChild(div)
 
@@ -18,36 +18,38 @@ export function createOpenReactStandalone({className, ...opts}: { className?: st
       }
       _container = div
       return div
-    }
-  )
+    })
   let getContainer = createGetContainer()
 
-  return Object.assign((createElement: (close: (result?: any) => void) => ReactElement) => {
-    let resolve: Function
-    const p = new Promise(r => {
-      resolve = r
-    })
+  return Object.assign(
+    (createElement: (close: (result?: any) => void) => ReactElement) => {
+      let resolve: Function
+      const p = new Promise((r) => {
+        resolve = r
+      })
 
-    const close = (result: any) => {
-      center.close()
-      resolve(result)
-    }
+      const close = (result: any) => {
+        center.close()
+        resolve(result)
+      }
 
-    const container = getContainer()
-    center.open({
-      element: createElement(close),
-      mountNode: container
-    })
+      const container = getContainer()
+      center.open({
+        element: createElement(close),
+        mountNode: container
+      })
 
-    return Object.assign(p, { ...center, containerDOM: container })
-  }, {
-    remove: () => {
-      if (_container) {
-        _container.remove()
-        getContainer = createGetContainer()
+      return Object.assign(p, { ...center, containerDOM: container })
+    },
+    {
+      remove: () => {
+        if (_container) {
+          _container.remove()
+          getContainer = createGetContainer()
+        }
       }
     }
-  })
+  )
 }
 
 const openReactStandalone = createOpenReactStandalone()

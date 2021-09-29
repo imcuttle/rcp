@@ -3,15 +3,17 @@
  * @author 余聪
  *
  */
-/* eslint-disable */
 import * as React from 'react'
 // @ts-ignore
-import isShallowEqual from 'shallowequal'
+import * as isShallowEqual from 'shallowequal'
 import useUncontrolled from '@rcp/use.uncontrolled'
-import { castArray, isEqual } from 'lodash'
+import * as castArray from 'lodash.castarray'
+import * as isEqual from 'lodash.isequal'
 import useForceUpdate from '@rcp/use.forceupdate'
 import { useReplacedValue } from '@rcp/use.replacer'
 import usePersistFn from '@rcp/use.persistfn'
+
+export * from '@rcp/use.replacer'
 
 type UnControlledOptions = Parameters<typeof useUncontrolled>[0]
 export type TFetcher<R = any, T extends any[] = any[]> = R | ((...args: T) => Promise<R> | R)

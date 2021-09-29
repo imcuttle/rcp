@@ -4,10 +4,10 @@
  * @description
  */
 process.env.DEBUG = 'scope'
-import createLogger from '../node'
+import createLogger from '../index'
 import browserCreateLogger from '../browser'
 
-describe('logger', function() {
+describe('logger', function () {
   it('should format', () => {
     const c = createLogger()
     expect(c.format({ message: 'msss', type: 'aa', argv: [] })).toMatchSnapshot()

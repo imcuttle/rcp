@@ -15,7 +15,7 @@ export const SYMBOLS_MAP = {
   Error: `${logSymbols.error} `
 }
 
-export default makeCreateLogger(function(
+export default makeCreateLogger(function (
   { namespace, message, type, argv },
   { prefix = '(', suffix = ')', typeMap = SYMBOLS_MAP } = {}
 ) {
