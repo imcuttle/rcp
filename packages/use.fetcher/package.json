@@ -33,15 +33,14 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.0.0",
-  "devDependencies": {},
+  "version": "1.0.1",
   "dependencies": {
+    "@rcp/use.forceupdate": "^1.0.1",
+    "@rcp/use.persistfn": "^1.0.2",
+    "@rcp/use.replacer": "^1.0.1",
+    "@rcp/use.uncontrolled": "^2.1.1",
     "lodash.castarray": "^4.4.0",
     "lodash.isequal": "^4.5.0",
-    "shallowequal": "^1.1.0",
-    "@rcp/use.forceupdate": "^1.0.0",
-    "@rcp/use.persistfn": "^1.0.1",
-    "@rcp/use.replacer": "^1.0.0",
-    "@rcp/use.uncontrolled": "^2.1.0"
+    "shallowequal": "^1.1.0"
   }
 }

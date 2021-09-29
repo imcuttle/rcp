@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.16"></a>
+
+## [1.1.16](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.15...@rcp/use.i18n@1.1.16) (2021-09-29)
+
+**Note:** Version bump only for package @rcp/use.i18n
+
 <a name="1.1.15"></a>
 
 ## [1.1.15](https://github.com/imcuttle/rcp/compare/@rcp/use.i18n@1.1.14...@rcp/use.i18n@1.1.15) (2020-07-05)

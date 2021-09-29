@@ -3,23 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.8"></a>
+
+## [1.1.8](https://github.com/imcuttle/rcp/compare/@rcp/util.iselemof@1.1.7...@rcp/util.iselemof@1.1.8) (2021-09-29)
+
+**Note:** Version bump only for package @rcp/util.iselemof
+
 <a name="1.1.7"></a>
+
 ## [1.1.7](https://github.com/imcuttle/rcp/compare/@rcp/util.iselemof@1.1.6...@rcp/util.iselemof@1.1.7) (2020-11-19)
 
 **Note:** Version bump only for package @rcp/util.iselemof
 
-
-
-
-
 <a name="1.1.6"></a>
+
 ## [1.1.6](https://github.com/imcuttle/rcp/compare/@rcp/util.iselemof@1.1.5...@rcp/util.iselemof@1.1.6) (2020-11-19)
 
 **Note:** Version bump only for package @rcp/util.iselemof
-
-
-
-
 
 <a name="1.1.5"></a>
 

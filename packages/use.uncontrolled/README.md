@@ -39,7 +39,7 @@ import useUncontrolled from '@rcp/use.uncontrolled'
 function Input({ value, onChangeValue, defaultValue }) {
   const [valueState, setValue] = useUncontrolled({ value, onChange: onChangeValue, defaultValue })
 
-  return <input type="text" value={valueState} onChange={evt => setValue(evt.target.value)} />
+  return <input type="text" value={valueState} onChange={(evt) => setValue(evt.target.value)} />
 }
 ```
 
