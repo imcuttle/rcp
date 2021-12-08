@@ -1,0 +1,32 @@
+# @rcp/use.compareeffect
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/use.compareeffect.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/use.compareeffect)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/use.compareeffect.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/use.compareeffect)
+
+use custome compare effect
+
+## Installation
+
+```bash
+npm install @rcp/use.compareeffect
+# or use yarn
+yarn add @rcp/use.compareeffect
+```
+
+## Usage
+
+```javascript
+import useCompareeffect from '@rcp/use.compareeffect'
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong@yuanfudao.com">yucong@yuanfudao.com</a>.
+
+## License
+
+MIT
