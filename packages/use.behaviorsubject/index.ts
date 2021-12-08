@@ -4,7 +4,7 @@
  *
  */
 import { BehaviorSubject } from 'rxjs'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import useUncontrolled from '@rcp/use.uncontrolled'
 import shallowEq from 'shallowequal'
 import usePersistFn from '@rcp/use.persistfn'
@@ -66,7 +66,7 @@ export function createReactBehaviorSubject<T>(initialValue: T, gOpts?: UseBehavi
 export function useBehaviorSubject<T>(
   subject: BehaviorSubject<T>,
   { eq = (a, b) => a === b }: UseBehaviorSubjectOpts = {}
-) {
+): [T, Dispatch<SetStateAction<T>>] {
   const eqFn = usePersistFn(eq)
   const [state, setState] = React.useState(subject.value)
 
@@ -93,5 +93,5 @@ export function useBehaviorSubject<T>(
     [state, subject]
   )
 
-  return [state, setStateForSubject as typeof setState]
+  return [state, setStateForSubject]
 }
