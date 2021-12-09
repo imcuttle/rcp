@@ -29,6 +29,17 @@ describe('useFetcher', function () {
     })
   })
 
+  it('should spec with key', async () => {
+    const { result, waitForNextUpdate } = renderHook(() => useFetcher(fetchData, { key: 'fetch' }))
+    expect(result.current?.[0]).toBeUndefined()
+
+    await waitForNextUpdate()
+    expect(result.current?.[0]).toEqual({
+      age: 12,
+      name: 'imcuttle'
+    })
+  })
+
   it('replacer', async () => {
     const mockFetchData = jest.fn(async () => {
       await delay(100)
@@ -44,6 +55,36 @@ describe('useFetcher', function () {
           replacers={[
             {
               with: fetchData,
+              as: mockFetchData
+            }
+          ]}
+        >
+          {children}
+        </ReplacerProvider>
+      )
+    })
+    await waitForNextUpdate()
+    expect(result.current?.[0]).toEqual({
+      age: 12,
+      name: 'mock'
+    })
+  })
+
+  it('replacer with key', async () => {
+    const mockFetchData = jest.fn(async () => {
+      await delay(100)
+      return {
+        age: 12,
+        name: 'mock'
+      }
+    })
+
+    const { result, waitForNextUpdate } = renderHook(() => useFetcher(fetchData, { key: 'fetch' }), {
+      wrapper: ({ children }) => (
+        <ReplacerProvider
+          replacers={[
+            {
+              with: 'fetch',
               as: mockFetchData
             }
           ]}

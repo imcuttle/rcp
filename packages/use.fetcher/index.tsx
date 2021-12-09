@@ -87,7 +87,10 @@ export default function useFetcher<T, ARG extends any>(
   // @ts-ignore
   deps: ARG = []
 ): TFetcherResult<T> {
-  const fetcher = useReplacedValue<any, TFetcher>(key || getter)
+  const keyOrFetcher = useReplacedValue<any, TFetcher>(key || getter)
+  const fetcher = React.useMemo(() => {
+    return typeof keyOrFetcher === 'function' ? keyOrFetcher : getter
+  }, [keyOrFetcher, getter])
   const [val, setVal] = useUncontrolled<T>({
     value: data,
     defaultValue: typeof fetcher !== 'function' ? fetcher : defaultData,
