@@ -1,6 +1,6 @@
 <a name="1.0.0"></a>
 
-# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2021-12-08)
+# [1.0.0](https://github.com/imcuttle/rcp/compare/v1.0.6...v1.0.0) (2021-12-09)
 
 ### Bug Fixes
 
@@ -11,7 +11,9 @@
 
 ### Features
 
+- add c.preventfastop ([44bf84f](https://github.com/imcuttle/rcp/commit/44bf84f))
 - add eq option ([631dfe7](https://github.com/imcuttle/rcp/commit/631dfe7))
+- add hook ([300eb94](https://github.com/imcuttle/rcp/commit/300eb94))
 - add use.i18n ([8f2b256](https://github.com/imcuttle/rcp/commit/8f2b256))
 - allow customized eq function ([79e92ce](https://github.com/imcuttle/rcp/commit/79e92ce))
 - remove global option ([55f611a](https://github.com/imcuttle/rcp/commit/55f611a))
