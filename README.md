@@ -54,18 +54,19 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 
 - [@rcp/c.keepalive](packages/c.keepalive) - Keep react component view / store when switched view.  
 - [@rcp/c.loadingwrapper](packages/c.loadingwrapper) - A component for easy create loading mask  
-- [@rcp/c.prompt](packages/c.prompt) - Advanced React router prompt support beforeunload  
 - [@rcp/hoc.i18n](packages/hoc.i18n) - React Component's high order component about internationalization  
-- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/use.behaviorsubject](packages/use.behaviorsubject) - use hook for rxjs behavior subject  
+- [@rcp/c.prompt](packages/c.prompt) - Advanced React router prompt support beforeunload  
+- [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/use.compareeffect](packages/use.compareeffect) - use custome compare effect  
+- [@rcp/c.preventfastop](packages/c.preventfastop) - Prevent some fast operation (eg. click)  
 - [@rcp/use.fetcher](packages/use.fetcher) - async data fetcher  
-- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.forceupdate](packages/use.forceupdate) - forceUpdate like legacy react  
-- [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
+- [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.persistfn](packages/use.persistfn) - use persist fn  
 - [@rcp/use.persistref](packages/use.persistref) - Persist the ref value  
+- [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
 - [@rcp/use.replacer](packages/use.replacer) - Replace runtime value as your wish  
 - [@rcp/use.shared](packages/use.shared) - shared value like recoil  
 - [@rcp/use.syncstorage](packages/use.syncstorage) - Sync state to storage  
@@ -76,8 +77,8 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
-- [@rcp/util.open](packages/util.open) - Open react element standalone  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  
+- [@rcp/util.open](packages/util.open) - Open react element standalone  
 
 
 ## Authors
