@@ -33,7 +33,7 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "dependencies": {
     "@rcp/use.compareeffect": "^1.2.0",
     "@rcp/use.forceupdate": "^1.2.0",

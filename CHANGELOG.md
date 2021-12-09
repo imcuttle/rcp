@@ -7,6 +7,7 @@
 - should remove container firstly ([4e0d087](https://github.com/imcuttle/rcp/commit/4e0d087))
 - should remove container firstly ([8dfcc84](https://github.com/imcuttle/rcp/commit/8dfcc84))
 - use extendDictionary ([330edf0](https://github.com/imcuttle/rcp/commit/330edf0))
+- use.fetcher with key ([fe45ac1](https://github.com/imcuttle/rcp/commit/fe45ac1))
 - use.i18ncontext ([da70207](https://github.com/imcuttle/rcp/commit/da70207))
 
 ### Features
