@@ -16,7 +16,11 @@ yarn add @rcp/use.compareeffect
 ## Usage
 
 ```javascript
-import useCompareeffect from '@rcp/use.compareeffect'
+import useCompareEffect from '@rcp/use.compareeffect'
+
+const App = () => {
+  useCompareEffect(() => {}, deps, equals /* shadowEq by default */)
+}
 ```
 
 ## API

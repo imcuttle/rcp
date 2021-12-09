@@ -1,0 +1,32 @@
+# @rcp/use.syncstorage
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/use.syncstorage.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/use.syncstorage)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/use.syncstorage.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/use.syncstorage)
+
+Sync state to storage
+
+## Installation
+
+```bash
+npm install @rcp/use.syncstorage
+# or use yarn
+yarn add @rcp/use.syncstorage
+```
+
+## Usage
+
+```javascript
+import { useRouterHistoryStateSync, useLocalStorageStateSync } from '@rcp/use.syncstorage'
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong@yuanfudao.com">yucong@yuanfudao.com</a>.
+
+## License
+
+MIT

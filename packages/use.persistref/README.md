@@ -1,0 +1,38 @@
+# @rcp/use.persistref
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/use.persistref.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/use.persistref)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/use.persistref.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/use.persistref)
+
+Persist the ref value
+
+## Installation
+
+```bash
+npm install @rcp/use.persistref
+# or use yarn
+yarn add @rcp/use.persistref
+```
+
+## Usage
+
+```javascript
+import usePersistRef from '@rcp/use.persistref'
+
+const App = ({ val }) => {
+  const valRef = usePersistRef(val)
+
+  valRef.current === val
+}
+```
+
+## API
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong@yuanfudao.com">yucong@yuanfudao.com</a>.
+
+## License
+
+MIT

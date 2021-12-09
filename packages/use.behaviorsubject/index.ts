@@ -4,9 +4,10 @@
  *
  */
 import { BehaviorSubject } from 'rxjs'
-import React, { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
+import * as React from 'react'
 import useUncontrolled from '@rcp/use.uncontrolled'
-import shallowEq from 'shallowequal'
+import * as shallowEq from 'shallowequal'
 import usePersistFn from '@rcp/use.persistfn'
 
 export type UseBehaviorSubjectOpts = Pick<Partial<Parameters<typeof useUncontrolled>[0]>, 'eq'>

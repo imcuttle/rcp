@@ -12,8 +12,34 @@ import * as isEqual from 'lodash.isequal'
 import useForceUpdate from '@rcp/use.forceupdate'
 import { useReplacedValue } from '@rcp/use.replacer'
 import usePersistFn from '@rcp/use.persistfn'
+import useCustomCompareEffect from '@rcp/use.compareeffect'
+import { PropsWithoutRef, RefAttributes, Suspense, SuspenseProps } from 'react'
 
 export * from '@rcp/use.replacer'
+
+export function suspense<T extends React.ComponentType<P>, P>(Comp: T, config: SuspenseProps) {
+  return function SuspenseComponent(props: P) {
+    return (
+      <Suspense {...config}>
+        {/*// @ts-expect-error*/}
+        <Comp {...props} />
+      </Suspense>
+    )
+  }
+}
+
+export function suspenseForwardRef<Ref, P>(
+  Comp: React.ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<Ref>>,
+  config: SuspenseProps
+) {
+  return React.forwardRef<Ref, P>(function SuspenseComponent(props: P, ref) {
+    return (
+      <Suspense {...config}>
+        <Comp ref={ref} {...props} />
+      </Suspense>
+    )
+  })
+}
 
 type UnControlledOptions = Parameters<typeof useUncontrolled>[0]
 export type TFetcher<R = any, T extends any[] = any[]> = R | ((...args: T) => Promise<R> | R)
@@ -52,14 +78,6 @@ function findCacheKey(currentKey: any, eq = isShallowEqual) {
       return eachKey
     }
   }
-}
-
-var useCustomCompareEffect = function (effect: any, deps: any, depsEqual: any) {
-  var ref = React.useRef(undefined)
-  if (!ref.current || !depsEqual(deps, ref.current)) {
-    ref.current = deps
-  }
-  React.useEffect(effect, ref.current)
 }
 
 export default function useFetcher<T, ARG extends any>(

@@ -1,0 +1,80 @@
+# @rcp/use.shared
+
+[![NPM version](https://img.shields.io/npm/v/@rcp/use.shared.svg?style=flat-square)](https://www.npmjs.com/package/@rcp/use.shared)
+[![NPM Downloads](https://img.shields.io/npm/dm/@rcp/use.shared.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/@rcp/use.shared)
+
+shared value like recoil
+
+## Installation
+
+```bash
+npm install @rcp/use.shared
+# or use yarn
+yarn add @rcp/use.shared
+```
+
+## Usage
+
+```javascript
+import { useShared, SharedProvider, useSharedProvider } from '@rcp/use.shared'
+
+const Content = React.memo(({ symbol = fetchData }) => {
+  // 必须使用唯一方法 ref，孩子获取数据
+  const [data] = useShared(symbol)
+  return <pre>{JSON.stringify(data, null, 2)}</pre>
+})
+
+const syncData = {
+  wow: 123
+}
+const dynamicData = async (name) => ({
+  wow: name
+})
+const Layout = ({ symbol = syncData }) => {
+  // 提供数据，可以是静态数据，也可以是动态数据（同步或异步）
+  // useSharedProvider(dynamicData, {}, [name])
+  useSharedProvider(symbol, {}, [])
+  return (
+    <>
+      <Content symbol={symbol} />
+      <NoEffectComp />
+    </>
+  )
+}
+
+const NoEffect = jest.fn(() => {
+  return null
+})
+const NoEffectComp = React.memo(NoEffect)
+
+const App = ({ symbol }: any) => {
+  // SharedProvider 用于提供共享数据存储载体，一般在 React Element Root 注入
+  return (
+    <SharedProvider>
+      <Layout symbol={symbol} />
+    </SharedProvider>
+  )
+}
+```
+
+## API
+
+### useSharedProvider
+
+数据提供者，一般用于需要全局共享数据的场景，如当前登录人等信息
+
+参数 & 返回值同 [useFetcher](../use.fetcher)
+
+## useShared
+
+数据获取，用于获取 `useSharedProvider` 共享的数据
+
+## Related
+
+## Authors
+
+This library is written and maintained by 余聪, <a href="mailto:yucong@yuanfudao.com">yucong@yuanfudao.com</a>.
+
+## License
+
+MIT

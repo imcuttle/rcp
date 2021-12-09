@@ -3,8 +3,9 @@
  * @author 余聪
  *
  */
-import React, { EffectCallback } from 'react'
-import eq from 'shallowequal'
+import { EffectCallback } from 'react'
+import * as React from 'react'
+import * as eq from 'shallowequal'
 
 export default function useCustomCompareEffect(
   effect: EffectCallback,
