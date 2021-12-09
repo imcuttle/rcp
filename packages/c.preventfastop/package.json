@@ -16,8 +16,7 @@
     "test": "npx jest",
     "dev": "npm run dist -- -w",
     "version": "npm run dist && npm run doc",
-    "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md",
-    "example": "webpack "
+    "doc": "documentation --markdown-toc=false readme dist/es/index.js -a public -s \"API\" && git add README.md"
   },
   "repository": {
     "directory": "packages/c.preventfastop",
@@ -34,7 +33,7 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
     "@rcp/use.persistfn": "^1.0.2"
   }
