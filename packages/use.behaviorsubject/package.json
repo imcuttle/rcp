@@ -33,7 +33,7 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "devDependencies": {
     "rxjs": "^6"
   },
@@ -41,8 +41,8 @@
     "rxjs": ">=6"
   },
   "dependencies": {
-    "@rcp/use.persistfn": "^1.0.2",
-    "@rcp/use.uncontrolled": "^2.1.1",
+    "@rcp/use.persistfn": "^1.0.3",
+    "@rcp/use.uncontrolled": "^2.1.2",
     "shallowequal": "^1.1.0"
   }
 }
