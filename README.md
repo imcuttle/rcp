@@ -60,8 +60,8 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/hoc.mount](packages/hoc.mount) - The high order component for mounting component  
 - [@rcp/hoc.uncontrolled](packages/hoc.uncontrolled) - The high order component for creating uncontrolled component  
 - [@rcp/use.behaviorsubject](packages/use.behaviorsubject) - use hook for rxjs behavior subject  
-- [@rcp/use.fetcher](packages/use.fetcher) - async data fetcher  
 - [@rcp/use.compareeffect](packages/use.compareeffect) - use custome compare effect  
+- [@rcp/use.fetcher](packages/use.fetcher) - async data fetcher  
 - [@rcp/use.forceupdate](packages/use.forceupdate) - forceUpdate like legacy react  
 - [@rcp/use.i18n](packages/use.i18n) - A react hook for using i18n  
 - [@rcp/use.i18ncontext](packages/use.i18ncontext) - A react hook for using i18n provider/consumer  
@@ -74,8 +74,8 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
 - [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
-- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
+- [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
 - [@rcp/util.open](packages/util.open) - Open react element standalone  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  
