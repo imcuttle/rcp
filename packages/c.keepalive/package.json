@@ -32,7 +32,7 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "dependencies": {
     "@rcp/util.displayname": "^1.0.15",
     "classnames": "^2.2.6"

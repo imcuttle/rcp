@@ -24,7 +24,7 @@
     "url": "git+https://github.com/imcuttle/rcp.git"
   },
   "dependencies": {
-    "@rcp/use.i18n": "^1.1.17",
+    "@rcp/use.i18n": "^1.1.18",
     "@rcp/util.tocompclass": "^1.0.15"
   },
   "keywords": [
@@ -37,6 +37,6 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.0.20",
+  "version": "1.0.21",
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f"
 }

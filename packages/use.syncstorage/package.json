@@ -33,11 +33,11 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.1.1",
+  "version": "1.1.2",
   "dependencies": {
-    "@rcp/use.forceupdate": "^1.2.0",
-    "@rcp/use.persistfn": "^1.0.3",
-    "@rcp/use.uncontrolled": "^2.1.2",
+    "@rcp/use.forceupdate": "^1.2.1",
+    "@rcp/use.persistfn": "^1.0.4",
+    "@rcp/use.uncontrolled": "^2.1.3",
     "javascript-stringify": "^2.1.0",
     "lodash.isequal": "^4.5.0",
     "qs": "^6.10.2"
