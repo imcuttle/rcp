@@ -26,7 +26,7 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "2.1.11",
+  "version": "3.0.0",
   "dependencies": {
     "@rcp/util.createlogger": "^1.1.7",
     "@rcp/util.displayname": "^1.0.15",

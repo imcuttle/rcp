@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+
+# [3.0.0](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.11...@rcp/hoc.uncontrolled@3.0.0) (2021-12-28)
+
+### Features
+
+- use es6 instead of es5 ([3dcc2a8](https://github.com/imcuttle/rcp/commit/3dcc2a8))
+
+### BREAKING CHANGES
+
+- use es6 instead of es5
+
 <a name="2.1.11"></a>
 
 ## [2.1.11](https://github.com/imcuttle/rcp/compare/@rcp/hoc.uncontrolled@2.1.10...@rcp/hoc.uncontrolled@2.1.11) (2021-09-29)
