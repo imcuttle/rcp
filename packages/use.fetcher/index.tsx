@@ -158,6 +158,7 @@ export default function useFetcher<T, ARG extends any>(
       isLoadingRef.current = false
       // trigger update
       !suspense && setVal(data)
+      !suspense && val === data && forceUpdate();
       updated = true
       return getResult({ res: data })
     } catch (error) {
