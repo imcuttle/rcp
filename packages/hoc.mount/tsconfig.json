@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": ".",
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": false
   },
-  "include": ["index.tsx"]
+  "include": ["index.tsx"],
+  "exclude": ["__tests__", "index.d.ts"]
 }

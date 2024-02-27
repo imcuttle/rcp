@@ -3,8 +3,9 @@
   "compilerOptions": {
     "outDir": ".",
     "jsx": "react",
-    "sourceMap": true,
+    "sourceMap": false,
     "moduleResolution": "node"
   },
-  "include": ["index.ts", "**/*.ts"]
+  "include": ["index.ts", "**/*.ts"],
+  "exclude": ["__tests__", "index.d.ts"]
 }

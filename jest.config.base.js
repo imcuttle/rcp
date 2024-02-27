@@ -5,8 +5,15 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest'
   },
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  },
   moduleNameMapper: {
-    '^@rcp/(.*)$': '<rootDir>/packages/$1/index'
+    '^@rcp/(.*)$': '<rootDir>/packages/$1/index',
+    '^react$': '<rootDir>/node_modules/react',
+    '^react-dom$': '<rootDir>/node_modules/react-dom'
   },
   // testRegex: '<rootDir>/.(test|spec).(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

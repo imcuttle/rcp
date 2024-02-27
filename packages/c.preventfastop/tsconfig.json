@@ -4,7 +4,7 @@
     "lib": ["es2018", "dom"],
     "outDir": ".",
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": false
   },
   "include": ["index.ts", "index.tsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["__tests__"]

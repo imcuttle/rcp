@@ -11,7 +11,7 @@
  * @param [withDefault=true] {boolean} - Whether check `default{propKey}` firstly
  * @param [eq=(a, b) => a === b] {Function} - Detect new value and old value is equal
  */
-export declare type StrictProp = {
+export type StrictProp = {
   name: string
   withDefault?: boolean
   eq?: (oldValue: any, newValue: any) => boolean
@@ -20,7 +20,7 @@ export declare type StrictProp = {
  * @typedef Prop {string | StrictProp}
  * @public
  */
-export declare type Prop = string | StrictProp
+export type Prop = string | StrictProp
 /**
  *
  * @public

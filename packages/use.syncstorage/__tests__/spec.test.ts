@@ -3,8 +3,8 @@
  * @author 余聪
  * @description
  */
-import useSyncstorage from '../'
+// import useSyncstorage from '../'
 
 describe('useSyncstorage', function () {
-  it('should ', () => {})
+  it.skip('should ', () => {})
 })

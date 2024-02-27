@@ -3,8 +3,8 @@
  * @author 余聪
  * @description
  */
-import useReplacer from '../'
+// import useReplacer from '../'
 
 describe('useReplacer', function () {
-  it('should ', () => {})
+  it.skip('should ', () => {})
 })

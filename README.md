@@ -72,10 +72,10 @@ should be named as `use.{{lowerCase}}`, eg. `@rp/use.i18n`.
 - [@rcp/use.syncstorage](packages/use.syncstorage) - Sync state to storage  
 - [@rcp/use.uncontrolled](packages/use.uncontrolled) - Make props.value piped to state, and exposes `onChange`, make react component is **uncontrolled & controlled**  
 - [@rcp/use.valuesstate](packages/use.valuesstate) - The useful methods exported for values state  
-- [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
 - [@rcp/util.createmount](packages/util.createmount) - The utility for creating mountable view  
-- [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
 - [@rcp/util.displayname](packages/util.displayname) - The utility for getting display name  
+- [@rcp/util.createlogger](packages/util.createlogger) - Create namespace isomorphic logger  
+- [@rcp/util.iscompclass](packages/util.iscompclass) - The utility for checking component class  
 - [@rcp/util.iselemof](packages/util.iselemof) - The utility determinating the input is element of the component class  
 - [@rcp/util.open](packages/util.open) - Open react element standalone  
 - [@rcp/util.tocompclass](packages/util.tocompclass) - The utility converting stateless to be component class  

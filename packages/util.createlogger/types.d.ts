@@ -5,31 +5,31 @@
  *
  */
 export interface IFormat {
-    message?: string;
-    namespace?: string;
-    type?: string;
-    argv?: any[];
+  message?: string
+  namespace?: string
+  type?: string
+  argv?: any[]
 }
 export interface IFormatOpts {
-    prefix?: string;
-    suffix?: string;
-    typeMap?: ITypeMap;
+  prefix?: string
+  suffix?: string
+  typeMap?: ITypeMap
 }
 export interface ITypeMap {
-    Info?: string;
-    Success?: string;
-    Warning?: string;
-    Error?: string;
+  Info?: string
+  Success?: string
+  Warning?: string
+  Error?: string
 }
-export declare type FormatFunc = (format: IFormat, opts?: IFormatOpts) => string;
-export declare type LoggerFunc = (message: any, ...argv: any[]) => void;
+export type FormatFunc = (format: IFormat, opts?: IFormatOpts) => string
+export type LoggerFunc = (message: any, ...argv: any[]) => void
 export interface ILogger {
-    invariant: (check: boolean, message?: string) => void;
-    format: FormatFunc;
-    log: LoggerFunc;
-    info: LoggerFunc;
-    warn: LoggerFunc;
-    success: LoggerFunc;
-    debug: LoggerFunc;
-    error: LoggerFunc;
+  invariant: (check: boolean, message?: string) => void
+  format: FormatFunc
+  log: LoggerFunc
+  info: LoggerFunc
+  warn: LoggerFunc
+  success: LoggerFunc
+  debug: LoggerFunc
+  error: LoggerFunc
 }

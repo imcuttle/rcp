@@ -38,14 +38,11 @@ export function useUncontrolledCore<T = any>(
   const fnRef = React.useRef(setValueFinal)
   fnRef.current = setValueFinal
 
-  useEffect(
-    () => {
-      if (typeof propValue !== 'undefined') {
-        fnRef.current(propValue)
-      }
-    },
-    [propValue]
-  )
+  useEffect(() => {
+    if (typeof propValue !== 'undefined') {
+      fnRef.current(propValue)
+    }
+  }, [propValue])
 
   return [value, fnRef.current]
 }

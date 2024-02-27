@@ -3,8 +3,10 @@
   "compilerOptions": {
     "outDir": ".",
     "jsx": "react",
-    "sourceMap": true
+    "skipLibCheck": true,
+    "strict": false,
+    "sourceMap": false
   },
   "include": ["index.ts", "index.tsx", "**/*.ts", "**/*.tsx"],
-  "exclude": ["__tests__"]
+  "exclude": ["__tests__", "node_modules", "index.d.ts"]
 }

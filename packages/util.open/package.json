@@ -39,6 +39,6 @@
     "lazy-value": "^2.0.0"
   },
   "devDependencies": {
-    "p-state": "^0.1.1"
+    "p-state": "^0.2.1"
   }
 }

@@ -9,35 +9,76 @@ import * as React from 'react'
 
 export interface Replacer<T = any, P extends T = T> {
   with: T
-  as: P
+  as?: P
+  transformAs?: (input: T, replacer: this, ...args: any[]) => P
 }
 
-export const ReplacerContext = React.createContext<Replacer[]>([])
-// eslint-disable-next-line no-underscore-dangle
-const _ReplacerProvider = ReplacerContext.Provider
-export const ReplacerConsumer = ReplacerContext.Consumer
+export function factory() {
+  const globalReplacerContextValues: Replacer[] = []
+  const ReplacerContext = React.createContext<Replacer[]>(globalReplacerContextValues)
+  // eslint-disable-next-line no-underscore-dangle
+  const _ReplacerProvider = ReplacerContext.Provider
+  const ReplacerConsumer = ReplacerContext.Consumer
 
-export const ReplacerProvider: React.FC<{
-  replacers?: Replacer[]
-}> = ({ children, replacers = [] }) => (
-  // eslint-disable-next-line react/jsx-pascal-case
-  <_ReplacerProvider value={replacers}>{children}</_ReplacerProvider>
-)
+  const ReplacerProvider: React.FC<{
+    replacers?: Replacer[]
+  }> = ({ children, replacers = globalReplacerContextValues }) => (
+    // eslint-disable-next-line react/jsx-pascal-case
+    <_ReplacerProvider value={replacers}>{children}</_ReplacerProvider>
+  )
 
-export function useReplacers() {
-  return useContext(ReplacerContext)
-}
+  function useReplacers() {
+    return useContext(ReplacerContext)
+  }
 
-export function useReplacedValue<T, P extends T = T>(value: T): P {
-  const replacers = useReplacers()
+  function useReplacedValue<T, P extends T = T>(value: T, { extraArgs = [] }: { extraArgs?: any[] } = {}): P {
+    const replacers = useReplacers()
 
-  return React.useMemo(() => {
-    if (replacers && replacers.length) {
-      const replacer = replacers.find((replacer) => replacer.with === value)
-      if (replacer) {
-        return replacer.as
+    const extraArgsRef = React.useRef(extraArgs)
+    extraArgsRef.current = extraArgs
+
+    const matchReplacer = React.useMemo(() => {
+      if (replacers && replacers.length) {
+        return replacers.find((replacer) => replacer.with === value)
       }
-    }
-    return value
-  }, [replacers, value])
+    }, [replacers, value])
+
+    return (
+      React.useMemo(() => {
+        if (matchReplacer) {
+          if (typeof matchReplacer.transformAs === 'function') {
+            return matchReplacer.transformAs(matchReplacer.with, matchReplacer, ...extraArgsRef.current)
+          }
+          return matchReplacer.as
+        }
+      }, [matchReplacer]) || value
+    )
+  }
+
+  return {
+    globalReplacerContextValues,
+    ReplacerContext,
+    ReplacerConsumer,
+    ReplacerProvider,
+    useReplacers,
+    useReplacedValue
+  }
+}
+
+const {
+  globalReplacerContextValues,
+  ReplacerContext,
+  ReplacerConsumer,
+  ReplacerProvider,
+  useReplacers,
+  useReplacedValue
+} = factory()
+
+export {
+  globalReplacerContextValues,
+  ReplacerContext,
+  ReplacerConsumer,
+  ReplacerProvider,
+  useReplacers,
+  useReplacedValue
 }

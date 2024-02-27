@@ -25,38 +25,35 @@ import * as React from 'react'
  * @return {ValuesHelper}
  */
 export function useValuesHelper<T = any>(stateValues: T[], setValues: (values: T[]) => void) {
-  return React.useMemo(
-    () => {
-      const indexOf = (value: T) => (!stateValues ? -1 : stateValues!.indexOf(value))
-      const has = (value: T) => indexOf(value) >= 0
-      const add = (value: T) => {
-        if (!has(value)) {
-          return setValues((stateValues || []).concat(value))
-        }
+  return React.useMemo(() => {
+    const indexOf = (value: T) => (!stateValues ? -1 : stateValues!.indexOf(value))
+    const has = (value: T) => indexOf(value) >= 0
+    const add = (value: T) => {
+      if (!has(value)) {
+        return setValues((stateValues || []).concat(value))
       }
-      const remove = (value: any) => {
-        const index = indexOf(value)
-        if (index >= 0) {
-          const newValues = stateValues!.slice()
-          newValues.splice(index, 1)
-          return setValues(newValues)
-        }
+    }
+    const remove = (value: any) => {
+      const index = indexOf(value)
+      if (index >= 0) {
+        const newValues = stateValues!.slice()
+        newValues.splice(index, 1)
+        return setValues(newValues)
       }
-      const toggle = (value: T) => {
-        return has(value) ? remove(value) : add(value)
-      }
-      return {
-        values: stateValues,
-        setValues,
-        remove,
-        add,
-        toggle,
-        indexOf,
-        has
-      }
-    },
-    [stateValues, setValues]
-  )
+    }
+    const toggle = (value: T) => {
+      return has(value) ? remove(value) : add(value)
+    }
+    return {
+      values: stateValues,
+      setValues,
+      remove,
+      add,
+      toggle,
+      indexOf,
+      has
+    }
+  }, [stateValues, setValues])
 }
 
 /**

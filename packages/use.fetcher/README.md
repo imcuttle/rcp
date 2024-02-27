@@ -17,6 +17,10 @@ yarn add @rcp/use.fetcher
 
 ```javascript
 import useFetcher from '@rcp/use.fetcher'
+
+function App() {
+  const [val, setVal, { loading, error }] = useFetcher(() => getAppData(), {}, [])
+}
 ```
 
 ## API

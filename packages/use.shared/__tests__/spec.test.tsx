@@ -87,6 +87,10 @@ describe('useShared', function () {
     await delay(100)
 
     expect(NoEffect).toHaveBeenCalledTimes(1)
-    expect(ins.html()).toMatchInlineSnapshot(`"<pre></pre>"`)
+    expect(ins.html()).toMatchInlineSnapshot(`
+"<pre>{
+  \\"name\\": \\"小红\\"
+}</pre>"
+`)
   })
 })

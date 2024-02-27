@@ -25,6 +25,7 @@ describe('utilOpen', function () {
       `"<div class=\\"modal-open-controller\\"><div><h1 id=\\"close-me\\">title</h1></div></div>"`
     )
 
+    console.log(promiseStateSync(p))
     expect(promiseStateSync(p)).toBe('pending')
     // @ts-ignore
     document.querySelector('#close-me').click()

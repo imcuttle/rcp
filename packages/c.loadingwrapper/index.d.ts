@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { FunctionComponent, ComponentClass } from 'react'
-export declare type TypeLoadingWrapperProps = {
+export type TypeLoadingWrapperProps = {
   isLoading: boolean
   renderLoadingDelayMs?: number
   withDelayRenderFirstly?: boolean
@@ -29,5 +29,5 @@ export default class LoadingWrapper extends React.PureComponent<TypeLoadingWrapp
   componentDidMount(): void
   componentDidUpdate(prevProps: any): void
   get couldRender(): boolean
-  render(): JSX.Element
+  render(): React.JSX.Element
 }

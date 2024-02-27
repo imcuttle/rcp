@@ -10,12 +10,19 @@ import useUncontrolled from '@rcp/use.uncontrolled'
 import * as castArray from 'lodash.castarray'
 import * as isEqual from 'lodash.isequal'
 import useForceUpdate from '@rcp/use.forceupdate'
-import { useReplacedValue } from '@rcp/use.replacer'
-import usePersistFn from '@rcp/use.persistfn'
+import usePersistFn from '@ecom/rcp.use.persistfn'
 import useCustomCompareEffect from '@rcp/use.compareeffect'
 import { PropsWithoutRef, RefAttributes, Suspense, SuspenseProps } from 'react'
+import { useFetcherContext } from './context'
+import { useReplacedValue } from './replacer'
+import { TFetcher, TFetcherEntity, TFetcherOptions, TFetcherResult, TPreFetchParams } from './types'
+import { usePluginTapable } from './plugin-tappable'
+import { decorateEntity } from './decrease-render-times'
 
-export * from '@rcp/use.replacer'
+export * from './types'
+export * from './context'
+export * from './preload'
+export * from './replacer'
 
 export function suspense<T extends React.ComponentType<P>, P>(Comp: T, config: SuspenseProps) {
   return function SuspenseComponent(props: P) {
@@ -41,33 +48,7 @@ export function suspenseForwardRef<Ref, P>(
   })
 }
 
-type UnControlledOptions = Parameters<typeof useUncontrolled>[0]
-export type TFetcher<R = any, T extends any[] = any[]> = R | ((...args: T) => Promise<R> | R)
-
-export type TFetcherEntity<T> = {
-  initialized: boolean
-  res: T
-  setResponse?: (value: T) => void
-  loading: boolean
-  error: any
-  fetch: (...params: any[]) => Promise<TFetcherEntity<T>>
-  forceUpdate: () => void
-}
-
-export type TFetcherResult<T> = [T, (newVal: T | ((oldValue: T) => T)) => void, TFetcherEntity<T>]
-export type TFetcherOptions<T = any> = {
-  onChange?: UnControlledOptions['onChange']
-  data?: T
-  defaultData?: T
-  suspense?: boolean
-  key?: any
-  eq?: ((a: any, b: any) => boolean) | 'deep' | 'shadow'
-  catchError?: boolean
-}
-
-const cache = new Map<any[], Promise<any> | any[]>()
-
-function findCacheKey(currentKey: any, eq = isShallowEqual) {
+function findCacheKey(currentKey: any, eq = isShallowEqual, cache: Map<any, any>) {
   currentKey = castArray(currentKey)
   // @ts-ignore
   for (let [eachKey] of cache.entries()) {
@@ -80,21 +61,51 @@ function findCacheKey(currentKey: any, eq = isShallowEqual) {
   }
 }
 
-export default function useFetcher<T, ARG extends any>(
+function setRefCurrent(ref: { current?: any }, value) {
+  const tmp = ref.current
+  ref.current = value
+  return tmp !== ref.current
+}
+
+export default function useFetcher<T, ARG extends any[]>(
+  _fetcher: TFetcher<T, ARG>,
+  _fetcherOptions: TFetcherOptions<T> = {},
   // @ts-ignore
-  getter: TFetcher<T, ARG>,
-  { data, defaultData, key, catchError = false, onChange, suspense, eq = 'shadow' }: TFetcherOptions<T> = {},
-  // @ts-ignore
-  deps: ARG = []
+  _deps: ARG = []
 ): TFetcherResult<T> {
-  const keyOrFetcher = useReplacedValue<any, TFetcher>(key || getter)
+  const { cache, disableDependencyCollect } = useFetcherContext()
+  const tapable = usePluginTapable()
+
+  const preFetchParams: TPreFetchParams<T, ARG> = {
+    fetcherOptions: _fetcherOptions,
+    fetcher: _fetcher,
+    deps: _deps,
+    state: {}
+  }
+  const afterParams = tapable.callTransformSync('preFetchHooks', preFetchParams)
+  const { fetcher: getter, deps, fetcherOptions } = afterParams
+
+  const {
+    onError,
+    data,
+    defaultData,
+    key,
+    catchError,
+    onChange,
+    suspense,
+    eq = 'shadow',
+    useEffect = React.useEffect,
+    useCallFetchEffect = React.useEffect
+  } = fetcherOptions
+
+  const keyOrFetcher = useReplacedValue<any, TFetcher>(key || getter, { extraArgs: [afterParams] })
   const fetcher = React.useMemo(() => {
     return typeof keyOrFetcher === 'function' ? keyOrFetcher : getter
   }, [keyOrFetcher, getter])
   const [val, setVal] = useUncontrolled<T>({
     value: data,
     defaultValue: typeof fetcher !== 'function' ? fetcher : defaultData,
-    useEffect: React.useEffect,
+    useEffect,
     onChange
   })
   const eqFn = usePersistFn((a, b) => {
@@ -114,70 +125,112 @@ export default function useFetcher<T, ARG extends any>(
   const isLoadingRef = React.useRef(!suspense)
   const errorRef = React.useRef(null)
   const fetchRef = React.useRef(() => {})
+  const pureFetchRef = React.useRef(() => {})
+  const internalFetchRef = React.useRef(() => {})
   const forceUpdateRef = React.useRef(() => {})
   const [_forceUpdate, v] = useForceUpdate()
   const forceUpdate = (forceUpdateRef.current = _forceUpdate)
 
-  const getResult = React.useCallback(
-    (overwriteProps?) => {
-      const entity = {
-        initialized: initializedRef.current,
-        res: val,
-        setResponse: setVal,
-        loading: isLoadingRef.current,
-        error: errorRef.current,
-        fetch: fetchRef.current,
-        forceUpdate,
-        ...overwriteProps
-      }
-      return [entity.res, entity.setResponse, entity] as TFetcherResult<T>
-    },
-    [v, val, forceUpdate, setVal]
-  )
+  const getEntity = usePersistFn((overwriteProps?) => {
+    return {
+      initialized: initializedRef.current,
+      res: val,
+      setResponse: setVal,
+      loading: isLoadingRef.current,
+      error: errorRef.current,
+      fetch: fetchRef.current,
+      pureFetch: pureFetchRef.current,
+      _internalFetch: internalFetchRef.current,
+      forceUpdate,
+      ...overwriteProps
+    } as TFetcherEntity<T>
+  })
+  const getResult = usePersistFn((overwriteProps?) => {
+    const entity = getEntity(overwriteProps)
+    return [entity.res, entity.setResponse, entity] as TFetcherResult<T>
+  })
 
-  const fetch = usePersistFn(async (...params) => {
-    if (typeof fetcher !== 'function') {
+  const fetch = usePersistFn<TFetcherEntity<T>['_internalFetch']>(
+    async (params = [], { shouldUpdate = true, preAppendParams = [], appendParams = [] } = {}) => {
+      if (typeof fetcher !== 'function') {
+        return getResult()
+      }
+
+      let updated = false
+      try {
+        if (!isLoadingRef.current) {
+          isLoadingRef.current = true
+          if (!suspense && shouldUpdate && trackResult.hitsDep('loading')) {
+            forceUpdate()
+          }
+        }
+
+        let runParams = (deps || ([] as any)).slice()
+        params.forEach((p, i) => {
+          runParams[i] = p
+        })
+        runParams = preAppendParams.concat(runParams).concat(appendParams)
+        // @ts-ignore
+        const data = await fetcher(...runParams)
+        const isInitializedUpdated = setRefCurrent(initializedRef, true)
+        const isErrorUpdated = setRefCurrent(errorRef, null)
+        isLoadingRef.current = false
+        // trigger update
+        if (!suspense) {
+          setVal(data)
+          if (
+            (shouldUpdate && val === data && trackResult.hitsDep('loading')) ||
+            (isInitializedUpdated && trackResult.hitsDep('initialized')) ||
+            (isErrorUpdated && trackResult.hitsDep('error'))
+          ) {
+            forceUpdate()
+          }
+        }
+        updated = true
+        return getResult({ res: data })
+      } catch (error) {
+        errorRef.current = error
+        onError?.(error)
+        if (process.env.NODE_ENV !== 'production') {
+          if (typeof catchError !== 'undefined' && catchError && suspense) {
+            console.error('[rcp:use.fetcher] catchError is not recommended when `suspense` is true. It cases ')
+          }
+        }
+        // 1. 传入 catchError = false
+        // 2. 没有传入catchError，但使用了 error
+        // 3. 没有传入catchError，使用 suspense
+        if (
+          (typeof catchError !== 'undefined' && !catchError) ||
+          (typeof catchError === 'undefined' && !trackResult.hitsDep('error')) ||
+          (typeof catchError === 'undefined' && suspense)
+        ) {
+          if (suspense) {
+            console.error(error)
+          }
+          throw error
+        }
+      } finally {
+        isLoadingRef.current = false
+        if (!updated && !suspense && shouldUpdate) {
+          if (
+            !errorRef.current ||
+            (errorRef.current && ((typeof catchError !== 'undefined' && catchError) || trackResult.hitsDep('error')))
+          ) {
+            forceUpdate()
+          }
+        }
+      }
+
       return getResult()
     }
-
-    let updated = false
-    try {
-      if (!isLoadingRef.current) {
-        isLoadingRef.current = true
-        !suspense && forceUpdate()
-      }
-
-      const depsCloned = (deps || ([] as any)).slice()
-      params.forEach((p, i) => {
-        depsCloned[i] = p
-      })
-      // @ts-ignore
-      const data = await fetcher(...depsCloned)
-      initializedRef.current = true
-      errorRef.current = null
-      isLoadingRef.current = false
-      // trigger update
-      !suspense && setVal(data)
-      !suspense && val === data && forceUpdate();
-      updated = true
-      return getResult({ res: data })
-    } catch (error) {
-      errorRef.current = error
-      if (!catchError) {
-        if (suspense) {
-          console.error(error)
-        }
-        throw error
-      }
-    } finally {
-      isLoadingRef.current = false
-      !updated && !suspense && forceUpdate()
-    }
-
-    return getResult()
-    // @ts-ignore
+  )
+  internalFetchRef.current = fetch
+  fetchRef.current = usePersistFn((...params: any[]) => {
+    return fetch(params)
   })
-  fetchRef.current = fetch
+  pureFetchRef.current = usePersistFn((...params: any[]) => {
+    return fetch(params, { shouldUpdate: false })
+  })
 
   // @ts-ignore
   let currentKey = React.useMemo(() => (key != null ? [key] : [deps, fetcher]), [key, ...(deps || []), fetcher])
@@ -185,19 +238,23 @@ export default function useFetcher<T, ARG extends any>(
   React.useLayoutEffect(() => {
     return () => {
       if (suspense) {
-        const key = findCacheKey(currentKey, eqFn)
+        const key = findCacheKey(currentKey, eqFn, cache)
         cache.delete(key)
       }
     }
   }, [suspense, currentKey, cache])
 
   if (suspense) {
-    const key = findCacheKey(currentKey, eqFn)
+    const key = findCacheKey(currentKey, eqFn, cache)
     const promiseOrEntity = cache.get(key)
     if (promiseOrEntity) {
       if (promiseOrEntity && typeof (promiseOrEntity as any).then === 'function') {
         // @ts-ignore
         if (promiseOrEntity.error) {
+          const cb = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : process.nextTick
+          cb(() => {
+            cache.delete(key)
+          })
           // @ts-ignore
           throw promiseOrEntity.error
         }
@@ -273,8 +330,17 @@ export default function useFetcher<T, ARG extends any>(
     },
     // @ts-ignore
     [...(deps || []), suspense],
-    eqDepsFn
+    eqDepsFn,
+    { useEffect: useCallFetchEffect }
   )
 
-  return getResult()
+  const ent = getEntity()
+
+  let entity = tapable.callTransformSync('unsuspenseEntityTransformHooks', ent, fetcherOptions, afterParams)
+  const trackResult = decorateEntity(entity, undefined, {
+    disabled: fetcherOptions.disableDependencyCollect ?? disableDependencyCollect ?? false
+  })
+  entity = trackResult.entity
+
+  return [entity.res, entity.setResponse, entity] as TFetcherResult<T>
 }

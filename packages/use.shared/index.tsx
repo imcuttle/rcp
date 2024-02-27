@@ -7,19 +7,25 @@
 import { useMemo } from 'react'
 import * as React from 'react'
 import useFetcher, { TFetcher, TFetcherResult } from '@rcp/use.fetcher'
-import { suspense, suspenseForwardRef } from '@rcp/use.fetcher'
+import { TFetcherOptions, suspense, suspenseForwardRef } from '@rcp/use.fetcher'
 import useForceUpdate from '@rcp/use.forceupdate'
 import usePersistFn from '@rcp/use.persistfn'
 
 export { suspense, suspenseForwardRef }
 
-export function useSharedProvider<T>(
+export type TSharedProviderOptions<T extends (a: any, opts: TFetcherOptions, ...args: any[]) => TFetcherResult<any>> =
+  Parameters<T>[1] & {
+    useFetcher?: T
+  }
+
+export function useSharedProvider<T, F extends (a: any, opts: TFetcherOptions, ...args: any[]) => TFetcherResult<any>>(
   CreateFetcherSymbol: TFetcher<T>,
-  { key, ...opts }: Parameters<typeof useFetcher>[1] = {},
-  deps?: Parameters<typeof useFetcher>[2]
+  { key, ...opts }: TSharedProviderOptions<F> = {},
+  deps?: Parameters<F>[2]
 ) {
+  const useLoader = React.useMemo(() => opts.useFetcher ?? useFetcher, [])
   // @ts-expect-error
-  const result = useFetcher<T>(CreateFetcherSymbol, { ...opts, key }, deps)
+  const result = useLoader<T>(CreateFetcherSymbol, { disableDependencyCollect: true, ...opts, key }, deps)
 
   const [, , entity] = result
   const map = useSharedMap()
@@ -28,11 +34,7 @@ export function useSharedProvider<T>(
   const fetcherKey = useMemo(() => key || CreateFetcherSymbol, [key || CreateFetcherSymbol])
 
   // 同步写
-  if (entity.res) {
-    map.set(fetcherKey, result)
-  } else {
-    map.delete(fetcherKey)
-  }
+  map.set(fetcherKey, result)
 
   React.useLayoutEffect(
     () => () => {
@@ -47,7 +49,7 @@ export function useSharedProvider<T>(
     if (updateList) {
       updateList.forEach((fn) => fn())
     }
-  }, [fetcherKey, entity.res, updateMap])
+  }, [fetcherKey, entity.res, entity.loading, entity.error, entity.initialized, updateMap])
 
   return result
 }
@@ -88,7 +90,29 @@ export function useShared<T>(
     [forceUpdate, valueSymbol, updateMap]
   )
 
-  return map.get(valueSymbol) || [undefined, undefined, {}]
+  return prevRef.current || [undefined, undefined, {}]
+}
+
+export function useSharedFetcher<T, F extends (a: any, opts: TFetcherOptions, ...args: any[]) => TFetcherResult<any>>(
+  createFetcherSymbol: TFetcher<T>,
+  { key, ...opts }: TSharedProviderOptions<F> = {},
+  deps?: Parameters<F>[2]
+): TFetcherResult<T> {
+  const fetcherKey = React.useMemo(() => {
+    return key || createFetcherSymbol
+  }, [key || createFetcherSymbol])
+
+  const map = useSharedMap()
+  const useHook = React.useMemo(() => {
+    if (map.get(fetcherKey)) {
+      return () => useShared(fetcherKey)
+    }
+    return () => {
+      return useSharedProvider(createFetcherSymbol, { key, ...opts }, deps)
+    }
+  }, [])
+
+  return useHook() as any
 }
 
 const SharedContext = React.createContext<Map<TFetcher<any>, any>>(new Map())
