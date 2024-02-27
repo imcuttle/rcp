@@ -23,13 +23,13 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.15",
+  "version": "2.0.0",
   "dependencies": {
-    "@rcp/util.displayname": "^1.0.15",
-    "@rcp/util.iscompclass": "^1.0.15"
+    "@rcp/util.displayname": "^2.0.0",
+    "@rcp/util.iscompclass": "^2.0.0"
   },
   "devDependencies": {
-    "@rcp/_types": "^1.0.9"
+    "@rcp/_types": "^2.0.0"
   },
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
   "repository": {

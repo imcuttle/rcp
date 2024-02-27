@@ -21,12 +21,12 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "version": "1.0.20",
+  "version": "2.0.0",
   "dependencies": {
-    "@rcp/util.createlogger": "^1.1.7",
-    "@rcp/util.createmount": "^1.0.17",
-    "@rcp/util.displayname": "^1.0.15",
-    "@rcp/util.tocompclass": "^1.0.15"
+    "@rcp/util.createlogger": "^2.0.0",
+    "@rcp/util.createmount": "^2.0.0",
+    "@rcp/util.displayname": "^2.0.0",
+    "@rcp/util.tocompclass": "^2.0.0"
   },
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f",
   "repository": {

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/imcuttle/rcp/compare/@rcp/util.createlogger@1.1.7...@rcp/util.createlogger@2.0.0) (2024-02-27)
+
+### Features
+
+- apply major changes ([76ab08c](https://github.com/imcuttle/rcp/commit/76ab08c0b961d33963a59f95d061f5cced94483c))
+
+### BREAKING CHANGES
+
+- apply lots of changes since two years ago
+
 <a name="1.1.7"></a>
 
 ## [1.1.7](https://github.com/imcuttle/rcp/compare/@rcp/util.createlogger@1.1.6...@rcp/util.createlogger@1.1.7) (2021-09-29)

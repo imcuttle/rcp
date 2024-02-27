@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@rcp/use.i18n": "^1.1.18",
-    "@rcp/util.tocompclass": "^1.0.15"
+    "@rcp/util.tocompclass": "^2.0.0"
   },
   "keywords": [
     "imcuttle",
@@ -37,6 +37,6 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.0.21",
+  "version": "1.0.22",
   "gitHead": "f28ececd4b2fab80551292239b568841c895177f"
 }

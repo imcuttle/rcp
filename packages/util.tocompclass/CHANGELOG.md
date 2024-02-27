@@ -3,23 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/imcuttle/rcp/compare/@rcp/util.tocompclass@1.0.15...@rcp/util.tocompclass@2.0.0) (2024-02-27)
+
+### Features
+
+- apply major changes ([76ab08c](https://github.com/imcuttle/rcp/commit/76ab08c0b961d33963a59f95d061f5cced94483c))
+
+### BREAKING CHANGES
+
+- apply lots of changes since two years ago
+
 <a name="1.0.15"></a>
+
 ## [1.0.15](https://github.com/imcuttle/rcp/compare/@rcp/util.tocompclass@1.0.14...@rcp/util.tocompclass@1.0.15) (2020-11-19)
 
 **Note:** Version bump only for package @rcp/util.tocompclass
 
-
-
-
-
 <a name="1.0.14"></a>
+
 ## [1.0.14](https://github.com/imcuttle/rcp/compare/@rcp/util.tocompclass@1.0.13...@rcp/util.tocompclass@1.0.14) (2020-11-19)
 
 **Note:** Version bump only for package @rcp/util.tocompclass
-
-
-
-
 
 <a name="1.0.13"></a>
 

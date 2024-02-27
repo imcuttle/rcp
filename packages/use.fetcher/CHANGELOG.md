@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/imcuttle/rcp/compare/@rcp/use.fetcher@1.1.5...@rcp/use.fetcher@2.0.0) (2024-02-27)
+
+### Bug Fixes
+
+- forceUpdate ([ce8ae09](https://github.com/imcuttle/rcp/commit/ce8ae0999b80928f9487a6ca50fe88a386d059df))
+
+### Features
+
+- apply major changes ([76ab08c](https://github.com/imcuttle/rcp/commit/76ab08c0b961d33963a59f95d061f5cced94483c))
+
+### BREAKING CHANGES
+
+- apply lots of changes since two years ago
+
 <a name="1.1.5"></a>
 
 ## [1.1.5](https://github.com/imcuttle/rcp/compare/@rcp/use.fetcher@1.1.4...@rcp/use.fetcher@1.1.5) (2021-12-28)

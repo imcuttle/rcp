@@ -33,9 +33,9 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.0.5",
+  "version": "2.0.0",
   "dependencies": {
-    "@rcp/util.createmount": "^1.0.17",
+    "@rcp/util.createmount": "^2.0.0",
     "lazy-value": "^2.0.0"
   },
   "devDependencies": {

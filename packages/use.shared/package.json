@@ -33,10 +33,10 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "1.1.5",
+  "version": "2.0.0",
   "dependencies": {
-    "@rcp/use.fetcher": "^1.1.5",
+    "@rcp/use.fetcher": "^2.0.0",
     "@rcp/use.forceupdate": "^1.2.1",
-    "@rcp/use.persistfn": "^1.0.4"
+    "@rcp/use.persistfn": "^2.0.0"
   }
 }
