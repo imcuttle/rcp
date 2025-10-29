@@ -33,9 +33,9 @@
   "engines": {
     "node": ">=6"
   },
-  "version": "2.0.0",
+  "version": "2.0.1",
   "dependencies": {
-    "@rcp/use.fetcher": "^2.0.0",
+    "@rcp/use.fetcher": "^2.0.1",
     "@rcp/use.forceupdate": "^1.2.1",
     "@rcp/use.persistfn": "^2.0.0"
   }

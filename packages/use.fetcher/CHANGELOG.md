@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/imcuttle/rcp/compare/@rcp/use.fetcher@2.0.0...@rcp/use.fetcher@2.0.1) (2025-10-29)
+
+**Note:** Version bump only for package @rcp/use.fetcher
+
 # [2.0.0](https://github.com/imcuttle/rcp/compare/@rcp/use.fetcher@1.1.5...@rcp/use.fetcher@2.0.0) (2024-02-27)
 
 ### Bug Fixes
