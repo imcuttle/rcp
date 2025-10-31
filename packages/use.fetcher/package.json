@@ -43,5 +43,6 @@
     "lodash.castarray": "^4.4.0",
     "lodash.isequal": "^4.5.0",
     "shallowequal": "^1.1.0"
-  }
+  },
+  "gitHead": "24649556c91a209880bc0df2bd6a4f057c7ca9c9"
 }

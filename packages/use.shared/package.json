@@ -38,5 +38,6 @@
     "@rcp/use.fetcher": "^2.0.1",
     "@rcp/use.forceupdate": "^1.2.1",
     "@rcp/use.persistfn": "^2.0.0"
-  }
+  },
+  "gitHead": "24649556c91a209880bc0df2bd6a4f057c7ca9c9"
 }
