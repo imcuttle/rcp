@@ -40,6 +40,6 @@
     "@rcp/use.uncontrolled": "^3.0.0",
     "javascript-stringify": "^2.1.0",
     "lodash.isequal": "^4.5.0",
-    "qs": "^6.10.2"
+    "qs": "^6.5.3"
   }
 }
